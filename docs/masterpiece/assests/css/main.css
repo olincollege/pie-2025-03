@@ -3614,9 +3614,6 @@ body,
   text-align: center;
 }
 
-#summary .inner {
-  margin: 5;
-}
 
 
 
@@ -3627,9 +3624,7 @@ body,
   padding: 2em 0;            /* increase/decrease for more/less space */
 }
 
-#summary .inner{
-  padding: 2em 0;            /* extra breathing room inside */
-}
+
 
 /* Space between title line + text */
 #summary header.major{
@@ -3676,14 +3671,6 @@ body,
 }
 
 /* Keep breathing room above/below the paragraph */
-#summary .inner{
-  padding: 1em 0;
-  max-width: 200em;
-  margin: 0 auto;
-  padding-left: em;
-  padding-right: 2em;
-}
-
 #summary header.major{
   margin: 0 0 2em 0;
 }
@@ -3708,4 +3695,94 @@ body,
 
 #summary header.major:after{
   background: rgba(255,255,255,.22) !important;
+}
+
+/* Smaller gap around the whole Summary section */
+#summary{
+  padding: 1em 0;   /* was 6em 0 4em 0 */
+}
+
+/* Less space under the title (the “major” header block) */
+#summary header.major{
+  margin: 0 0 1em 0;  /* was 0 0 2em 0 */
+}
+
+/* Less space between paragraphs */
+#summary p{
+  margin: 0 0 0.75em 0;  /* default was ~2em from template */
+}
+
+/* Fix layout drifting left (restore Photon container padding/centering) */
+.container{
+  margin: 0 auto !important;
+  width: 60em;
+  max-width: calc(100% - 4em) !important;
+}
+
+@media screen and (max-width: 980px){
+  .container{ width: 100% !important; max-width: 100% !important; }
+}
+
+@media screen and (max-width: 480px){
+  .container{ max-width: calc(100% - 3em) !important; }
+}
+
+/* FIX: Summary was missing the same side padding other sections get */
+#summary{
+  text-align: center;
+  padding: 1em 3em; /* small vertical, normal horizontal */
+}
+
+@media screen and (max-width: 736px){
+  #summary{ padding: 1em 1.5em; }
+}
+@media screen and (max-width: 320px){
+  #summary{ padding: 1em 1em; }
+}
+
+/* Make Summary align EXACTLY with .container sections */
+#summary{
+  padding: 1em 0;         /* vertical only */
+  text-align: center;
+}
+
+#summary > .inner{
+  margin: 0 auto;
+  width: 60em;
+  max-width: calc(100% - 4em);
+}
+
+@media screen and (max-width: 980px){
+  #summary > .inner{
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  #summary > .inner{
+    max-width: calc(100% - 3em);
+  }
+}
+
+/* Center the Summary content + center the paragraph block */
+#summary > .inner{
+  margin: 0 auto !important;
+  width: 60em;
+  max-width: calc(100% - 4em);
+  text-align: center;
+}
+
+#summary p{
+  max-width: 100ch;
+  margin: 0 auto 0.75em auto !important; /* <-- centers the block */
+  /* optional: make the text easier to read while staying centered as a block */
+  text-align: center;
+}
+
+@media screen and (max-width: 980px){
+  #summary > .inner{ width: 100%; max-width: 100% !important; }
+}
+@media screen and (max-width: 480px){
+  #summary > .inner{ max-width: calc(100% - 3em) !important; }
 }
