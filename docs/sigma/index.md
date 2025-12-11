@@ -8,11 +8,11 @@ layout: default
   body {
     background: #2e221c;
     color: #e5d4b3;
-    font-family: "IM Fell English SC", serif;
+    font-family: "Lilex", serif;
   }
 
   h1, h2 {
-    font-family: "UnifrakturCook", serif !important;
+    font-family: "Inter", serif !important;
     color: #d2a679 !important;
     text-shadow: 0 0 2px #000;
   }
