@@ -1,8 +1,30 @@
 ---
+title: Sigma
 layout: default
-custom_css: sigma/theme.css
 ---
-<link rel="stylesheet" href="theme.css">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background: #2e221c;
+    color: #e5d4b3;
+    font-family: "IM Fell English SC", serif;
+  }
+
+  h1, h2 {
+    font-family: "UnifrakturCook", serif !important;
+    color: #d2a679 !important;
+    text-shadow: 0 0 2px #000;
+  }
+
+  .box {
+    border: 2px solid #7a5833;
+    background: #3b2d25;
+    padding: 15px;
+    border-radius: 8px;
+  }
+</style>
+
 # SIGMA
 A modernized take on the Enigma Machine used in WWII to encrypt messages.
 ---
