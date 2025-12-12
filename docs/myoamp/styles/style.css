@@ -1,0 +1,217 @@
+html {
+  font-size: 50px;
+  font-family:  "Karla", sans-serif;
+  background-color: #f3b094;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: #032749;
+  text-shadow: 3px 3px 1px black;
+}
+h2 {
+  font-size: 20px;
+  margin: 0;
+  padding: 1px 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 50px;
+  margin: 0;
+  padding: 1px 0;
+  text-align: center;
+}
+
+li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+
+main {
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #fed3c0;
+  padding: 0 20px 20px 20px; 
+  border: 5px solid black;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+
+.system-diagrams {
+  width: fit-content;
+  margin: 100px auto 100px auto;
+  background-color: #fed3c0;
+  padding: 20px 20px 20px 20px; /*top, right, bottom, left */
+  border: 5px solid black;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.overview {
+  width: fit-content;
+  margin: 100px auto 100px auto;
+  background-color: #fed3c0;
+  padding: 20px 20px 20px 20px;
+  border: 5px solid black;
+  justify-content: center;   
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;  /* stack components vertically */
+  align-items: center;     /* center the boxes horizontally */
+  gap: 20px;               /* spacing between boxes */
+  text-align: center;
+}
+
+.timeline{
+  display: flex;             /* arrange boxes horizontally */
+  justify-content: center;   /* center all boxes in the section */
+  gap: 20px;                 /* space between boxes */
+  margin: 50px auto;         /* center section and give vertical spacing */
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+
+p {
+  color: rgb(0, 0, 0);
+  width: auto;
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 25px;
+} 
+
+
+.info-box {
+  display: block;
+  width: 300px;
+  padding: 30px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.components {
+  display: block;
+  width: 300px;
+  padding: 40px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 15px;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: black;
+}
+
+.more {
+  opacity: 0;
+  transition: 0.3s;
+  
+}
+
+.info-box:hover .more {
+  opacity: 1;
+  
+}
+
+.info-box:hover {
+  background-color: #f4c1ab;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav {
+  list-style: none;
+  display: flex;      /* horizontal menu */
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  position: relative; /* positions dropdown correctly*/
+}
+
+.nav a { /*styles each link*/
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: black;
+  border-radius: 10px;
+}
+
+.nav a:hover {
+  background: #f4c1ab;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.components:hover {
+  background-color: #f4c1ab;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.nav-bar {
+  border: 4px solid black;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 10px;
+  text-align: left;
+  background: #fed3c0;
+  width: 680px;
+}
+
+
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-50px);
+  pointer-events: none;
+  transition: 0.3s;
+  position: absolute;
+  top: 35px;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+  background: #f4c1ab;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 79px;
+  margin-top: -5px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #fed3c0;  /* change color on hover */
+  cursor: pointer;
+}

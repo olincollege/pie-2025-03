@@ -1,0 +1,77 @@
+<!doctype html> <!--helps prevent any issues - runs error checks and stuff -->
+<html lang="en-US"> <!--sets the language as HTML-->
+  <head> <!--this is hidden - keywords-->
+    <link href="styles/style.css" rel="stylesheet" />
+    <meta charset="utf-8" /> <!--allows for most characters and languages-->
+    <meta name="viewport" content="width=device-width" /> <!--sets the size of the page to the device screen/browser window-->
+    <title>My test page</title> <!-- name/word associated with page (ex. what it will be named if favorited)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script async src="scripts/main.js"></script>
+  </head>
+  <body>
+    <section class = "nav-bar">
+      <nav>
+        <ul class = "nav">
+          <a href="index.html">Home</a>
+          <li class="dropdown">
+            <a href = "#"> Systems </a>
+            <ul class = "dropdown-menu">
+              <li><a href = "systems.html#mechanical" class = "components" > Mechanical </a></li>
+              <li><a href = "systems.html#electrical" class = "components" > Electrical </a></li>
+              <li><a href = "systems.html#firmware" class = "components" > Firmware </a></li>
+              <li><a href = "systems.html#software" class = "components" > Software </a></li>
+            </ul>
+          </li>
+
+          <a href="sprints.html">Sprints</a>
+          <a href="billofmaterials.html">Bill of Materials</a>
+          <a href="aboutus.html">About Us</a>
+        </ul>
+      </nav>
+    </section>
+    <main>
+
+      <h1>MyoAmp</h1>
+      <h2>Designed by: Timur Gray, Ramzey Burdette, Brandon Spiller, Anna Du, Masha Arakcheeva </h2>
+
+      <img src="images/hand.jpg" alt="a prosthetic hand" />
+      <p>We developed a prosthetic rehabilitation device to help people who have limited mobility in their hand 
+      muslces. The device allows for three different grips that will assist users in daily tasks. 
+      </p>
+  
+    </main>
+    <section class="system-diagrams">
+      <h3>Energy Flow Chart</h3>
+      <img src="images/energy.drawio.png" alt="energy flow diagram" />
+      <p> The bioelectric energy is represented with green arrows, the mechanical energy with bright pink, the power with light pink, and data lines with blue. The heart of the system is the battery, which fuels the power to the pico, sensors, and motor boards. The sEMG sensors and sensor pads work together to get bioelectric data from the arm into the system, and the machine learning model uses said data to decide which grip to switch to. The data is directed into the motor driver boards, and then, the linear actuators themselves, resulting in mechanical movement. </p>
+    </section>
+
+    <section class="overview">
+      <h3>Project Overview</h3>
+      <p>We used sensor pads to collect data from the arm, with the signals informing the device which gesture or grip the hand would like to make. The data is then sent to the pico, and later the motor driver boards and linear actuators, resulting in the desired mechanical movement </p>
+      <a href="systems.html" class="components">Mechanical</a>
+      <a href="systems.html" class="components">Electrical</a>
+      <a href="systems.html" class="components">Firmware</a>
+      <a href="systems.html" class="components">Software</a>
+    </section>
+
+    <h3>Timeline</h3>
+    <section class="timeline">
+      
+      <a href="sprints.html" class="info-box">
+        <p class="title">Sprint 1</p>
+        <p class="more">Our finalized idea, materials, and CAD</p>
+      </a>
+      <a href="sprints.html" class="info-box">
+        <p class="title">Sprint 2</p>
+        <p class="more">Getting a working prototype</p>
+      </a>
+      <a href="sprints.html" class="info-box">
+        <p class="title">Sprint 3</p>
+        <p class="more">Last run: final assembly and debugging </p>
+      </a>
+    </section>
+  </body>
+</html>
