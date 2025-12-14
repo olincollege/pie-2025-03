@@ -109,9 +109,9 @@
 
     <h3>Keyboard</h3>
     <p>
-      The keyboard design borrows from the original Enigma Machine. It uses spring-loaded conductive metal topped with labeled key-caps. When a letter is pressed, the key completes a circuit on the breadboard which gets sent to the arduino for processing.
+      The keyboard design borrows from the original Enigma Machine. It uses spring-loaded metal rods topped with labeled key-caps. When a letter is pressed, the key completes a circuit on the breadboard which gets sent to the arduino for processing.
       <br><br>
-      # TALK TO JO -------------- add more here <br><br>
+      Each key has a 3D printed tab on it. On the rod is a spring that is sandwiched between the tab and the middle plate. When the key is pressed, the spring compresses. The pin at the end of the tab comes into contact with a piece of copper wire, completing the circuit. When the key is let go, the spring decompresses and puts the key back to the original position, breaking the circuit. <br><br>
       We chose to make the keypresses send information to the Arduino for one particular reason. When the arduino recieves a signal of the swapped letter, both the pin corresponding to the keypress, and the pin corresponding to the swapped letter will read high. By sending the keyboard press to the arduino first, it can differentiate between the two, allowing it to send the swapped letter (and not the keypress!) to the display.
       <br><br>
       A tradeoff to making the keyboard as opposed to using a standard keyboard is time and redundancy. Since keys are made using springs and many small parts, each key is essentially a small mechanism, requiring hours of soldering. Since there are 26 letters in the alphabet, this creates long-repetative tasks for the assembly of dozens of parts.
