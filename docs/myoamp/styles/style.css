@@ -428,3 +428,110 @@ video {
   display: block;
   margin: 0 0 150px 50px;
 }
+
+.aboutus-summary{
+  text-align: right;
+  margin: 100px -800px 0 0;
+}
+
+.aboutus-summary h1{
+  margin: -100px 0 100px 0;
+}
+
+.teammates {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+}
+
+.teammates h2 {
+  font-size: 30px;
+  margin-top: 15px;
+  text-align: center;
+  padding:20px;
+}
+
+.teammates p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.member {
+  text-align: center;
+  position: relative;
+}
+
+.member img {
+  border-radius: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.wifi{
+  position: absolute;
+  width: 240px;
+  height: 80px;
+  top: 280px; 
+  left: 100px;
+  z-index: -1;  
+}
+
+.circuit{
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 1500px; 
+  right: 80px;
+  z-index: -1;  
+}
+
+.firmware{
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  top: 1150px; 
+  left: 100px;
+  z-index: -1;   
+}
+
+.pm{
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  top: 1950px; 
+  left: 100px;
+  z-index: -1;   
+}
+
+.anna {
+  transform: translateX(-400px) translateY(-100px);
+  width: 400px;
+}
+.ram {
+  transform: translateX(-350px) translateY(-450px);
+  width: 400px;
+}
+.timur {
+  transform: translateX(350px) translateY(-350px);
+}
+
+.page{
+  position: relative;
+}
+
+.geardrawing{
+  position: absolute;
+  width: 250px;
+  height: auto;
+  top: 600px; 
+  right: 100px;
+  z-index: -1;  
+}
+
+.brandon {
+  transform: translateX(400px) translateY(-700px);
+}
+.masha {
+  transform: translateX(-350px) translateY(-800px);
+  margin-bottom: -500px;
+}
