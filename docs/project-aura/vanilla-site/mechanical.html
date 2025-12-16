@@ -161,6 +161,54 @@
                 </p>
               </div>
             </div>
+
+            <div class="design-decisions">
+              <h2 class="section-heading text-center">Challenges</h2>
+
+              <div class="decision-cards">
+                <div class="decision-card">
+                  <div class="decision-header">
+                    <h3>Steering Stepper Mounting</h3>
+                  </div>
+                  <p>
+                    Due to the size of the MY1016Z, the mounting of the steering
+                    steppers became a problem due to the space constraint on the
+                    robot. We initially mounted the steppers to the corners of
+                    the robot. However, it turns out to be very unstable and
+                    causes chain tensioning issues as the sprockets are too
+                    close to each other.
+                  </p>
+                  <p><strong>Solution:</strong></p>
+                  <p>
+                    We moved the stepper motors to the center of the robot and
+                    slightly reduced the maximum steering angle. This allows us
+                    to space the sprockets further from each other, giving us
+                    enough space to tension the chain without skipping.
+                  </p>
+                </div>
+
+                <div class="decision-card">
+                  <div class="decision-header">
+                    <h3>Drivetrain Space issue</h3>
+                  </div>
+                  <p>
+                    In order to minimize the resistance in steering, we designed
+                    the drivetrain to be as compact as possible. The compact
+                    size of the drivetrain led to problems with integrating the
+                    wheel, the wheel mount, and the wheel sprocket in the tight
+                    space without interference. We had trouble with the chain
+                    interfering with the bolts and the chain exploded.
+                  </p>
+                  <p><strong>Solution:</strong></p>
+                  <p>
+                    We tested multiple sprocket spacers and used the thinnest
+                    one that doesn't cause interference. We also used shorter
+                    bolts for mounting the drivetrain, maximizing the space for
+                    rotational components.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

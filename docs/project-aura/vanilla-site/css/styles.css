@@ -54,6 +54,10 @@
 /* Base Styles */
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -62,6 +66,10 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .skip-link {
@@ -122,13 +130,18 @@ a:focus {
 /* Container */
 .container {
   max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 @media (min-width: 640px) {
   .container {
-    padding: 0 var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
   }
 }
 
@@ -241,6 +254,12 @@ a:focus {
 .section-heading {
   font-size: var(--font-size-4xl);
   margin-bottom: var(--spacing-xl);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Hero Section */
@@ -355,12 +374,21 @@ a:focus {
 .team-section {
   padding: var(--spacing-2xl) 0;
   background: white;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  grid-auto-columns: minmax(0, 1fr);
 }
 
 .team-card {
@@ -368,8 +396,16 @@ a:focus {
   padding: var(--spacing-lg);
   border-radius: var(--border-radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  text-align: center;
   transition: box-shadow var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  min-width: 0;
 }
 
 .team-card:hover {
@@ -377,26 +413,54 @@ a:focus {
 }
 
 .team-avatar {
-  width: 6rem;
-  height: 6rem;
-  margin: 0 auto var(--spacing-md);
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto var(--spacing-lg) auto;
   background: var(--color-bg-gray);
   border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-3xl);
-  color: var(--color-text-light);
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  clip-path: circle(50%);
+}
+
+.team-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 .team-name {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
 }
 
 .team-role {
+  font-size: var(--font-size-base);
   color: var(--color-text-light);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
 }
 
 /* Video Section */
@@ -843,6 +907,10 @@ a:focus {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .team-card {
+    padding: var(--spacing-md);
+  }
+
   .sections-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -880,6 +948,10 @@ a:focus {
 
   .team-grid {
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .team-card {
+    padding: var(--spacing-md);
   }
 
   .sections-grid {
