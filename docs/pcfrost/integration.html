@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Integration - PC Frost</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subpage-body" id="integration-body">
+    <a href="main.html" class="back-button">← Back to Home</a>
+    
+    <h1>System Integration</h1>
+    
+    <p class="subpage-description">
+        How we brought together mechanical precision, electrical control, and intelligent 
+        software to create a cohesive, reliable automated frosting system.
+    </p>
+
+    <div class="subpage-content">
+        
+        <section class="content-section">
+            <h2>Integration Overview</h2>
+            <p>
+                PC Frost's success depends on seamless integration of three core subsystems: 
+                mechanical, electrical, and software. Each subsystem was developed in parallel, 
+                with regular integration checkpoints to ensure compatibility and identify issues early.
+            </p>
+            <p>
+                Our integration philosophy: <em>fail fast, test often, document everything.</em>
+            </p>
+            <img src="images/system-diagram.jpg" alt="System integration diagram" class="content-image">
+            <p class="image-caption">Figure 1: High-level system integration architecture</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Mechanical-Electrical Interface</h2>
+            <h3>Motor Control Integration</h3>
+            <p>
+                The mechanical system's stepper motors are driven by DRV8825 stepper drivers 
+                controlled via the microcontroller. Key integration considerations included:
+            </p>
+            <ul>
+                <li><strong>Step resolution:</strong> Configured to 1/16 microstepping for smooth motion</li>
+                <li><strong>Current limiting:</strong> Set to 1.2A per phase to prevent motor overheating</li>
+                <li><strong>Enable/disable logic:</strong> Motors disabled during idle to reduce power consumption</li>
+                <li><strong>Emergency stop:</strong> Hardware interrupt immediately disables all motors</li>
+            </ul>
+            
+            <h3>Sensor Integration</h3>
+            <p>
+                Limit switches at each axis endpoint provide homing references and prevent 
+                mechanical damage from over-travel:
+            </p>
+            <ul>
+                <li>Normally-open switches with hardware debouncing</li>
+                <li>Interrupt-driven to ensure immediate response</li>
+                <li>Software validation to prevent false triggers</li>
+            </ul>
+            
+            <h3>Pneumatic System Control</h3>
+            <p>
+                The frosting delivery system is controlled via a 12V solenoid valve with 
+                PWM-controlled pressure regulation:
+            </p>
+            <ul>
+                <li>Digital I/O controls solenoid on/off state</li>
+                <li>Analog feedback from pressure sensor enables closed-loop control</li>
+                <li>Safety valve automatically releases pressure on system shutdown</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Electrical-Software Interface</h2>
+            <h3>Communication Protocol</h3>
+            <p>
+                The control software communicates with the microcontroller via USB serial 
+                connection using a custom command protocol based on G-code standards:
+            </p>
+            <div class="code-block">
+G0 X100 Y50 F1000  ; Rapid move to position
+G1 X150 Y75 E5     ; Linear move with extrusion
+M3 S80             ; Set frosting pressure to 80%
+M5                 ; Stop frosting
+M84                ; Disable motors
+            </div>
+            
+            <h3>Real-Time Feedback</h3>
+            <p>
+                The microcontroller streams status updates back to the control software:
+            </p>
+            <ul>
+                <li>Current position (X, Y, Z coordinates)</li>
+                <li>Motor states (enabled/disabled, moving/idle)</li>
+                <li>Pressure sensor readings</li>
+                <li>Limit switch states</li>
+                <li>Error codes and warnings</li>
+            </ul>
+            
+            <h3>Error Handling</h3>
+            <p>
+                Robust error detection and recovery mechanisms ensure safe operation:
+            </p>
+            <ul>
+                <li><strong>Communication timeout:</strong> System halts if no command received for 5 seconds</li>
+                <li><strong>Position validation:</strong> Software checks all movements against workspace bounds</li>
+                <li><strong>Pressure monitoring:</strong> Alerts trigger if pressure deviates from setpoint</li>
+                <li><strong>Emergency stop:</strong> Hardware button immediately halts all operations</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Software-Mechanical Interface</h2>
+            <h3>Coordinate System Translation</h3>
+            <p>
+                The polar coordinate system requires translation between user-space coordinates 
+                (degrees and radius) and machine-space coordinates (stepper motor steps):
+            </p>
+            <ul>
+                <li>Angular position controlled by turntable stepper motor</li>
+                <li>Radial position controlled by linear actuator</li>
+                <li>Real-time kinematic calculations ensure smooth motion</li>
+                <li>Acceleration/deceleration profiles prevent mechanical shock</li>
+            </ul>
+            
+            <h3>Motion Planning</h3>
+            <p>
+                The software implements look-ahead motion planning to optimize path execution:
+            </p>
+            <ul>
+                <li>Analyzes upcoming moves to maximize speed while respecting acceleration limits</li>
+                <li>Blends consecutive moves for smooth curves</li>
+                <li>Synchronizes frosting extrusion with motion speed</li>
+                <li>Estimates job completion time based on toolpath analysis</li>
+            </ul>
+            
+            <img src="images/motion-planning.jpg" alt="Motion planning visualization" class="content-image">
+            <p class="image-caption">Figure 2: Motion planning path optimization</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Calibration and Tuning</h2>
+            <h3>Mechanical Calibration</h3>
+            <p>
+                Initial setup requires precise calibration of the mechanical system:
+            </p>
+            <ol>
+                <li><strong>Homing sequence:</strong> All axes move to limit switches to establish zero positions</li>
+                <li><strong>Steps per mm:</strong> Calibrated by measuring actual travel distances</li>
+                <li><strong>Backlash compensation:</strong> Software compensates for mechanical play</li>
+                <li><strong>Squareness adjustment:</strong> Frame adjusted until axes are orthogonal within 0.1°</li>
+            </ol>
+            
+            <h3>Pressure Calibration</h3>
+            <p>
+                Frosting flow rate calibration ensures consistent results:
+            </p>
+            <ol>
+                <li>Test pattern executed at various pressures (10-30 PSI)</li>
+                <li>Flow rate measured by weighing dispensed frosting</li>
+                <li>Lookup table created mapping pressure to flow rate</li>
+                <li>Software uses interpolation for intermediate pressure values</li>
+            </ol>
+            
+            <h3>PID Tuning</h3>
+            <p>
+                Pressure control uses a PID (Proportional-Integral-Derivative) controller 
+                to maintain consistent flow:
+            </p>
+            <ul>
+                <li>Proportional gain (Kp) adjusted for responsiveness</li>
+                <li>Integral gain (Ki) eliminates steady-state error</li>
+                <li>Derivative gain (Kd) reduces overshoot</li>
+                <li>Tuning performed using Ziegler-Nichols method</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Integration Testing</h2>
+            <h3>Unit Testing</h3>
+            <p>
+                Each subsystem was tested independently before integration:
+            </p>
+            <ul>
+                <li>Mechanical: Step accuracy, repeatability, backlash measurements</li>
+                <li>Electrical: Signal integrity, power distribution, noise immunity</li>
+                <li>Software: Algorithm correctness, edge case handling, performance</li>
+            </ul>
+            
+            <h3>Integration Testing</h3>
+            <p>
+                Combined system testing validated end-to-end functionality:
+            </p>
+            <ul>
+                <li><strong>Positional accuracy:</strong> Measured deviation from commanded positions</li>
+                <li><strong>Repeatability:</strong> Same command sequence repeated 100 times</li>
+                <li><strong>Speed testing:</strong> Maximum reliable speed determined empirically</li>
+                <li><strong>Endurance testing:</strong> 24-hour continuous operation stress test</li>
+            </ul>
+            
+            <h3>Results</h3>
+            <p>
+                Final integration testing demonstrated:
+            </p>
+            <ul>
+                <li>Position accuracy: ±0.2mm across entire workspace</li>
+                <li>Repeatability: ±0.1mm over 100 cycles</li>
+                <li>Maximum reliable speed: 100mm/s with 1000mm/s² acceleration</li>
+                <li>Mean time between failures: >48 hours continuous operation</li>
+            </ul>
+            <img src="images/testing-setup.jpg" alt="Integration testing setup" class="content-image">
+            <p class="image-caption">Figure 3: Integration testing and validation setup</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Troubleshooting and Debugging</h2>
+            <h3>Common Integration Issues</h3>
+            <p>
+                During development, we encountered and resolved several integration challenges:
+            </p>
+            
+            <p><strong>Issue:</strong> Electrical noise from stepper motors caused microcontroller resets</p>
+            <p><strong>Solution:</strong> Added ferrite beads on motor cables and improved power supply decoupling</p>
+            
+            <p><strong>Issue:</strong> Inconsistent pressure readings during rapid movements</p>
+            <p><strong>Solution:</strong> Implemented software filtering and increased sensor sampling rate</p>
+            
+            <p><strong>Issue:</strong> Lost steps during acceleration</p>
+            <p><strong>Solution:</strong> Reduced acceleration limits and increased motor current</p>
+            
+            <p><strong>Issue:</strong> Communication timeouts under heavy USB bus load</p>
+            <p><strong>Solution:</strong> Implemented command buffering and flow control protocol</p>
+            
+            <h3>Diagnostic Tools</h3>
+            <p>
+                We developed several tools to aid in integration debugging:
+            </p>
+            <ul>
+                <li>Real-time position plotter showing commanded vs. actual positions</li>
+                <li>Pressure monitor displaying setpoint, measured value, and PID output</li>
+                <li>Communication logger capturing all serial traffic</li>
+                <li>Oscilloscope views of critical signals for timing analysis</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Lessons Learned</h2>
+            <ul>
+                <li><strong>Start integration early:</strong> Don't wait until all subsystems are "finished"</li>
+                <li><strong>Define clear interfaces:</strong> Well-documented APIs between subsystems saved countless hours</li>
+                <li><strong>Version control everything:</strong> Including mechanical CAD files and electronics schematics</li>
+                <li><strong>Plan for debugging:</strong> Build in diagnostic capabilities from the start</li>
+                <li><strong>Test edge cases:</strong> The most interesting bugs appear at system boundaries</li>
+                <li><strong>Document as you go:</strong> Future you will be grateful for good notes</li>
+            </ul>
+        </section>
+
+    </div>
+</body>
+</html>

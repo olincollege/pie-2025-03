@@ -129,12 +129,6 @@ table tr:hover {
 }
 
 /* ========== ABOUT US PAGE ========== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 #about-body {
     min-height: 100vh;
     overflow-y: auto;
@@ -340,5 +334,199 @@ table tr:hover {
     .about-us-photo {
         width: 180px;
         height: 180px;
+    }
+}
+
+/* ========== SUBPAGE TEMPLATE STYLES ========== */
+/* (Mechanical, Electrical, Programming, Integration, Design Story) */
+
+.subpage-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 60px 40px;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+/* ========== UNIQUE PAGE GRADIENTS ========== */
+
+/* Mechanical Page - Industrial Blue/Steel */
+#mechanical-body {
+    background: linear-gradient(135deg, #4A90E2 0%, #2C5F8D 100%);
+}
+
+/* Electrical Page - Electric Yellow/Orange */
+#electrical-body {
+    background: linear-gradient(135deg, #F4A460 0%, #E67E22 100%);
+}
+
+/* Programming Page - Digital Green/Cyan */
+#programming-body {
+    background: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);
+}
+
+/* Integration Page - Unified Purple/Magenta */
+#integration-body {
+    background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+}
+
+/* Design Story Page - Creative Pink/Coral */
+#story-body {
+    background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+}
+
+/* Back button */
+.back-button {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+/* Page title */
+.subpage-body h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Subtitle/description */
+.subpage-description {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #f0f8ff;
+}
+
+/* Content container */
+.subpage-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Section styling */
+.content-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Section headers */
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #f0f8ff;
+}
+
+/* Paragraphs */
+.content-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #f0f8ff;
+}
+
+/* Lists */
+.content-section ul,
+.content-section ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.content-section li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    color: #f0f8ff;
+}
+
+/* Images */
+.content-image {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Image captions */
+.image-caption {
+    text-align: center;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #e0e0e0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Code blocks (if needed) */
+.code-block {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .subpage-body {
+        padding: 40px 20px;
+    }
+
+    .subpage-body h1 {
+        font-size: 2.2rem;
+    }
+
+    .content-section {
+        padding: 30px 20px;
+    }
+
+    .content-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .content-section h3 {
+        font-size: 1.3rem;
     }
 }

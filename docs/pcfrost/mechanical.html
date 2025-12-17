@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical System - PC Frost</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subpage-body" id="mechanical-body">
+    <a href="main.html" class="back-button">← Back to Home</a>
+    
+    <h1>Mechanical System</h1>
+    
+    <p class="subpage-description">
+        Overview of the mechanical design, components, and engineering decisions 
+        that enable our CNC cake froster to operate efficiently and precisely.
+    </p>
+
+    <div class="subpage-content">
+        
+        <section class="content-section">
+            <h2>System Overview</h2>
+            <p>
+                The mechanical system consists of a three-axis CNC platform designed to 
+                move a frosting nozzle in X, Y, and Z directions with precision. The frame 
+                is constructed from aluminum extrusion for rigidity while maintaining a 
+                lightweight profile.
+            </p>
+            <img src="images/mechanical-overview.jpg" alt="Mechanical system overview" class="content-image">
+            <p class="image-caption">Figure 1: Complete mechanical assembly</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Frame Design</h2>
+            <h3>Material Selection</h3>
+            <p>
+                We chose 2020 aluminum extrusion for the frame due to its:
+            </p>
+            <ul>
+                <li>High strength-to-weight ratio</li>
+                <li>Easy assembly with T-slot nuts and brackets</li>
+                <li>Modular design allowing for future modifications</li>
+                <li>Cost-effectiveness compared to custom machined parts</li>
+            </ul>
+            
+            <h3>Structural Considerations</h3>
+            <p>
+                The base measures 600mm × 600mm, providing stability for the working area 
+                of 400mm × 400mm. Corner brackets and cross-bracing prevent flex during 
+                high-speed movements.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Motion System</h2>
+            <h3>Linear Motion</h3>
+            <p>
+                Each axis uses linear guide rails paired with lead screws for precise 
+                positioning. NEMA 17 stepper motors drive the lead screws through 
+                flexible couplers to accommodate minor misalignments.
+            </p>
+            
+            <h3>Specifications</h3>
+            <ul>
+                <li>X-axis travel: 400mm</li>
+                <li>Y-axis travel: 400mm</li>
+                <li>Z-axis travel: 150mm</li>
+                <li>Resolution: 0.05mm per step</li>
+                <li>Maximum speed: 100mm/s</li>
+            </ul>
+            
+            <img src="images/motion-system.jpg" alt="Motion system components" class="content-image">
+            <p class="image-caption">Figure 2: Linear rail and lead screw assembly</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Frosting Delivery System</h2>
+            <p>
+                The frosting is dispensed through a pneumatically-actuated syringe system 
+                mounted on the Z-axis carriage. Air pressure is regulated to ensure 
+                consistent flow rates across different frosting viscosities.
+            </p>
+            
+            <h3>Key Components</h3>
+            <ul>
+                <li>60mL syringe reservoir</li>
+                <li>Solenoid valve for on/off control</li>
+                <li>Pressure regulator (0-30 PSI)</li>
+                <li>Stainless steel nozzle (2mm diameter)</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Challenges and Solutions</h2>
+            <p>
+                <strong>Challenge:</strong> Initial design had excessive vibration during rapid movements.
+            </p>
+            <p>
+                <strong>Solution:</strong> Added damping feet under the frame and implemented 
+                acceleration limiting in the motion control software.
+            </p>
+            
+            <p>
+                <strong>Challenge:</strong> Lead screw backlash caused positioning errors.
+            </p>
+            <p>
+                <strong>Solution:</strong> Upgraded to anti-backlash nuts and implemented 
+                software compensation for remaining play.
+            </p>
+        </section>
+
+    </div>
+</body>
+</html>

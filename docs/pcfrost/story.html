@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Story - PC Frost</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subpage-body" id="story-body">
+    <a href="main.html" class="back-button">← Back to Home</a>
+    
+    <h1>Design Story</h1>
+    
+    <p class="subpage-description">
+        From initial concept to final prototype, this is the journey of how PC Frost came to life—
+        the challenges we faced, the pivots we made, and the lessons we learned along the way.
+    </p>
+
+    <div class="subpage-content">
+        
+        <section class="content-section">
+            <h2>The Beginning: Identifying the Problem</h2>
+            <p>
+                Our journey began in a small bakery where we observed the tedious, time-consuming 
+                process of manually frosting dozens of cakes each day. Professional decorators 
+                could spend 10-15 minutes per cake, and consistency was always a challenge—especially 
+                during busy holiday seasons.
+            </p>
+            <p>
+                We asked ourselves: <em>What if we could automate this process while maintaining 
+                the artistry and precision that makes each cake special?</em> This question became 
+                the foundation of PC Frost.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Concept Development</h2>
+            <h3>Initial Brainstorming</h3>
+            <p>
+                Our first whiteboard sessions produced several wildly different concepts:
+            </p>
+            <ul>
+                <li>A robotic arm with full 6-axis articulation</li>
+                <li>A turntable-based system with a stationary nozzle</li>
+                <li>A polar coordinate CNC system</li>
+                <li>A traditional Cartesian CNC platform</li>
+            </ul>
+            
+            <h3>The Winning Design</h3>
+            <p>
+                After prototyping quick mockups, we settled on the polar coordinate approach—hence 
+                the "PC" in PC Frost. This design offered the perfect balance of simplicity, 
+                precision, and the natural circular motion needed for cake decoration. The rotating 
+                platform mimics how bakers naturally work, while the radial arm provides reach 
+                and control.
+            </p>
+            <img src="images/concept-sketches.jpg" alt="Early concept sketches" class="content-image">
+            <p class="image-caption">Figure 1: Initial concept sketches and design iterations</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Prototype Iterations</h2>
+            <h3>Prototype 1: The Cardboard Model</h3>
+            <p>
+                Before investing in materials, we built a full-scale cardboard model to test 
+                ergonomics and basic geometry. This helped us identify workspace constraints 
+                and optimal sizing for standard cake dimensions.
+            </p>
+            
+            <h3>Prototype 2: The Wobbly First Build</h3>
+            <p>
+                Our first functional prototype was... educational. Built with budget stepper 
+                motors and 3D-printed parts, it suffered from:
+            </p>
+            <ul>
+                <li>Excessive vibration at anything above 20mm/s</li>
+                <li>Inconsistent frosting flow due to pressure fluctuations</li>
+                <li>Frame flex that destroyed our positioning accuracy</li>
+            </ul>
+            <p>
+                Despite its flaws, this prototype proved the concept was viable and gave us 
+                critical data about what needed improvement.
+            </p>
+            
+            <h3>Prototype 3: The Refinement</h3>
+            <p>
+                Armed with lessons learned, we rebuilt from the ground up with aluminum extrusion, 
+                proper linear rails, and a regulated pneumatic system. This version finally 
+                achieved the precision and reliability we needed.
+            </p>
+            <img src="images/prototype-evolution.jpg" alt="Prototype evolution" class="content-image">
+            <p class="image-caption">Figure 2: Evolution from Prototype 1 to Prototype 3</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Design Decisions</h2>
+            <h3>Why Polar Coordinates?</h3>
+            <p>
+                The polar coordinate system proved superior for circular cakes because:
+            </p>
+            <ul>
+                <li>Natural circular motion reduces computational overhead</li>
+                <li>Simpler G-code generation for radial patterns</li>
+                <li>Better reach-to-footprint ratio compared to Cartesian systems</li>
+                <li>Easier calibration with a rotating platform</li>
+            </ul>
+            
+            <h3>Pneumatic vs. Servo-Driven Extrusion</h3>
+            <p>
+                We initially considered a servo-driven piston for frosting dispensing but switched 
+                to pneumatics after testing revealed that air pressure provided more consistent 
+                flow control across varying frosting viscosities. The compressibility of air 
+                actually worked in our favor as a buffer against pressure spikes.
+            </p>
+            
+            <h3>Material Choices</h3>
+            <p>
+                Every material choice was deliberate:
+            </p>
+            <ul>
+                <li><strong>Aluminum extrusion:</strong> Modular, rigid, and easy to modify</li>
+                <li><strong>Linear rails:</strong> Low friction and high precision positioning</li>
+                <li><strong>Stainless steel nozzle:</strong> Food-safe and easy to clean</li>
+                <li><strong>Acrylic guards:</strong> Transparent for observation, easy to sanitize</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Overcoming Challenges</h2>
+            <h3>The Frosting Problem</h3>
+            <p>
+                Our biggest challenge was managing different frosting consistencies. Buttercream 
+                behaves very differently from royal icing, and temperature fluctuations caused 
+                viscosity changes mid-job.
+            </p>
+            <p>
+                <strong>Solution:</strong> We developed a pressure feedback system that monitors 
+                flow rate and automatically adjusts PSI to maintain consistency. We also added 
+                a temperature-controlled reservoir to keep frosting at optimal working temperature.
+            </p>
+            
+            <h3>Software Complexity</h3>
+            <p>
+                Converting decorative patterns into machine instructions proved more complex than 
+                anticipated. We needed software that could:
+            </p>
+            <ul>
+                <li>Import vector graphics and convert them to toolpaths</li>
+                <li>Calculate optimal travel paths to minimize time</li>
+                <li>Adjust for different cake sizes automatically</li>
+                <li>Preview designs before execution</li>
+            </ul>
+            <p>
+                <strong>Solution:</strong> We built a custom web-based interface using JavaScript 
+                and Canvas API, allowing designers to preview and adjust patterns in real-time 
+                before sending to the machine.
+            </p>
+            
+            <h3>Food Safety Concerns</h3>
+            <p>
+                As a food-contact device, every component in the frosting path needed to be 
+                food-safe and easy to sanitize. We worked with food safety consultants to ensure 
+                compliance with FDA guidelines.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Testing and Validation</h2>
+            <p>
+                We frosted over 200 cakes during testing, experimenting with different:
+            </p>
+            <ul>
+                <li>Frosting recipes and viscosities</li>
+                <li>Pattern complexities and speeds</li>
+                <li>Environmental conditions (temperature, humidity)</li>
+                <li>Cake sizes from 6" to 16" diameter</li>
+            </ul>
+            <p>
+                Our final design achieved an average frosting time of 4-6 minutes per cake 
+                with professional-quality results—reducing the manual time by more than 60%.
+            </p>
+            <img src="images/testing-results.jpg" alt="Testing results" class="content-image">
+            <p class="image-caption">Figure 3: Sample cakes from testing phase</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Looking Forward</h2>
+            <p>
+                PC Frost represents just the beginning. Future iterations could include:
+            </p>
+            <ul>
+                <li>Multi-color frosting with automatic color switching</li>
+                <li>Computer vision for automatic cake detection and centering</li>
+                <li>Cloud-connected pattern library for sharing designs</li>
+                <li>Scaled-up versions for industrial bakery operations</li>
+            </ul>
+            <p>
+                This project taught us that successful engineering isn't just about technical 
+                excellence—it's about understanding the user, iterating quickly, and never 
+                being satisfied with "good enough."
+            </p>
+        </section>
+
+    </div>
+</body>
+</html>

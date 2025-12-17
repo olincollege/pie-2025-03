@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical System - PC Frost</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subpage-body" id="electrical-body">
+    <a href="main.html" class="back-button">← Back to Home</a>
+    
+    <h1>Electrical System</h1>
+    
+    <p class="subpage-description">
+        Documentation of the electrical architecture, power distribution, and control 
+        systems that drive the CNC cake froster.
+    </p>
+
+    <div class="subpage-content">
+        
+        <section class="content-section">
+            <h2>System Architecture</h2>
+            <p>
+                The electrical system is built around an Arduino Mega 2560 microcontroller 
+                paired with a CNC shield for stepper motor control. The system operates on 
+                dual power supplies: 12V for motors and pneumatics, and 5V for logic circuits.
+            </p>
+            <img src="images/electrical-diagram.jpg" alt="Electrical system diagram" class="content-image">
+            <p class="image-caption">Figure 1: System block diagram</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Power Distribution</h2>
+            <h3>Primary Power Supply</h3>
+            <p>
+                A 12V 10A switching power supply provides power for the stepper motors 
+                and solenoid valve. This supply was selected for its ability to handle 
+                the peak current demands during simultaneous multi-axis movements.
+            </p>
+            
+            <h3>Logic Power</h3>
+            <p>
+                The Arduino and sensors operate on 5V supplied through a buck converter 
+                from the main 12V rail, ensuring stable voltage regardless of motor load.
+            </p>
+            
+            <ul>
+                <li>Main supply: 12V, 10A (120W)</li>
+                <li>Logic supply: 5V, 2A via buck converter</li>
+                <li>Total power consumption: ~80W typical, 120W peak</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Motor Control</h2>
+            <h3>Stepper Drivers</h3>
+            <p>
+                Each axis uses an A4988 stepper driver capable of 1/16 microstepping. 
+                The drivers are configured for 1.2A current limit to match the NEMA 17 
+                motor specifications.
+            </p>
+            
+            <h3>Driver Configuration</h3>
+            <div class="code-block">
+Microstepping: 1/16
+Current limit: 1.2A
+Step resolution: 3200 steps/revolution
+Maximum speed: 2000 steps/second
+            </div>
+            
+            <img src="images/stepper-driver.jpg" alt="Stepper driver board" class="content-image">
+            <p class="image-caption">Figure 2: CNC shield with A4988 drivers installed</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Sensors and Inputs</h2>
+            <h3>Limit Switches</h3>
+            <p>
+                Each axis is equipped with mechanical limit switches for homing and 
+                safety. The switches use normally-closed configuration with hardware 
+                debouncing via RC filters.
+            </p>
+            
+            <h3>Emergency Stop</h3>
+            <p>
+                A physical e-stop button directly interrupts power to the motor drivers, 
+                providing immediate shutdown capability independent of software control.
+            </p>
+            
+            <ul>
+                <li>6× limit switches (2 per axis)</li>
+                <li>1× emergency stop button</li>
+                <li>1× start/pause button</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Wiring and Safety</h2>
+            <p>
+                All high-current connections use 18 AWG wire with ferrule terminations. 
+                Motor wiring is bundled in cable chains to prevent snagging during movement. 
+                Fusing protects both the main power supply (15A) and logic circuits (3A).
+            </p>
+            
+            <h3>Safety Features</h3>
+            <ul>
+                <li>Overcurrent protection via fuses</li>
+                <li>Emergency stop circuit</li>
+                <li>Thermal shutdown on drivers</li>
+                <li>Software limit checking</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Testing and Validation</h2>
+            <p>
+                Electrical testing included verification of voltage levels under load, 
+                motor current draw at various speeds, and thermal performance during 
+                extended operation. All systems remained within specifications during 
+                a 2-hour continuous operation test.
+            </p>
+        </section>
+
+    </div>
+</body>
+</html>
