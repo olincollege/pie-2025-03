@@ -175,49 +175,148 @@
 <hr>
 
 <section id="mechanical">
-    <h2>Mechanical Aspects</h2>
-  
-    <article id="ghost-box">
-      <h3>Frame</h3>
-      <p><strong>Design Concepts:</strong></p>
-      <div class="image-container">
-        <img src="media/pink-ghost.png" alt="box">
-      </div>
-    </article>
-    
-    <article id="ghost-box">
-      <h3>X-Axis</h3>
-      <p><strong>Design Concepts:</strong></p>
-      <div class="image-container">
-        <img src="media/pink-ghost.png" alt="box">
-      </div>
-    </article>
+  <h2>Mechanical Aspects</h2>
 
-    <article id="ghost-box">
-      <h3>Y-Axis</h3>
-      <p><strong>Design Concepts:</strong></p>
-      <div class="image-container">
-        <img src="media/pink-ghost.png" alt="box">
-      </div>
-    </article>
+  <p class="mechanical-intro">
+    The mechanical design prioritizes rigidity, repeatability, and ease of assembly. All CAD was developed in Onshape, which allowed the team 
+    to iterate quickly. The frame provides a stable reference plane for consistent burns, while 
+    belt-driven X and Y axes enable fast planar motion. A lead-screw Z axis was used to control burn depth and maintain consistent tool contact
+    with the workpiece. Components were intentionally designed to be modular to support iteration, including swapping motors, re-tensioning 
+    belts, and adjusting the tool mount. Parts were fabricated using a combination of 3D printing and laser cutting, with structural elements 
+    cut using band saws and horizontal band saws to achieve accurate lengths and clean edges.
+  </p>
 
-    <article id="ghost-box">
-      <h3>Z-Axis</h3>
-      <p><strong>Design Concepts:</strong></p>
-      <div class="image-container">
-        <img src="media/pink-ghost.png" alt="box">
-      </div>
-    </article>
+  <!-- FRAME -->
+  <div class="mech-block" id="mech-frame">
+    <h3>Frame</h3>
 
-      <article id="ghost-box">
-      <h3>Motor House</h3>
-      <p><strong>Design Concepts:</strong></p>
-      <div class="image-container">
-        <img src="media/pink-ghost.png" alt="box">
+    <div class="mech-main">
+      <div class="mech-text">
+        <p><strong>Design Concepts:</strong></p>
+        
       </div>
-    </article>
 
-  </section>
+      <div class="mech-image">
+        <img src="media/frame_cad.png" alt="CAD of Frame">
+      </div>
+    </div>
+
+    <div class="mech-gallery">
+      <img src="media/frame_1.png" alt="Frame detail 1">
+      <img src="media/frame_2.png" alt="Frame detail 2">
+      <img src="media/frame_3.png" alt="Frame detail 3">
+      <img src="media/frame_4.png" alt="Frame detail 4">
+    </div>
+  </div>
+
+  <!-- X AXIS -->
+  <div class="mech-block" id="mech-x">
+    <h3>X-Axis</h3>
+
+    <div class="mech-main">
+      <div class="mech-text">
+        <p><strong>Design Concepts:</strong></p>
+        <ul>
+          <li>Belt-driven motion for speed and smoothness.</li>
+          <li>Simple tensioning to reduce backlash and skipping.</li>
+          <li>Carriage designed to keep the tool centered and stable.</li>
+        </ul>
+      </div>
+
+      <div class="mech-image">
+        <img src="media/x_axis.png" alt="X-Axis CAD">
+      </div>
+    </div>
+
+    <div class="mech-gallery">
+      <img src="media/x_1.png" alt="X-axis detail 1">
+      <img src="media/x_2.png" alt="X-axis detail 2">
+      <img src="media/x_3.png" alt="X-axis detail 3">
+      <img src="media/x_4.png" alt="X-axis detail 4">
+    </div>
+  </div>
+
+  <!-- Y AXIS -->
+  <div class="mech-block" id="mech-y">
+    <h3>Y-Axis</h3>
+
+    <div class="mech-main">
+      <div class="mech-text">
+        <p><strong>Design Concepts:</strong></p>
+        <ul>
+          <li>Parallel rails for stable gantry motion.</li>
+          <li>Belt routing chosen to minimize twist and racking.</li>
+          <li>Mounting ensures square travel relative to the work surface.</li>
+        </ul>
+      </div>
+
+      <div class="mech-image">
+        <img src="media/y_axis.png" alt="Y-Axis CAD">
+      </div>
+    </div>
+
+    <div class="mech-gallery">
+      <img src="media/y_1.png" alt="Y-axis detail 1">
+      <img src="media/y_2.png" alt="Y-axis detail 2">
+      <img src="media/y_3.png" alt="Y-axis detail 3">
+      <img src="media/y_4.png" alt="Y-axis detail 4">
+    </div>
+  </div>
+
+  <!-- Z AXIS -->
+  <div class="mech-block" id="mech-z">
+    <h3>Z-Axis</h3>
+
+    <div class="mech-main">
+      <div class="mech-text">
+        <p><strong>Design Concepts:</strong></p>
+        <ul>
+          <li>Lead screw for controlled, repeatable depth.</li>
+          <li>Mount designed to keep the pyrography tool vertical.</li>
+          <li>Has timimg belt clamps for the x-axis. </li>
+        </ul>
+      </div>
+
+      <div class="mech-image">
+        <img src="media/z_axis.png" alt="Z-Axis CAD">
+      </div>
+    </div>
+
+    <div class="mech-gallery">
+      <img src="media/z_1.png" alt="Z-axis detail 1">
+      <img src="media/z_2.png" alt="Z-axis detail 2">
+      <img src="media/z_3.png" alt="Z-axis detail 3">
+      <img src="media/z_4.png" alt="Z-axis detail 4">
+    </div>
+  </div>
+
+  <!-- MOTOR HOUSE -->
+  <div class="mech-block" id="mech-motor-house">
+    <h3>Motor House</h3>
+
+    <div class="mech-main">
+      <div class="mech-text">
+        <p><strong>Design Concepts:</strong></p>
+        <ul>
+          <li>Protects wiring and keeps the electronics organized.</li>
+          <li>Provides strain relief and consistent cable routing.</li>
+          <li>Mounting supports easy access for maintenance.</li>
+        </ul>
+      </div>
+
+      <div class="mech-image">
+        <img src="media/motor_house.png" alt="Motor House CAD">
+      </div>
+    </div>
+
+    <div class="mech-gallery">
+      <img src="media/motor_1.png" alt="Motor house detail 1">
+      <img src="media/motor_2.png" alt="Motor house detail 2">
+      <img src="media/motor_3.png" alt="Motor house detail 3">
+      <img src="media/motor_4.png" alt="Motor house detail 4">
+    </div>
+  </div>
+</section>
   
 
 <hr>
