@@ -19,7 +19,7 @@
     z-index: 1000; 
     background: linear-gradient(135deg, #5b4636, #3e2f25, #5b4636);
     color: white;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -237,6 +237,20 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
     scroll-margin-top: 80px; 
+}
+
+/* Full Team Photo */
+.team-photo {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem auto;
+  text-align: center;
+}
+
+.team-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 /* Team Members Section */
