@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>No Sidebar - Helios by HTML5 UP</title>
+		<title>Mechanical, Electrical, & Software Design</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -21,7 +21,7 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Helios</a></h1>
+								<h1><a href="index.html" id="logo">ATLAS V1</a></h1>
 							</header>
 						</div>
 
@@ -43,23 +43,18 @@
 					<div class="container">
 						<article id="main" class="special">
 							<header>
-								<h2><a href="#">No Sidebar</a></h2>
+								<h2><a href="#">Mechanical, Electrical, and Software Design</a></h2>
 								<p>
-									Morbi convallis lectus malesuada sed fermentum dolore amet
+									The build behind the beauty.
 								</p>
 							</header>
-							<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-							<p>
-								Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-								posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-								lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-								consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-								interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-								natoque aenean scelerisque vel lacinia mollis quam sodales congue.
-							</p>
+							<a href="#" class="image featured"><img src="images/Integrated System.JPG" alt="" /></a>
+							<header>
+								<h2>Mechanical Design</h2>
+							</header>
 							<section>
 								<header>
-									<h3>Ultrices tempor sagittis nisl</h3>
+									<h3>Cycloidal Drive</h3>
 								</header>
 								<p>
 									Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
@@ -76,13 +71,191 @@
 							</section>
 							<section>
 								<header>
-									<h3>Augue euismod feugiat tempus</h3>
+									<h3>Camera Arm & Mount</h3>
 								</header>
 								<p>
-									Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-									ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+									The arm and camera mount are made up of several main components. The base plate attaches
+									directly to the cycloidal drive and includes a slot for the vertical arm. This vertical arm
+									houses the motor as well as the gear reduction, and it supports a steel pin and bearing that
+									connect to the camera mount.
+		
+									The choice to use a steel shaft was important. In early iterations, we tested a 3D-printed
+									shaft, but it experienced noticeable torsional deformation due to the combined torque from
+									the camera weight and the gear reduction. Switching to steel significantly improved
+									stiffness and reduced twisting under load.
+		
+								</p>
+								<p>
+									A standard off-the-shelf bearing was added to reduce friction between the pin and the arm,
+									allowing smoother rotation and reducing wear on the components. The arm plate and camera
+									mount plate were made from 3/8 inch 6061 aluminum, which provided more strength than
+									strictly necessary but helped ensure rigidity. This thickness was also practical because the
+									material was available as leftover scrap stock, allowing us to avoid purchasing additional
+									material.
+		
+									The base plate for the arm was made from 1/4 inch 6061 aluminum, which matched other
+									structural components in the system and was also readily available as extra stock. Using
+									materials we already had on hand helped reduce cost while keeping the overall structure
+									stiff and reliable.
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Polar Alignment System</h3>
+								</header>
+								<p>
+									The Polar Alignment System allows ATLAS to be converted into an equatorial style telescope.
+									In order to achieve an equatorial mount system that could support the weight of the
+									cycloidal drive and mount without interfering with the mechanisms, we decided to use a three
+									leg system. Using MATLAB, calculations were performed to find the optimal attachment
+									locations to support the weight of the mount and to find optimal leg lengths provided stock
+									limitations and allow for inclination adjustability.
+								</p>
+								<p>
+									In order to increase functionality and adaptability, the front leg features an adjustable
+									element that allows the angle of inclination to range from 30-45 degrees. This works through
+									a hollow shaft that another shaft fits into. The inner-shaft can be adjusted to change the
+									front leg length and locked into place using a shaft collar. The adjustable leg is attached
+									to the bottom of the cycloidal drive motor using a custom attachment part. The two back legs
+									are secured through attachment blocks that are secured to the top plate of the cycloidal
+									drive housing. Additionally, all legs are able to be removed by simply unscrewing the legs
+									from the attachment mounts to convert the telescope to an altazimuth.
+								</p>
+							</section>
+
+							<!-- Carousel -->
+							<section class="carousel">
+								<div class="reel">
+
+									<article>
+										<a href="#" class="image featured"><img src="images/Prototype1.JPG" alt="" /></a>`
+										<header>
+											<h3><a href="#">Pulvinar sagittis congue</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/ProtoCycloid.JPG" alt="" /></a>
+										<header>
+											<h3><a href="#">Fermentum sagittis proin</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/3dPrintedArmV1.jpeg" alt="" /></a>
+										<header>
+											<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/3dPrintedArmV2.jpeg" alt="" /></a>
+										<header>
+											<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/3dPrintedRev1.jpeg" alt="" /></a>
+										<header>
+											<h3><a href="#">Varius magnis sollicitudin</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/MachiningKnolled.JPEG" alt="" /></a>
+										<header>
+											<h3><a href="#">Pulvinar sagittis congue</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/MixedMaterialArm.jpeg" alt="" /></a>
+										<header>
+											<h3><a href="#">Fermentum sagittis proin</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/Final Cycloid.jpg" alt="" /></a>
+										<header>
+											<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/FirstAssembly.JPEG" alt="" /></a>
+										<header>
+											<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+									<article>
+										<a href="#" class="image featured"><img src="images/FinalProduct1.JPG" alt="" /></a>
+										<header>
+											<h3><a href="#">Varius magnis sollicitudin</a></h3>
+										</header>
+										<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+									</article>
+
+								</div>
+							</section>
+
+							<header>
+								<h2>Electrical & Software Design</h2>
+							</header>
+							<section>
+								<header>
+									<h3>Stellar Localization System</h3>
+								</header>
+								<p>
+									Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet
+									venenatis
+									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis.
+									Fermentum elit
+									ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada
+									ante
+									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra
+									magna.
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Programmatic Camera Control</h3>
+								</header>
+								<p>
+									Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet
+									venenatis
+									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis.
+									Fermentum elit
+									ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada
+									ante
+									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra
+									magna.
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Axial Motor Control</h3>
+								</header>
+								<p>
+									Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet
+									venenatis
+									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis.
+									Fermentum elit
+									ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada
+									ante
+									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra
+									magna.
 								</p>
 							</section>
 						</article>
