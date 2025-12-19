@@ -329,7 +329,7 @@ code {
 }
 
 .topleft{
-  margin: 0px 700px 0 25px;
+  margin: 0px 100px 0 25px;
   position: relative;
   z-index: -1;
 }
@@ -341,8 +341,8 @@ code {
 
 table {
   border-collapse: collapse;
-  margin: 0 auto;      /* centers table */
-  margin-top: -200px;
+  margin: 0px 0px 0 0px;      /* centers table */
+  transform: translateX(70px);
 }
 
 th {
@@ -375,7 +375,7 @@ tr:last-child td {
 }
 
 .bottom{
-  margin: -300px 900px 0 -230px;
+  margin: -300px 800px 0 -220px;
   width: 500px;
   height: auto;
 }
