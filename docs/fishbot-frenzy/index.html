@@ -418,7 +418,98 @@
                     Our game is built around three core mechanical elements, the
                     fishbots, the tank, and the score boxes.
                 </p>
-                <h1>Fishbots</h1>
+                <h2>Fishbots</h2>
+                <img />
+                <p>
+                    Without the fishbots, the game doesn't exist! Can't have
+                    Fishbot Frenzy without the fishbots. The bot shells are
+                    composed of an internal PLA (polylactide) shell with
+                    pressfit TPU (thermoplastic polyurethane) leg segments and
+                    external PLA toppers. PLA was printed with Prusa MINI
+                    printers, while TPU was printed on a Bambu.
+                </p>
+                <ul>
+                    <li>
+                        <b>Internal PLA</b>: Stiff PLA doesn't dampen vibrations
+                        as much as TPU, and stronger vibrations correspond with
+                        faster fishbots. The internal PLA casing is designed for
+                        the battery and motor to fit in precise locations; this
+                        decreases difficulty of mounting components and balances
+                        the fishbot properly, as unbalanced fishbots will spin
+                        rather than move forward.
+                    </li>
+                    <li>
+                        <b>External TPU</b>: The TPU legs are composed of a
+                        right and left set of legs, with a slot that pressfits
+                        into a central ridge running lengthwise along the
+                        internal PLA. These TPU leg sets are double-sided: if
+                        the fishbots fall, they will be able to move regardless
+                        of which side they land on. The tilt of the legs is what
+                        causes the fishbots to move forward rather than turning
+                        when vibrated.
+                    </li>
+                    <li>
+                        <b>External PLA</b>: Fish-shaped PLA toppers have pegs
+                        that pressfit into the TPU segments. They apply a
+                        horizontal tension that holds the TPU closer to the PLA.
+                        The fish toppers also act as a platform for adhesive
+                        RFID tags, a deflective shape that causes the fish to
+                        turn when they encounter an obstacle, and an aesthetic
+                        cover.
+                    </li>
+                </ul>
+                <h2>Tank</h2>
+                <img src="media/img/overview/tank.png" />
+                <ul>
+                    <li>
+                        <b>Main Platform</b>: The primary play area for the game
+                        is referred to as the "tank". The tank is a 24"-diameter
+                        circle and contains all active gameplay elements. The
+                        holes, scotch yoke slot, and entire circle were cut from
+                        a single 0.3" plywood sheet using a Shopbot CNC router.
+                    </li>
+                    <li>
+                        <b>Obstacles</b>: Three moving obstacles are integrated
+                        into the tank, built to interrupt the fishbots. The
+                        central mechanism is a wooden, lasercut scotch yoke cut
+                        from a combination of ⅛" eucaboard and ¼" plywood and
+                        run with ¼" and 5/16" wooden dowels; the other two are
+                        simply spinning obstacles directly mounted to motor
+                        shafts. 3D-printed PLA mounts connect the mechanisms to
+                        lasercut obstacles such as coral. Slots in these mounts
+                        are designed such that different shapes can be placed
+                        in. The motors are mounted to a ⅛" lasercut plywood base
+                        beneath the tank with 3D-printed supports.
+                    </li>
+                    <li>
+                        <b>Score Display</b>: 3D-printed PLA mounts are fitted
+                        precisely to the four seven-segment LED displays used to
+                        show points. A base extending from the bottoms of the
+                        mounts contains a countersunk hole for wood screws.
+                    </li>
+                    <li>
+                        <b>Structure</b>: Four ¼" plywood struts are glued to
+                        the base and to the railings, but not to the main
+                        platform. Likewise, the railings—modeled after
+                        topographical maps and cut from ¼" plywood—aren't glued
+                        to the main platform, but rather in two arcs. One arc is
+                        glued to four struts and the other is glued to the last
+                        two struts. This leaves the main platform free to slide
+                        out of place and allows us access to the electronics
+                        beneath. The base provides integral structure for the
+                        mechanisms to be mounted and for the struts to hold the
+                        railings at a set relative location.
+                    </li>
+                    <li>
+                        <b>Score Box</b>: The "fins" were built to match the
+                        height of the tank, such that fish would be able to
+                        re-enter the tank without issue. The railing is shaped
+                        specifically such that the fishbots will "swim" out of
+                        the box on their own, without human intervention. From
+                        the platform, the fishbots enter a tunnel with an RFID
+                        sensor.
+                    </li>
+                </ul>
             </div>
             <div class="subteam-category" id="electrical">electrical</div>
             <div class="subteam-category" id="software">software</div>
