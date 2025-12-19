@@ -69,10 +69,7 @@ li {
 }
 
 .flow-img{
-  position: absolute;
-  top: 1000px;       /* shift up */
-  left: 1200px;         /* center horizontally */
-  transform: translateX(-50%);
+  position: static;
   width: 500px;
   height: auto;
   border-radius: 25px;
@@ -1074,4 +1071,3 @@ transform: translateY(-700px);
   position: relative;
   z-index: -1;
 }
-
