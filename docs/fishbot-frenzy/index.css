@@ -876,6 +876,11 @@ section#subteams {
     overflow: hidden;
 }
 
+.software-section {
+    display: flex;
+    flex-direction: row;
+}
+
 .subteam-section::before {
     content: '';
     position: absolute;

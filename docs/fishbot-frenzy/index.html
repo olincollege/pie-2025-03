@@ -11,6 +11,13 @@
             rel="stylesheet"
         />
         <link href="index.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
         <div id="underwater-bg"></div>
@@ -780,14 +787,69 @@
                         Adafruit MotorShield stacked on an Arduino R3 Uno.
                     </li>
                     <li>
-                        <b>Scoreboard & RFID</b>: Scoring is tracked via an RFID
-                        sensor that detects chips located on the fishbots.
+                        <b>Scoreboard & RFID</b>: Scoring is implemented via an
+                        RFID sensor that detects chips located on the fishbots.
+                        Each scorebox contains an ESP32 for logic and control.
                         Scores are displayed on two 7 segment displays
-                        controlled via shift registers.
+                        controlled via shift registers. One scorebox used common
+                        anode displays, while the other used smaller common
+                        cathode displays.
                     </li>
                 </ul>
+                <div class="display">
+                    <img src="/media/img/overview/7_segment.drawio.png" />
+                    <p>
+                        A circuit diagram of a seven segment display used in the
+                        scorebox.
+                    </p>
+                </div>
             </div>
-            <div class="subteam-category" id="software">software</div>
+            <div class="subteam-category" id="software">
+                <h3>Software Subteam</h3>
+                <!-- <div class="software-section"> -->
+                <p>
+                    As Arduino compatible boards and microcontrollers were
+                    chosen for our project, our code is in Arduino C.
+                </p>
+                <ul>
+                    <li>motor</li>
+                    <ul>
+                        <li>
+                            This sketch contains the code for the playfield
+                            obstacles. It uses the Adafruit motor shield library
+                            to spin our 3 DC motors continuously
+                        </li>
+                    </ul>
+                    <li>scorebox</li>
+                    <ul>
+                        <li>
+                            This sketch contains testing code for RFID detection
+                            and incrementing score, displayed using a single
+                            digit 7 segment display.
+                        </li>
+                    </ul>
+                    <li>scorebox_multi and scorebox_multi_cathode</li>
+                    <ul>
+                        <li>
+                            These sketches contain the final code for RFID
+                            detection and incrementing score, displayed using
+                            two 7 segment displays. The cathode version required
+                            the bits of the shift register to be flipped as the
+                            7 segment displays were common cathode rather than
+                            common anode.
+                        </li>
+                    </ul>
+                </ul>
+                <p>
+                    Find the code on
+                    <a href="https://github.com/metalcupcake5/fishbot-frenzy">
+                        <i class="fa-brands fa-github"></i>Github
+                    </a>
+                </p>
+
+                <!-- <div class="github"></div> -->
+                <!-- </div> -->
+            </div>
             <!-- <div class="subteam-section"></div> -->
         </section>
 
