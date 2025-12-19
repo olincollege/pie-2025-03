@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
     },
     {
       img:"Images/cad2.png",
-      text: "A drawing of the battery housing, meant to contain a 12 Volt and 9 Volt battery."
+      text: "A drawing of the battery housing, meant to contain a 12 Volt and 5 Volt battery."
     },
     {
       img:"Images/cad3.png",
@@ -61,17 +61,23 @@ window.addEventListener('load', () => {
 
   function update() {
     const newElement = (index == 1) ? document.createElement("video") : document.createElement("img");
+    const textElement = document.getElementById("text");
+    textElement.style.position = "absolute";
+    textElement.style.top = "105%";
+    textElement.style.left = "10%";
+    textElement.style.textAlign = "center";
     if (index == 1) {
       newElement.controls = true;
       newElement.width = 600;
       const sourceElement = document.createElement("source");
-      sourceElement.src = slides[index].img;
+      sourceElement.src = slides[index].vid;
       sourceElement.type = "video/mp4";
+      console.log(sourceElement);
       newElement.appendChild(sourceElement);
-
+      textElement.textContent = slides[index].text;
     } else {
       newElement.src = slides[index].img;
-      newElement.textContent = slides[index].text;
+      textElement.textContent = slides[index].text;
     }
 
     slideContainer.children[0].replaceWith(newElement);
