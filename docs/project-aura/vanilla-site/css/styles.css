@@ -292,9 +292,18 @@ a:focus {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.2), transparent 30%),
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 99, 235, 0.2),
+      transparent 30%
+    ),
     radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.18), transparent 32%),
-    linear-gradient(180deg, rgba(17, 24, 39, 0.55) 0%, rgba(17, 24, 39, 0.25) 60%, rgba(17, 24, 39, 0.65) 100%);
+    linear-gradient(
+      180deg,
+      rgba(17, 24, 39, 0.55) 0%,
+      rgba(17, 24, 39, 0.25) 60%,
+      rgba(17, 24, 39, 0.65) 100%
+    );
   z-index: 1;
 }
 
@@ -321,7 +330,12 @@ a:focus {
 .hero-title {
   letter-spacing: -0.03em;
   animation: heroGlow 6s ease-in-out infinite;
-  background: linear-gradient(120deg, rgba(255,255,255,0.95), rgba(191,219,254,0.9), rgba(255,255,255,0.95));
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(191, 219, 254, 0.9),
+    rgba(255, 255, 255, 0.95)
+  );
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -700,6 +714,23 @@ a:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Constrain large diagram images so they don't dominate the viewport */
+.diagram-image--constrained {
+  max-height: 60vh; /* keep image from taking the whole screen */
+  width: auto; /* allow shrinking while preserving aspect ratio */
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .diagram-image--constrained {
+    max-height: 40vh;
+  }
+}
+
 .diagram-placeholder {
   background: var(--color-bg-gray);
   border-radius: var(--border-radius);
@@ -855,27 +886,65 @@ a:focus {
   line-height: 1.75;
 }
 
-/* Electrical Page */
+/* Problem / Solution boxes used on the Software page and elsewhere */
+.problem-box,
+.solution-box {
+  padding: var(--spacing-md);
+  border-radius: calc(var(--border-radius) * 0.9);
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.problem-box {
+  background: #fff1f2; /* light red */
+  border-left: 4px solid #ef4444; /* red accent */
+}
+
+.solution-box {
+  background: #f0fdf4; /* light green */
+  border-left: 4px solid #10b981; /* green accent */
+}
+
+/* Detail list (clean reset + custom bullet) */
 .detail-list {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
   margin-top: var(--spacing-md);
+  margin-left: 0;
 }
 
 .detail-list li {
+  /* strong reset to avoid native markers showing */
+  list-style: none;
   display: flex;
   align-items: flex-start;
   margin-bottom: var(--spacing-md);
   color: var(--color-text);
   line-height: 1.75;
-  gap: 0.25rem; /* Ensure space between strong and following text */
+  gap: 0.5rem; /* Ensure space between strong and following text */
+  padding-left: 0;
+  position: relative;
 }
 
+/* Hide native marker for browsers that ignore display:none on ::marker */
+.detail-list li::marker {
+  color: transparent;
+  font-size: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom bullet */
 .detail-list li::before {
   content: "•";
-  margin-right: var(--spacing-md);
+  display: inline-block;
+  width: 1.2rem;
+  text-align: center;
+  margin-right: calc(var(--spacing-md) - 0.25rem);
   font-weight: 700;
   color: var(--color-text);
+  line-height: 1;
 }
 
 /* Software Page */
@@ -883,6 +952,27 @@ a:focus {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+}
+
+/* Make videos and embedded media inside the software page responsive and prevent overflow */
+.software-grid video,
+.software-grid iframe,
+.software-grid embed,
+.software-grid object {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure media elements don't cause horizontal scrolling on small screens */
+.software-grid video {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Generic diagram frame used on software page */
@@ -1160,11 +1250,11 @@ a:focus {
 }
 
 .caption {
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    font-style: italic;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 /* Adjust software grid for better flow */
