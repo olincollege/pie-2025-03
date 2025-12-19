@@ -4,7 +4,7 @@ function Team() {
       name: "Connor Hoang",
       role: "Electrical & Computer Systems (EE/CS)",
       learningGoal: "Gain hands-on experience with component specification and system integration. Learn how to properly spec electrical components for real-world applications and work with the Raspberry Pi in a complex system with multiple sensors and actuators.",
-      reflection: "",
+      reflection: "Better late then never: Despite the final product not coming together, I was able to achieve my learning goals. I've gained experience choosing motors given a list of requirements, designing electrical systems (both conceptually and through KiCAD), and implementing sequential operations in software. It was through the project's challenges and missteps that I learned the most. The fact that we had to swap Raspberry Pis led to me exploring the differences between the gpiozero, RPi.GPIO, and lgpio libraries. After accidentally making sparks fly, I learned how to design around backfeeding current and thus have a more robust circuit. My greatest takeaway is my need to be confident in my own ability to learn new skills, and to take an abundance of time throughout a project to lay out the groundwork for success.",
       photo: "./dist/assets/images/connor2.png",
       linkedin: "https://www.linkedin.com/in/cdhoang/"
     },

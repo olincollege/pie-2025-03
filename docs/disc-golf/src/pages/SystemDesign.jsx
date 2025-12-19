@@ -207,25 +207,25 @@ function SystemDesign() {
           </div>
         </div>
 
-        {/* System Architecture Diagram 2 */}
-        <div className="mt-6 rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsWiringDiagramZoomed(true)}>
-          <img 
-            src="./dist/assets/images/system_architecture2.jpg" 
-            alt="System Architecture Diagram 2" 
-            className="w-full h-auto"
-          />
-          <div className="bg-stone-50 p-2 text-center">
-            <p className="text-stone-500 text-xs">Click to zoom</p>
-          </div>
-        </div>
-
         {/* Wiring Diagram */}
         <div className="mt-8">
           <h3 className="text-xl font-semibold text-stone-800 mb-4">Wiring Diagram</h3>
           <p className="text-stone-600 mb-4 leading-relaxed">
             Detailed wiring diagram showing the electrical connections between components, including the Raspberry Pi GPIO pins, relays, motors, sensors, and control panel elements.
           </p>
-          <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsWiringDiagramSVGZoomed(true)}>
+          <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsWiringDiagramZoomed(true)}>
+            <img 
+              src="./dist/assets/images/wiring_diagram.jpg" 
+              alt="Wiring Diagram" 
+              className="w-full h-auto"
+            />
+            <div className="bg-stone-50 p-2 text-center">
+              <p className="text-stone-500 text-xs">Click to zoom</p>
+            </div>
+          </div>
+
+          {/* SVG Wiring Diagram */}
+          <div className="mt-6 rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsWiringDiagramSVGZoomed(true)}>
             <img 
               src="./dist/assets/images/disk_golf_wiring_diagram.svg" 
               alt="Wiring Diagram SVG" 
@@ -277,7 +277,7 @@ function SystemDesign() {
               ×
             </button>
             <img 
-              src="./dist/assets/images/system_architecture2.jpg" 
+              src="./dist/assets/images/wiring_diagram.jpg" 
               alt="Wiring Diagram - Zoomed" 
               className="w-full h-auto"
               onClick={(e) => e.stopPropagation()}
@@ -323,7 +323,7 @@ function SystemDesign() {
         </p>
         <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsEnergyFlowZoomed(true)}>
           <img 
-            src="./dist/assets/images/energy_data.jpg" 
+            src="./dist/assets/images/energy_flow.jpg" 
             alt="Data and Energy Flow Diagram" 
             className="w-full h-auto"
           />
@@ -348,7 +348,7 @@ function SystemDesign() {
               ×
             </button>
             <img 
-              src="./dist/assets/images/energy_data.jpg" 
+              src="./dist/assets/images/energy_flow.jpg" 
               alt="Data and Energy Flow Diagram - Zoomed" 
               className="w-full h-auto"
               onClick={(e) => e.stopPropagation()}
@@ -627,7 +627,7 @@ function SystemDesign() {
             <div className="md:w-1/3">
               <div className="rounded-lg overflow-hidden shadow-sm border border-stone-200">
                 <img 
-                  src="./dist/assets/images/50%25_chuck.jpeg" 
+                  src="./dist/assets/images/50%_chuck.jpeg" 
                   alt="50% Scale Chuck Prototype - Black 3D printed chuck on cutting mat" 
                   className="w-full h-auto object-cover"
                 />
