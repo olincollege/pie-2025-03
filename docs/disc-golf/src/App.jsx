@@ -11,6 +11,7 @@ import Sprint2 from './pages/Sprint2'
 import Sprint3 from './pages/Sprint3'
 import Budget from './pages/Budget'
 import Documentation from './pages/Code'
+import Learnings from './pages/Learnings'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/process/sprint3" element={<Sprint3 />} />
             <Route path="/budget" element={<Budget />} />
             <Route path="/code" element={<Documentation />} />
+            <Route path="/learnings" element={<Learnings />} />
           </Routes>
         </main>
         <Footer />

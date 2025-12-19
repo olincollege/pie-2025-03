@@ -37,7 +37,7 @@ function Home() {
             </p>
             
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-stone-700 font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              A fully automated, Raspberry Pi-powered station that combines smart load sensing with precision mechanics to detect, clamp, and clean discs with consistent reliability.
+              A fully automated, Raspberry Pi-powered station that combines smart load sensing with precision mechanics to detect, clamp, and clean discs.
             </p>
           </div>
           
@@ -64,70 +64,82 @@ function Home() {
           <div className="lg:col-span-5 sticky top-24">
             <div className="aspect-square bg-stone-100 rounded-2xl overflow-hidden shadow-lg border border-stone-200">
               <img 
-                src="https://placehold.co/600x600/C9A668/ffffff?text=Final+Product" 
+                src="./dist/assets/images/1.JPG" 
                 alt="Automated Disc Cleaner" 
                 className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 60%' }}
               />
             </div>
           </div>
 
-          {/* Right: Features & Details */}
+          {/* Right: Objectives & Details */}
           <div className="lg:col-span-7">
-            <div className="inline-block mb-3 text-xs font-bold tracking-widest text-stone-500 uppercase">CORE FEATURES</div>
+            <div className="inline-block mb-3 text-xs font-bold tracking-widest text-stone-500 uppercase">PROJECT OBJECTIVES</div>
             <h2 className="font-serif text-4xl mb-6 text-stone-900">Automated Disc Cleaning Station</h2>
             
-            <p className="text-lg text-stone-600 leading-relaxed mb-10">
-              A complete electromechanical system that autonomously detects, secures, and cleans disc golf discs. Our solution integrates advanced load sensing, precision motor control, and computer vision to ensure a perfect clean every cycle.
+            <p className="text-lg text-stone-600 leading-relaxed mb-6">
+              Our project objective was to create an <strong>automated disc cleaning station</strong> that combines intelligent sensing, precision mechanics, and computer vision to deliver a complete cleaning solution for disc golf discs.
             </p>
 
-            <div className="space-y-6">
+            <p className="text-base text-stone-600 leading-relaxed mb-6">
+              The following were our goals and their implementation status:
+            </p>
+
+            <div className="space-y-6 mb-8">
               <div className="flex items-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-nobel-gold mr-4 mt-2.5 flex-shrink-0"></div>
                 <div>
-                   <h4 className="text-stone-900 font-semibold text-lg">Intelligent Control System</h4>
-                   <p className="text-stone-600">Raspberry Pi 5 orchestrates all sensors, motors, and AI vision logic.</p>
+                   <h4 className="text-stone-900 font-semibold text-lg">Disc Detection</h4>
+                   <p className="text-stone-600">Rotary encoder load sensing detects disc presence by monitoring motor RPM changes before starting a cleaning cycle.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-nobel-gold mr-4 mt-2.5 flex-shrink-0"></div>
                 <div>
-                   <h4 className="text-stone-900 font-semibold text-lg">Smart Load Sensing</h4>
-                   <p className="text-stone-600">Rotary encoder detects disc presence by monitoring motor RPM changes.</p>
+                   <h4 className="text-stone-900 font-semibold text-lg">Secure Rotation</h4>
+                   <p className="text-stone-600">Custom 3-jaw chuck mechanism securely holds the disc in place as it rotates during cleaning.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-nobel-gold mr-4 mt-2.5 flex-shrink-0"></div>
                 <div>
-                   <h4 className="text-stone-900 font-semibold text-lg">Secure 3-Jaw Chuck</h4>
-                   <p className="text-stone-600">Custom-designed mechanism safely clamps and rotates discs during cleaning.</p>
+                   <h4 className="text-stone-900 font-semibold text-lg">Complete Clean</h4>
+                   <p className="text-stone-600">Servo-actuated brushes scrub the disc surface, ensuring thorough cleaning.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-1.5 h-1.5 rounded-full bg-stone-300 mr-4 mt-2.5 flex-shrink-0"></div>
+                <div>
+                   <h4 className="text-stone-600 font-semibold text-lg">Pneumatics <span className="text-stone-400 font-normal text-sm">(Not Fully Implemented)</span></h4>
+                   <p className="text-stone-500 italic">We did not fully implement the compressed air system for complete removal of dirt and grime.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-nobel-gold mr-4 mt-2.5 flex-shrink-0"></div>
                 <div>
-                   <h4 className="text-stone-900 font-semibold text-lg">Automated Deep Clean</h4>
-                   <p className="text-stone-600">Servo-actuated brushes scrub both sides while pneumatics remove debris.</p>
-                </div>
-              </div>
-
-               <div className="flex items-start">
-                <div className="w-1.5 h-1.5 rounded-full bg-nobel-gold mr-4 mt-2.5 flex-shrink-0"></div>
-                <div>
-                   <h4 className="text-stone-900 font-semibold text-lg">AI Quality Verification</h4>
-                   <p className="text-stone-600">Integrated Pi Camera with ML model confirms cleanliness in real-time.</p>
+                   <h4 className="text-stone-900 font-semibold text-lg">AI Vision Detection</h4>
+                   <p className="text-stone-600">Machine learning model uses camera input to confirm all mud and debris has been removed.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-nobel-gold mr-4 mt-2.5 flex-shrink-0"></div>
                 <div>
-                   <h4 className="text-stone-900 font-semibold text-lg">Interactive Interface</h4>
-                   <p className="text-stone-600">Polished touchscreen GUI combined with physical controls for intuitive operation.</p>
+                   <h4 className="text-stone-900 font-semibold text-lg">User Interface</h4>
+                   <p className="text-stone-600">LCD display provides real-time status updates and clear instructions, such as "Please Flip Disc."</p>
                 </div>
               </div>
+            </div>
+
+            <div className="bg-stone-50 rounded-lg p-6 border border-stone-200">
+              <h3 className="text-stone-900 font-semibold text-lg mb-2">System Overview</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                The complete electromechanical system autonomously detects, secures, and cleans disc golf discs. Our solution integrates advanced load sensing, precision motor control, and computer vision to ensure reliable cleaning performance.
+              </p>
             </div>
           </div>
         </div>
@@ -144,43 +156,51 @@ function Home() {
           {/* Demo Video */}
           <div className="mb-16 max-w-4xl mx-auto">
             <h3 className="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Final Demo Video</h3>
-            <div className="aspect-video bg-stone-50 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center border border-stone-200">
-              <div className="text-center">
-                <svg 
-                  className="mx-auto h-24 w-24 text-stone-400 mb-4" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={1.5} 
-                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" 
-                  />
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={1.5} 
-                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
-                  />
-                </svg>
-                <p className="text-stone-500 text-lg">
-                  Demo Video Coming Soon
-                </p>
-              </div>
+            <div className="aspect-video bg-stone-50 rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/UypY4SlSCaY"
+                title="Disc Golf Disc Cleaner Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Fusion Animation Video */}
+          <div className="mb-16 max-w-4xl mx-auto">
+            <h3 className="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">CAD Animation</h3>
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-auto"
+                style={{ borderRadius: '8px' }}
+              >
+                <source src="./dist/assets/images/fusion.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
           {/* Photo Gallery */}
           <div>
             <h3 className="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Project Photos</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                <div key={num} className="rounded-xl overflow-hidden shadow-sm border border-stone-200 hover:border-nobel-gold transition-all transform hover:scale-105 hover:shadow-md">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { src: './dist/assets/images/3.JPG', alt: 'Project photo 1' },
+                { src: './dist/assets/images/4.jpg', alt: 'Project photo 2' },
+                { src: './dist/assets/images/disc_golf.JPG', alt: 'Project photo 3' },
+                { src: './dist/assets/images/6.JPG', alt: 'Project photo 4' },
+                { src: './dist/assets/images/5.JPG', alt: 'Project photo 5' },
+                { src: './dist/assets/images/2.JPG', alt: 'Project photo 6' }
+              ].map((photo, index) => (
+                <div key={index} className="rounded-xl overflow-hidden shadow-sm border border-stone-200 hover:border-nobel-gold transition-all transform hover:scale-105 hover:shadow-md">
                   <img 
-                    src={`https://placehold.co/400x300/C9A668/ffffff?text=Photo+${num}`}
-                    alt={`Project photo ${num}`} 
+                    src={photo.src}
+                    alt={photo.alt} 
                     className="w-full h-auto object-cover"
                   />
                 </div>

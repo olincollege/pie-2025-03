@@ -68,8 +68,8 @@ function Sprint3() {
               <span className="mr-2">🔧</span> Central Motor Failure
             </h3>
             <p className="text-amber-800 mb-3">
-              Our original central motor broke during testing. We pivoted to using an 
-              <span className="font-medium"> HP C6409-60004 Motor</span> as a replacement, which we successfully 
+              Our original central motor broke during testing. We pivoted to using a 
+              <span className="font-medium"> 12V/18V 200W DC Planet Gear Motor with 90kg·cm torque</span> as a replacement, which we successfully 
               integrated with our existing motor mount and control system.
             </p>
           </div>

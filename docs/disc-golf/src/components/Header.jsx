@@ -42,6 +42,9 @@ function Header() {
           <NavLink to="/budget" className={navLinkClass}>
             Budget
           </NavLink>
+          <NavLink to="/learnings" className={navLinkClass}>
+            Learnings
+          </NavLink>
           <NavLink to="/code" className={navLinkClass}>
             Docs
           </NavLink>

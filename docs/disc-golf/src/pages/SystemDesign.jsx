@@ -5,6 +5,10 @@ function SystemDesign() {
   const [startPos, setStartPos] = useState({ x: 0, y: 0 })
   const [scrollLeft, setScrollLeft] = useState(0)
   const [scrollTop, setScrollTop] = useState(0)
+  const [isEnergyFlowZoomed, setIsEnergyFlowZoomed] = useState(false)
+  const [isSystemArchitectureZoomed, setIsSystemArchitectureZoomed] = useState(false)
+  const [isWiringDiagramZoomed, setIsWiringDiagramZoomed] = useState(false)
+  const [isWiringDiagramSVGZoomed, setIsWiringDiagramSVGZoomed] = useState(false)
   const scrollContainerRef = useRef(null)
 
   const handleMouseDown = (e) => {
@@ -76,8 +80,103 @@ function SystemDesign() {
         <div className="w-20 h-1 bg-nobel-gold mx-auto mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}></div>
       </div>
 
+      {/* Table of Contents */}
+      <div className="mb-16 bg-stone-50 rounded-lg p-6 border border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <h2 className="font-serif text-xl font-bold text-stone-900 mb-4">Table of Contents</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <a 
+            href="#system-architecture" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('system-architecture')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            System Architecture
+          </a>
+          <a 
+            href="#data-energy-flow" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('data-energy-flow')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            Data & Energy Flow
+          </a>
+          <a 
+            href="#enclosure-design" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('enclosure-design')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            Enclosure Design
+          </a>
+          <a 
+            href="#chuck-design" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('chuck-design')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            3-Jaw Chuck Design
+          </a>
+          <a 
+            href="#brush-assembly" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('brush-assembly')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            Brush Assembly
+          </a>
+          <a 
+            href="#grate-assembly" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('grate-assembly')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            Grate Assembly
+          </a>
+          <a 
+            href="#electrical-design" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('electrical-design')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            Electrical Design
+          </a>
+          <a 
+            href="#software-controls" 
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('software-controls')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }}
+            className="text-stone-600 hover:text-nobel-gold transition-colors text-sm flex items-center cursor-pointer"
+          >
+            <span className="mr-2">→</span>
+            Software & Control Logic
+          </a>
+        </div>
+      </div>
+
       {/* System Architecture Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+      <div id="system-architecture" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.1s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
           System Architecture
         </h2>
@@ -86,17 +185,122 @@ function SystemDesign() {
           The block diagram below shows all major components and how they connect to each other, 
           including the Raspberry Pi controller, motor drivers, sensors, and user interface elements.
         </p>
-        <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200">
+        <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsSystemArchitectureZoomed(true)}>
           <img 
-            src="https://placehold.co/900x600/C9A668/ffffff?text=System+Architecture+Block+Diagram" 
+            src="./dist/assets/images/system_diagram.jpg" 
             alt="System Architecture Block Diagram" 
             className="w-full h-auto"
           />
+          <div className="bg-stone-50 p-2 text-center">
+            <p className="text-stone-500 text-xs">Click to zoom</p>
+          </div>
+        </div>
+
+        {/* Wiring Diagram */}
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold text-stone-800 mb-4">Wiring Diagram</h3>
+          <p className="text-stone-600 mb-4 leading-relaxed">
+            Detailed wiring diagram showing the electrical connections between components, including the Raspberry Pi GPIO pins, relays, motors, sensors, and control panel elements.
+          </p>
+          <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsWiringDiagramZoomed(true)}>
+            <img 
+              src="./dist/assets/images/wiring_diagram.jpg" 
+              alt="Wiring Diagram" 
+              className="w-full h-auto"
+            />
+            <div className="bg-stone-50 p-2 text-center">
+              <p className="text-stone-500 text-xs">Click to zoom</p>
+            </div>
+          </div>
+
+          {/* SVG Wiring Diagram */}
+          <div className="mt-6 rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsWiringDiagramSVGZoomed(true)}>
+            <img 
+              src="./dist/assets/images/disk_golf_wiring_diagram.svg" 
+              alt="Wiring Diagram SVG" 
+              className="w-full h-auto"
+            />
+            <div className="bg-stone-50 p-2 text-center">
+              <p className="text-stone-500 text-xs">Click to zoom</p>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* System Architecture Zoom Modal */}
+      {isSystemArchitectureZoomed && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
+          onClick={() => setIsSystemArchitectureZoomed(false)}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl">
+            <button
+              onClick={() => setIsSystemArchitectureZoomed(false)}
+              className="absolute top-4 right-4 text-stone-500 hover:text-stone-900 text-3xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-stone-100 transition-colors"
+              aria-label="Close zoom"
+            >
+              ×
+            </button>
+            <img 
+              src="./dist/assets/images/system_diagram.jpg" 
+              alt="System Architecture Block Diagram - Zoomed" 
+              className="w-full h-auto"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Wiring Diagram Zoom Modal */}
+      {isWiringDiagramZoomed && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
+          onClick={() => setIsWiringDiagramZoomed(false)}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl">
+            <button
+              onClick={() => setIsWiringDiagramZoomed(false)}
+              className="absolute top-4 right-4 text-stone-500 hover:text-stone-900 text-3xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-stone-100 transition-colors"
+              aria-label="Close zoom"
+            >
+              ×
+            </button>
+            <img 
+              src="./dist/assets/images/wiring_diagram.jpg" 
+              alt="Wiring Diagram - Zoomed" 
+              className="w-full h-auto"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Wiring Diagram SVG Zoom Modal */}
+      {isWiringDiagramSVGZoomed && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
+          onClick={() => setIsWiringDiagramSVGZoomed(false)}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl">
+            <button
+              onClick={() => setIsWiringDiagramSVGZoomed(false)}
+              className="absolute top-4 right-4 text-stone-500 hover:text-stone-900 text-3xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-stone-100 transition-colors"
+              aria-label="Close zoom"
+            >
+              ×
+            </button>
+            <img 
+              src="./dist/assets/images/disk_golf_wiring_diagram.svg" 
+              alt="Wiring Diagram SVG - Zoomed" 
+              className="w-full h-auto"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
       {/* Data & Energy Flow Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+      <div id="data-energy-flow" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.2s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
           Data & Energy Flow
         </h2>
@@ -106,17 +310,44 @@ function SystemDesign() {
           Energy flow shows power distribution from the supply through the fuse box 
           to motors, the Raspberry Pi, and peripheral devices.
         </p>
-        <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200">
+        <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setIsEnergyFlowZoomed(true)}>
           <img 
-            src="https://placehold.co/900x600/C9A668/ffffff?text=Data+%26+Energy+Flow+Diagram" 
+            src="./dist/assets/images/energy_flow.jpg" 
             alt="Data and Energy Flow Diagram" 
             className="w-full h-auto"
           />
+          <div className="bg-stone-50 p-2 text-center">
+            <p className="text-stone-500 text-xs">Click to zoom</p>
+          </div>
         </div>
       </div>
 
+      {/* Energy Flow Zoom Modal */}
+      {isEnergyFlowZoomed && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
+          onClick={() => setIsEnergyFlowZoomed(false)}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl">
+            <button
+              onClick={() => setIsEnergyFlowZoomed(false)}
+              className="absolute top-4 right-4 text-stone-500 hover:text-stone-900 text-3xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-stone-100 transition-colors"
+              aria-label="Close zoom"
+            >
+              ×
+            </button>
+            <img 
+              src="./dist/assets/images/energy_flow.jpg" 
+              alt="Data and Energy Flow Diagram - Zoomed" 
+              className="w-full h-auto"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
       {/* Enclosure Design Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+      <div id="enclosure-design" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.3s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
           Enclosure Design
         </h2>
@@ -199,7 +430,7 @@ function SystemDesign() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
           <div className="rounded-lg overflow-hidden shadow-sm border border-stone-200">
             <img 
-              src="https://placehold.co/500x350/C9A668/ffffff?text=Enclosure+CAD" 
+              src="./dist/assets/images/Enclosure.png" 
               alt="Enclosure CAD Rendering" 
               className="w-full h-auto"
             />
@@ -209,7 +440,7 @@ function SystemDesign() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-sm border border-stone-200">
             <img 
-              src="https://placehold.co/500x350/C9A668/ffffff?text=Inner+Enclosure+Supports" 
+              src="./dist/assets/images/Inner Enclosure Supports.png" 
               alt="Inner Enclosure Supports" 
               className="w-full h-auto"
             />
@@ -221,7 +452,7 @@ function SystemDesign() {
       </div>
 
       {/* Chuck Design Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+      <div id="chuck-design" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.4s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
           3-Jaw Chuck Design
         </h2>
@@ -307,78 +538,296 @@ function SystemDesign() {
         </div>
       </div>
 
-      {/* Motor Systems Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
+      {/* Brush Assembly Section */}
+      <div id="brush-assembly" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.42s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
-          Motor Systems
+          Brush Assembly
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg border border-stone-200 shadow-sm">
-            <h3 className="text-xl font-semibold text-stone-800 mb-3">Central Motor</h3>
+        <p className="text-stone-600 mb-6 leading-relaxed">
+          The brush assembly serves one point within the overall "disc golf" system: to raise and lower the "brush" which will clean the disc golf. Within the assembly there are 10 components: the scrub daddy "brush", the servo motor, the servo mount, the gear train mount, the 24-tooth bevel pinion, the 48-tooth bevel gear, the shaft, the shaft spacer, the "brush" arm, and the scrub daddy mounts.
+        </p>
+
+        {/* Annotated Brush Assembly Image */}
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg border border-stone-200">
+          <img 
+            src="./dist/assets/images/annotated_brush_assembly.png" 
+            alt="Annotated Brush Assembly CAD rendering showing gear train, servo motor, shaft, and arm mounting wheel" 
+            className="w-full h-auto"
+          />
+        </div>
+
+        {/* Design Constraints */}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Design Constraints</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              For the construction of all the supporting members of the brush assembly, the combined area was designed to be limited to a 128 by 100 by 180 millimeter box. This constraint was imposed to optimize "brush" positioning regarding the height of the test disc-golf when rested upon the chuck surface. Another constraint was weight, the system itself would be mounted on the back wall, which would mean that any extraneous weight would reduce the brush system's performance.
+            </p>
             <p className="text-stone-600 leading-relaxed">
-              HP C6409-60004 motor rotates the chuck and disc at controlled speeds for thorough cleaning. 
-              Mounted to the wooden inner enclosure supports which handle the torque loads.
+              In this vein, the gear train mount and the servo mount were designed to minimize width by cutting unnecessary walls and features, yet still maintaining the required strength to hold up the shaft, servo motor, gear train, brush arm and "brush". The wall paneling mounting points for these mounts were chosen to lay flush to the wall and "in-line" to align the servo pinion to the shaft which held the driven gear. In order to assure no x-axis translation of the driven gear on the shaft, 3D-printed spacers were mounted onto the shaft. Specifically for the servo-mount, channels for wiring were iterated upon and drawn in order to optimize wire-harnessing and facilitate electrical integration.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg border border-stone-200 shadow-sm">
-            <h3 className="text-xl font-semibold text-stone-800 mb-3">Brush Motor</h3>
+
+          {/* Arm Design */}
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Arm Design</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              In order to attach the driven gear to the "brush" arm, the gear was manufactured to have a rear circular mounting that would allow for arm-mounting holes. This design choice did raise concerns with spacing constraints, but was designed with those limitations in mind, as well as the concern that the "brush" arm would interfere with the shaft spacer.
+            </p>
             <p className="text-stone-600 leading-relaxed">
-              Servo motor acts as a "wrist" to actuate the brush and position it across the disc surface 
-              in pre-programmed patterns for complete coverage.
+              The arm itself was designed to have two straight portions, with an angled change differentiating them. This angle was chosen purposely to maintain a flat and flush brush when the servo was actuated. In other words, if the "upper-arm" was parallel to the ground, the brush was in its "idle" position, but when the fore-arm was parallel with the ground, the brush was flat against the disc and in its "actuated" position.
+            </p>
+          </div>
+
+          {/* Gear Train */}
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Gear Train</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              The gear train itself is only composed of the 24-tooth driving pinion and the 48-tooth driven gear. The "brush" actuation process is simply the driving motion of the servo motor being transferred to the pinion, which then "steps-up" the torque of the system when the motion is exchanged between the pinion and the gear. Bevel gears were chosen in order to translate the z-axis rotation of the back-wall mounted servo-motor into x-axis rotation of the driven gear. This x-axis motion would then translate the "brush" "up" and "down", allowing for the brush to remain idle out of use, and then actuated onto the disc when in use.
+            </p>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              This process occurs since the tooth ratio between the driver and driven gear is 1:2, which corresponds to a twofold increase in output torque, yet also a twofold decrease in output angular velocity. Since the only actual worry is the brush assembly delivering a high enough torque to counteract the resting torque, which is exerted by the weight of the scrub daddy applied at the distance equal to the length of the "brush" arm length, the increase in torque is prioritized over the decrease in angular velocity.
+            </p>
+            
+            {/* Math Equations */}
+            <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 my-4">
+              <p className="text-stone-700 mb-3 font-medium">Gear Ratio Relationships:</p>
+              <div className="space-y-2 text-stone-600 font-mono text-sm">
+                <p>Gear ratio ∝ τ | Gear ratio ∝ ω | ω ∝ 1/τ</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Torque Calculations */}
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Torque Analysis & Justification</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              To justify the 1:2 gear ratio design decision, hand-calculations were drawn to compare the resting torque exerted by the scrub daddy compared to the "stepped-up" torque of the gear train. The factory specification for the maximum exerted torque by the model HS-425BB servo motor available the project landed between 3.3 - 4.1 kg·cm. The scrub daddy weighs 3 to 4 grams, and the amount of predicted PLA filament usage of a printed arm of the supposed dimensions is about 7 grams. Choosing the value which reflects the worst-case weight, the total weight lands around 0.011 kilograms. The arm itself, though angled at x degrees, measures at 0.194 meters.
+            </p>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              Through simple hand calcs listed below, the resting torque of the arm paired with the scrub daddy is at around 0.021 newton-meters. Converting a conservative max torque value of 3.3 kg·cm to Nm for the servo, will return a value of 0.32 newton-meters. When stepped-up by the gear-train, this will result in a conservative max-torque value of 0.64 newton-meters.
+            </p>
+            
+            {/* Math Calculations */}
+            <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 my-4">
+              <p className="text-stone-700 mb-3 font-medium">Torque Conversion Calculations:</p>
+              <div className="space-y-3 text-stone-600 font-mono text-sm">
+                <p>3.3 kg·cm → 3.3 kg·cm · (9.81 N/kg) · (m/100 cm) = 0.32 Nm</p>
+                <p>0.011 kg · 0.194 m = 0.021 Nm (resting torque)</p>
+                <p>0.32 Nm · 2 (gear ratio) = 0.64 Nm (stepped-up torque)</p>
+              </div>
+            </div>
+
+            <p className="text-stone-600 leading-relaxed">
+              While 0.64 newton-meters might seem "overkill" for a resting gravitational torque of 0.021 newton-meters, the scrub-daddy "brush" was an actual pivot from an actual wood-handle, horse-hair long brush, which exerted a resting torque of 0.5 newton-meters. While the gear train did accommodate the resting torque of the original brush, due to spatial constraints, and issues with mounting, the scrub-daddy system was implemented. With this change in standard, the safety factor for the actuation of the "brush" motor was now exceedingly higher, which allows for more minute adjustment and reduction of mechanical fault for possible troubleshooting purposes.
             </p>
           </div>
         </div>
       </div>
 
+      {/* Grate Assembly Section */}
+      <div id="grate-assembly" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.43s' }}>
+        <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
+          Grate Assembly
+        </h2>
+        
+        <p className="text-stone-600 mb-6 leading-relaxed">
+          The grate assembly has two key functions: keep the central motor and its chuck systems suspended, and to allow the flow of grime from the dish to fall into the dust pan. The assembly itself is fairly simple: the grate mounts, the grate cover, the grate, the motor mount, and the motor mount supports.
+        </p>
+
+        {/* Annotated Grate Assembly Image */}
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg border border-stone-200">
+          <img 
+            src="./dist/assets/images/annotated_grate_assembly.png" 
+            alt="Annotated Grate Assembly showing central motor, gear train, grate mounts, and motor mount supports" 
+            className="w-full h-auto"
+          />
+        </div>
+
+        {/* Design Constraints and Mounting */}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Spatial Constraints & Mounting</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              Working within the 300 × 300 millimeter z-x-axis spatial constraints, the grate had to be mounted low enough in order for the camera to have a large enough field-of-vision that could allow the ML model to make its data collection and analysis, yet high enough for the bottom of the motor not to interfere with the dust pan.
+            </p>
+            <p className="text-stone-600 leading-relaxed">
+              Given these constraints, 3D-printed PLA brackets were fastened with wood screws onto the wood enclosure support brackets. To allow for quick reparations and facile iterative testing, the mounts were chosen to have tight yet ample enough fits with the grate in order for quick removal, yet stable enough to not induce any vibrational fatigue in the plywood grate.
+            </p>
+          </div>
+
+          {/* Grate and Grate Cover Design */}
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Grate and Grate Cover Design</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              The grate and the grate cover were both designed with the constraints of the 300×300 millimeter space limitations, yet also with the idea that dimensions that matched that exact space would inhibit facile installation and de-installation. In that vein, the grate and grate cover were designed to "sit" on the mounts, but for their "arms" to not then push flush against the walls created by the wooden enclosure support brackets.
+            </p>
+            <p className="text-stone-600 leading-relaxed">
+              The chosen materials for the grate and the grate cover followed the basic analysis for each component's purpose: the grate had to be lightweight and easy to iterate with as well as strong in all directions, and the grate cover had to make sure to protect the grate from any debris damage. To this point, the grate was chosen to be manufactured in plywood for its multi-axial strength due to its pluri-layer makeup, which makes up for traditional wood's one-direction grain weakness. The cover was machined out of sheet metal in order to minimize any additional weight as well as to protect the grate from any mud or moisture which might otherwise weaken its load-bearing capabilities.
+            </p>
+          </div>
+
+          {/* Motor Mount Design */}
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Motor Mount Design</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              The motor mount was designed around three core concepts: suspend the motor, create a strong yet weight-efficient connection to the grate, and protect the motor. To that end, the motor mount was inspired by the shape of a yogurt cup. The "cusp" of the mount would allow for mounting to the grate as well as to the motor, and the body would protect the motor body from any unwanted presences in the form of grime or plywood offshoots. The body was designed to be "concentric" with the square opening in the middle of the grate, but not flush in order to allow any fasteners for the motor to pass through.
+            </p>
+            <p className="text-stone-600 leading-relaxed">
+              Additionally, during the first few iterations, connection was a major issue due to the fact that mounting points on the motor were wholly skewed on one side, which would not create a tight fit when the motor was upright, and then would tilt when taut. The problem area was identified to be the plastic deformation of the mount itself when applied extra pressure under the tightening of the fasteners. Spacers were then added in order to move the pressure point upwards and to negate the possibility of the tilt effect from occurring.
+            </p>
+          </div>
+
+          {/* Stress Analysis */}
+          <div>
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Structural Analysis</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              Finally, to justify material and design choices, a static stress test was run in order to observe the simulated displacement, stress concentrations and strain due to a perceived load of 20 Newtons, an overestimation of the total weight that the grate and its motor mounts would be subject to. The results demonstrated a high safety factor with minimal displacement and no perceivable dangers of failure.
+            </p>
+
+            {/* Stress Test Images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <div className="rounded-lg overflow-hidden shadow-sm border border-stone-200">
+                <img 
+                  src="./dist/assets/images/stress_test_1.png" 
+                  alt="Von Mises stress analysis showing stress distribution with maximum stress of 13.122 MPa" 
+                  className="w-full h-auto"
+                />
+                <div className="p-3 bg-white">
+                  <p className="text-stone-600 text-sm font-semibold mb-1">Von Mises Stress Analysis</p>
+                  <p className="text-stone-500 text-xs">Maximum stress: 13.122 MPa at load application points. Stress concentrations visible at beam connections to central plate.</p>
+                </div>
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-sm border border-stone-200">
+                <img 
+                  src="./dist/assets/images/stress_test_2.png" 
+                  alt="Displacement analysis showing maximum displacement of 0.017 mm under 20N load" 
+                  className="w-full h-auto"
+                />
+                <div className="p-3 bg-white">
+                  <p className="text-stone-600 text-sm font-semibold mb-1">Displacement Analysis</p>
+                  <p className="text-stone-500 text-xs">Maximum displacement: 0.017 mm at central plate. Fixed supports at beam ends show zero displacement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Electrical Design Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+      <div id="electrical-design" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.5s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
           Electrical Design
         </h2>
         
-        <div className="space-y-6 mb-8">
+        <div className="space-y-8 mb-8">
+          {/* Overview and Power */}
           <div>
-            <h3 className="text-xl font-semibold text-stone-800 mb-2">Control System</h3>
-            <p className="text-stone-600 leading-relaxed">
-              <strong className="text-stone-800">Raspberry Pi 5 (8GB):</strong> The main controller, upgraded from our initial Arduino Uno 
-              plan to handle more complex processing requirements including potential AI/ML workloads and 
-              multi-threaded control logic.
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Overview and Power</h3>
+            <p className="text-stone-600 leading-relaxed mb-4">
+              The general layout of our electrical system is as follows: A LiPo battery connects through an E-stop to a fusebox that acts as the power distribution hub (PDH) for the whole system. The PDH has output voltages of 22.2V for the primary motors or, through a buck converter, 5V for smaller devices. A Raspberry Pi 4b, powered off 5V from the PDH, then connects GPIO pins to close relays, get sensor readings, and control the UI.
             </p>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold text-stone-800 mb-2">Motor Control</h3>
-            <p className="text-stone-600 leading-relaxed">
-              <strong className="text-stone-800">TB6600 Motor Driver (4.0A):</strong> Upgraded from the Adafruit Motorshield V2 (1.2A) 
-              to properly handle the Nema 23 motor's 4.0A current draw. Provides precise stepper control with 
-              microstepping capability.
-            </p>
+          {/* Central Motor */}
+          <div className="bg-stone-50 rounded-lg p-6 border-l-4 border-stone-400">
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Central Motor</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Description</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The central motor's electrical system consists of a relay, diode, and the motor itself. Rated for 24V, we supplied 22.2V directly from the PDH. The relay and diode across the power line allow the Raspberry Pi to control when the motor is on or off.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Requirements</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  We needed control over when the motor spun up or slowed down. We needed enough torque to spin the complete chuck subassembly. We needed a high enough rpm to have an abrasive cleaning function. Should the chuck friction values fail and the chuck motor spins the whole chuck as opposed to just the scroll plate, the motor must be disconnected to not send backwards current through the power system.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Justification</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  To have control over when the motor spins up or slows down we included the relay used to disconnect the motor from power. As we knew our power constraints (22.2V) from the LiPo battery, we ordered a motor that is able to fully rotate the chuck mechanism at an acceptable speed for abrasive cleaning to work.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold text-stone-800 mb-2">Sensing & Input</h3>
-            <ul className="list-disc list-inside text-stone-600 space-y-2 ml-2">
-              <li>
-                <strong className="text-stone-800">Rotary Encoder:</strong> Performs "load sensing" by measuring motor RPM to detect disc 
-                presence. Distinguishes between fast "No-Load" speed and slower "Loaded" speed. This replaced 
-                our original flawed plan of using 3 IR distance sensors.
-              </li>
-              <li>
-                <strong className="text-stone-800">Pi Camera:</strong> For AI/ML-based mud detection and cleanliness verification
-              </li>
-              <li>
-                <strong className="text-stone-800">Physical Button Panel:</strong> START, RESET, and STOP buttons for manual control
-              </li>
-            </ul>
+          {/* Chuck Motor */}
+          <div className="bg-stone-50 rounded-lg p-6 border-l-4 border-stone-400">
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Chuck Motor</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Description</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The chuck motor's electrical system consists of a relay, diode, slip ring, motor controller, and the motor itself. Most notable is the use of a slip ring in this design. The slip ring was necessary to provide power to the motor while the motor itself gets spun by the central motor, along with the chuck mechanism. The chuck motor is used to automatically adjust the tightness of the chuck mechanism without direct user input. The chuck motor can be disconnected from the rest of the circuit using a relay; this is used to prevent backwards current from flowing back into the electrical system when the chuck is being spun.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Requirements</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The motor must be able to spin the chuck just enough to tighten the chuck teeth but not enough to damage the disc golf disc. The motor must be able to run on a maximum of 22.2 V.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Justification</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The chuck needs to be able to be spun by a motor to provide self-tightening functionality, so we chose a small motor with an inbuilt motor encoder to minimize the load on the central motor. Since the chuck motor is being rotated along with the chuck, we purchased a slip ring to allow for stationary wires to be sent back to the PDH and Raspberry Pi, while the rotating wires in being free spinning remain untangled.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold text-stone-800 mb-2">Power Management</h3>
-            <p className="text-stone-600 leading-relaxed">
-              Power supply system designed to handle simultaneous high current draw from multiple motors 
-              while maintaining stable voltage for the Raspberry Pi and sensors.
-            </p>
+          {/* Control Panel */}
+          <div className="bg-stone-50 rounded-lg p-6 border-l-4 border-stone-400">
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Control Panel</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Description</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The control panel consists of an LCD display, two buttons used for navigating the UI, an E-Stop, and a switch used for manually switching the polarity of the chuck motor. The main purpose of the control panel is to interface with the disc golf cleaner and input settings for how you would like your disc golf disc cleaned. The switch to change the chuck motor's polarity was added in the last few days due to not having any hardware to reverse the polarity and thus reverse the direction of where the chuck was spinning (an oversight during the design process).
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Requirements</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  There needs to be an E-stop, a display for information, and two buttons for users to control the system. The two buttons need to use a 3.3 V logic level.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Justification</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  We needed a way for the user to tell the system to immediately stop operations in case of emergency, for which we introduced the emergency stop button. We also needed to provide an interface for the user to tell the system when to clean the disc and for how long for which we introduced the UI. The buttons allow for user control of the system, in particular, allowing for the machine to start and a graceful stop if a wash needs to stop, but the E-stop is not warranted. The button colors were selected to align with industry-standard "Start/Stop" semantics, ensuring the interface is intuitive for the operator.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Pneumatics */}
+          <div className="bg-stone-50 rounded-lg p-6 border-l-4 border-stone-400">
+            <h3 className="text-xl font-semibold text-stone-800 mb-3">Pneumatics</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Description</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The pneumatic system conceptually consists of an electrically controlled valve, pneumatic tubing, an air compressor, and an air pressure sensor. The air pressure sensor is used for diagnostics with the pneumatics system and to adjust the cleaning cycle time based on the pressure in the system. The electrically controlled valve allows the system to control when compressed air is being dispensed. Currently, there is no implementation for how the system would control the air compressor. A likely implementation would involve disconnecting power to the air compressor using some sort of relay or electronically controlled switch mechanism.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Requirements</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  The components must be able to be run using a maximum of 22.2 V, rated for a minimum of 55 PSI, and ultimately able to dislodge waste from the disc.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-800 mb-2">Justification</h4>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  This was a stretch goal that would aid in cleaning off debris from the disc golf disc. The compressed air would theoretically help remove already loose debris, allowing the machine to better target the debris that is very stuck on the disc and would allow the brush to stay cleaner for longer and due to it removing less debris. The system would run at 40 PSI to achieve the proper exit velocity, but for safety precautions, we allotted some additional 55 PSI headroom.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -405,7 +854,7 @@ function SystemDesign() {
           >
             <div className="min-w-full p-4">
               <img 
-                src="./dist/assets/images/circuit_diagram.svg" 
+                src="./dist/assets/images/disk_golf_electrical_system.svg" 
                 alt="Circuit Diagram - KiCad Schematic" 
                 className="w-full h-auto block mx-auto pointer-events-none"
                 style={{ minWidth: '100%', maxWidth: 'none' }}
@@ -417,7 +866,7 @@ function SystemDesign() {
       </div>
 
       {/* Software & Controls Section */}
-      <div className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+      <div id="software-controls" className="mb-16 pb-8 border-b border-stone-200 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.6s' }}>
         <h2 className="font-serif text-2xl font-bold text-stone-900 mb-4">
           Software & Control Logic
         </h2>
