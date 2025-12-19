@@ -11,6 +11,13 @@
             rel="stylesheet"
         />
         <link href="index.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
         <div id="underwater-bg"></div>
@@ -75,9 +82,10 @@
                     <ul>
                         <li><a href="#home">HOME</a></li>
                         <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#timeline">TIMELINE</a></li>
+                        <li><a href="#progress">PROGRESS</a></li>
                         <li><a href="#subteams">SUBTEAMS</a></li>
-                        <li><a href="#equipment">EQUIPMENT</a></li>
+                        <li><a href="#system">SYSTEM</a></li>
+                        <li><a href="#team">TEAM</a></li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +94,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1 class="ocean-title">FISHBOT FRENZY</h1>
-                <p class="subtitle">A fishing minigame</p>
+                <p class="subtitle">A fishing game</p>
             </div>
             <a href="#about" class="scroll-btn">
                 <div class="scroll-btn-inner">
@@ -107,28 +115,51 @@
             <div class="about-section">
                 <div class="about-hero">
                     <p class="about-description">
-                        Our goal was to blah blah blah blah
+                        Fishbot Frenzy is a multiplayer, interactive fishing
+                        game centered around dynamic gameplay and integrated
+                        engineering. The system consists of a tank containing
+                        several "fishbots" that move among three motorized
+                        obstacles. Players attempt to “catch” as many fishbots
+                        as possible with magnetic fishing rods. Once collected,
+                        each fishbot is placed into a player's personal scoring
+                        box. A digital score display updates in real time when
+                        it senses the fishbot returning to the main tank.
+                        Players can monitor their progress and compete head to
+                        head!
                     </p>
+                    <br />
+                    <div class="display">
+                        <img
+                            src="media/img/overview/main.JPG"
+                            style="max-height: 600px"
+                        />
+                    </div>
                 </div>
 
                 <div class="about-grid">
                     <div class="about-card">
                         <span class="about-card-icon">🐠</span>
                         <h4>Fishies</h4>
-                        <p>something about them</p>
+                        <p>blub</p>
                     </div>
 
                     <div class="about-card">
                         <span class="about-card-icon">🪸</span>
-                        <h4>Engaging ga meplay</h4>
-                        <p>everyone wants that</p>
+                        <h4>Engaging Gameplay</h4>
+                        <p>who doesnt want that</p>
                     </div>
 
-                    <div class="about-card">
-                        <span class="about-card-icon">🌊</span>
-                        <h4>something else</h4>
-                        <p>yeah</p>
-                    </div>
+                    <a
+                        href="https://github.com/olin-crest-lab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="about-card">
+                            <span class="about-card-icon">🌊</span>
+                            <h4>crest</h4>
+                            <p>yeah</p>
+                        </div>
+                    </a>
                 </div>
 
                 <!-- <div class="achievements-grid">
@@ -152,7 +183,7 @@
             </div>
         </section>
 
-        <section id="timeline" class="phase-section fade-in">
+        <section id="progress" class="phase-section fade-in">
             <h2 class="section-title">Project Timeline</h2>
             <div class="phase-container">
                 <div class="phase-sidebar">
@@ -172,17 +203,142 @@
 
                 <div class="phase-content-area">
                     <div class="phase-content active" id="phase-1">
-                        <h3>Coral Reef Restoration</h3>
+                        <h3><b>A Minimum Viable Product, but Integrated</b></h3>
+                        <img src="media/img/phase1/phase1_sketch.jpg" />
                         <p>
-                            Leading global initiatives to restore damaged coral
-                            reef ecosystems through innovative techniques
-                            including coral farming, assisted gene flow, and
-                            microfragmentation. Our work focuses on building
-                            climate-resilient reefs that can withstand warming
-                            ocean temperatures and increasing acidification.
+                            For the first phase of our project, we wanted to see
+                            if we could make a simple prototype of the tank, a
+                            fishing rod, a functioning bristlebot with an off
+                            switch, and a working score box that could detect
+                            the presence of a fishbot. Our goal was a basic but
+                            integrated system.
+                        </p>
+                        <br />
+
+                        <h4>Mechanical</h4>
+
+                        <p>The mechanical subteam's goal was to prototype:</p>
+                        <ol>
+                            <li>
+                                Tank: An open-air, tabletop container made such
+                                that a bristlebot/hexbug cannot escape.
+                            </li>
+                            <li>
+                                Scorebox: A rectangular box designed to hold a
+                                fishbot before it returns to the tank.
+                            </li>
+                            <li>
+                                Fishbots: Custom bristlebots constructed from
+                                toothbrush heads equipped with a small motor and
+                                battery.
+                            </li>
+                        </ol>
+                        <br />
+                        <p>
+                            Almost all of these goals were met successfully!
+                            Tank and scorebox prototypes were designed in
+                            Onshape and then laser cut from eucaboard. The
+                            fishbots were unable to leave the scorebox, but all
+                            other goals were achieved. Beyond those goals, an
+                            initial prototype of a custom fishbot 3D print was
+                            created as well.
                         </p>
 
-                        <div class="phase-stats">
+                        <br />
+
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase1/phase1_tank_cad.png"
+                                />
+                                <img
+                                    src="media/img/phase1/phase1_tank_prototype.jpg"
+                                />
+                            </div>
+                            <p>Tank CAD and physical prototype</p>
+                        </div>
+
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase1/phase1_scorebox_cad.png"
+                                />
+                                <img
+                                    src="media/img/phase1/phase1_scorebox_prototype.jpg"
+                                />
+                            </div>
+                            <p>Scorebox CAD and physical prototype</p>
+                        </div>
+
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase1/phase1_bristlebot.jpg"
+                                />
+                                <img
+                                    src="media/img/phase1/phase1_fishbot.png"
+                                />
+                            </div>
+                            <p>
+                                Bristlebot physical prototype and CAD of fishbot
+                                shell #1
+                            </p>
+                        </div>
+
+                        <h4>Electrical</h4>
+
+                        <p>The electrical subteam's goal was to:</p>
+                        <ol>
+                            <li>
+                                Increment a score based on the presence of a
+                                fishbot using an object detection system
+                            </li>
+                            <li>Wire the fishbot to make it move</li>
+                        </ol>
+                        <br />
+                        <p>
+                            All of these goals were met! The object detection
+                            system was based on an ultrasonic sensor and created
+                            using an LED and Arduino R3 Uno.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <img
+                                src="media/img/phase1/phase1_scoring_circuit_diagram.png"
+                            />
+                            <p>Scoring sensor circuit diagram</p>
+                        </div>
+                        <p>
+                            The bristlebot was equipped with a battery, motor,
+                            and switch.
+                        </p>
+                        <video controls style="height: 500px">
+                            <source
+                                src="media/video/phase1/Fishbot.mp4"
+                                type="video/mp4"
+                            />
+                        </video>
+
+                        <h4>Software</h4>
+                        <p>
+                            The software goal for this phase was to develop
+                            scoring logic from the object detection system, and
+                            this was successfully met. Using Arduino IDE to set
+                            a distance threshold, the program would trigger the
+                            LED based on fishbot detection, increment a score in
+                            the serial monitor, and enforce a delay to prevent
+                            repeat scoring.
+                        </p>
+
+                        <div class="display">
+                            <video controls style="height: 500px">
+                                <source
+                                    src="media/video/phase1/pointscoring.mp4"
+                                />
+                            </video>
+                        </div>
+
+                        <!-- <div class="phase-stats">
                             <div class="stat-item">
                                 <span class="number">15</span>
                                 <span class="label">Active Sites</span>
@@ -195,9 +351,9 @@
                                 <span class="number">2.3M</span>
                                 <span class="label">Corals Planted</span>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="phase-details">
+                        <!-- <div class="phase-details">
                             <div class="detail-card">
                                 <h4>Microfragmentation</h4>
                                 <p>
@@ -222,167 +378,623 @@
                                     to bleaching.
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="phase-content" id="phase-2">
-                        <h3>Deep Ocean Mapping</h3>
+                        <h3>Ramping Things Up</h3>
                         <p>
-                            Comprehensive mapping and exploration of deep-sea
-                            environments using advanced sonar systems, ROVs, and
-                            autonomous underwater vehicles. Our research reveals
-                            previously unknown ecosystems and helps establish
-                            marine protected areas in critical deep-sea
-                            habitats.
+                            This phase was focused on enhancing functionality
+                            and aesthetics of different parts of our project,
+                            along with limited amounts of integration.
                         </p>
+                        <br />
 
-                        <div class="phase-stats">
-                            <div class="stat-item">
-                                <span class="number">12,500</span>
-                                <span class="label">km² Mapped</span>
+                        <h4>Mechanical</h4>
+                        <p>
+                            The mechanical subteam's goal was to increase the
+                            complexity of the tank and score box, and to further
+                            iterate upon the fishbot shells.
+                        </p>
+                        <br />
+
+                        <p>
+                            This iteration of the tank was designed to be
+                            multilevel, with a DC motor rotating a central
+                            platform. Due to a lack of testing, the ramp was too
+                            steep and the upper level was too narrow for the
+                            fishbots to navigate; however, as a proof of concept
+                            of complexity and potential for a tiered tank
+                            design, it was successful!
+                        </p>
+                        <br />
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase2/phase2_tank_cad.png"
+                                />
+                                <img
+                                    src="media/img/phase2/phase2_tank_prototype.JPG"
+                                />
+                                <img
+                                    src="media/img/phase2/phase2_tank_prototype_side.JPG"
+                                />
                             </div>
-                            <div class="stat-item">
-                                <span class="number">847</span>
-                                <span class="label">Dive Hours</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="number">34</span>
-                                <span class="label">New Species</span>
-                            </div>
+                            <p>Tank CAD and physical prototype</p>
                         </div>
 
-                        <div class="phase-details">
-                            <div class="detail-card">
-                                <h4>Mariana Trench</h4>
-                                <p>
-                                    Exploring the deepest parts of Earth's
-                                    oceans, documenting extremophile communities
-                                    and their unique adaptations.
-                                </p>
+                        <p>
+                            The scorebox design was changed to mimic a large
+                            fish consuming the fishbot. While the design did not
+                            include the tunnel that would lead the fish back to
+                            the main tank nor any object detection, it was a
+                            successful proof of concept for a geared chomping
+                            mechanism. An SG90 Micro Servo Motor drove the spur
+                            gears that moved the jaws.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase2/phase2_scorebox_front.png"
+                                />
+                                <img
+                                    src="media/img/phase2/phase2_scorebox_back.png"
+                                />
+                                <img src="media/img/phase2/phase2_servo.png" />
                             </div>
-                            <div class="detail-card">
-                                <h4>Hydrothermal Vents</h4>
-                                <p>
-                                    Studying chemosynthetic ecosystems around
-                                    underwater volcanic vents and their role in
-                                    ocean chemistry.
-                                </p>
-                            </div>
-                            <div class="detail-card">
-                                <h4>Seamount Surveys</h4>
-                                <p>
-                                    Mapping underwater mountains and their
-                                    endemic species, crucial for deep-sea
-                                    conservation efforts.
-                                </p>
-                            </div>
+                            <p>Scorebox and servo CAD</p>
                         </div>
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase2/phase2_scorebox_prototyp.jpg"
+                                />
+                            </div>
+                            <video controls style="height: 500px">
+                                <source
+                                    src="media/video/phase2/phase2_scorebox_prototype.mp4"
+                                />
+                            </video>
+                            <p>Scorebox prototype</p>
+                        </div>
+
+                        <p>
+                            Finally, for the fishbots, we were able to create
+                            three different fishbots! We tested out different
+                            body shapes and different materials, including PLA
+                            and TPU. A eucaboard topper for aesthetics was
+                            considered but decided against due to the increased
+                            weight.
+                        </p>
+                        <br />
+
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <div class="display">
+                                    <img
+                                        style="max-height: 200px"
+                                        src="media/img/phase2/phase2_shell2.png"
+                                    />
+                                    <p>
+                                        Straight-legged fishbot (shell #2) CAD.
+                                    </p>
+                                </div>
+                                <div class="display">
+                                    <img
+                                        style="max-height: 200px"
+                                        src="media/img/phase2/phase2_fishtopper.png"
+                                    />
+                                    <p>
+                                        A ⅛" fish topper designed to be cut from
+                                        eucaboard.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="horizontal-display">
+                                <img src="media/img/phase2/phase2_shell5.png" />
+                                <img
+                                    src="media/img/phase2/phase2_fishbot_photo1.png"
+                                />
+                            </div>
+                            <p>
+                                A fishbot with legs tilted to 25° and
+                                better-designed motor casing (shell #5).
+                            </p>
+                        </div>
+                        <br />
+
+                        <h4>Electrical/Software</h4>
+                        <p>
+                            The main goal for electrical and software during
+                            this phase was to test RFID sensing. Unlike a simple
+                            distance sensor, RFID would allow us to assign
+                            different points to unique fish bots.
+                        </p>
+                        <br />
+
+                        <div class="display">
+                            <img src="media/img/phase2/phase2_rfid.png" />
+                            <p>RFID sensor and chip.</p>
+                        </div>
+                        <p>
+                            The software successfully integrated with the
+                            scorebox; the opening and closing jaws were limited
+                            in software rather than in hardware. Electrical also
+                            began working directly with mechanical to improve
+                            fishbot wiring.
+                        </p>
+                        <br />
+
+                        <h2>Next Steps</h2>
+                        <p>
+                            Many challenges presented themselves during this
+                            phase. The tank needed to be rethought; the ramp
+                            didn't work, the paths were too narrow, and the
+                            square shape didn't work particularly well. The
+                            scorebox didn't fit any fish inside, had no tank
+                            connection (tunnel) designed, and had no plan for
+                            integrating with RFID. Our next steps included:
+                        </p>
+                        <ol>
+                            <li>
+                                Making a tunnel to connect the score box and
+                                tank
+                            </li>
+                            <li>Planning the RFID sensor mount</li>
+                            <li>
+                                Integrating a score display outside of the
+                                Arduino IDE Serial Monitor Output
+                            </li>
+                            <li>
+                                Determine how the score box would open and close
+                            </li>
+                        </ol>
                     </div>
 
                     <div class="phase-content" id="phase-3">
-                        <h3>Marine Life Conservation</h3>
+                        <h3>
+                            Phase 3: It's Beginning to Look a Lot like Fab Time
+                        </h3>
                         <p>
-                            Protecting endangered marine species through habitat
-                            restoration, breeding programs, and policy advocacy.
-                            Our work spans from microscopic plankton to large
-                            marine mammals, ensuring biodiversity preservation
-                            across all ocean levels.
+                            For this phase, we needed to finalize designs for a
+                            clear path to fabrication and integration.
                         </p>
+                        <br />
 
-                        <div class="phase-stats">
-                            <div class="stat-item">
-                                <span class="number">127</span>
-                                <span class="label">Species Protected</span>
+                        <h4>Mechanical</h4>
+                        <p>
+                            The final iteration of the fish tank began to take
+                            shape in CAD. The size of the tank increased
+                            substantially from the previous phase and while the
+                            floor-moving mechanism was removed, three DC motors
+                            powering different obstacle mechanisms (scotch yoke
+                            and two spinners) were placed instead.
+                        </p>
+                        <br />
+                        <p>
+                            In order to allow access to the bottom layer of
+                            electronics, the structure was planned out such that
+                            the main platform could be removed along with two
+                            structs and half of the railings. Using six struts
+                            not only meant that four struts could be permanently
+                            in place, but also that the scoreboxes could be
+                            permanent attachments directly across from each
+                            other. The dome shape was partially for aesthetics,
+                            and partially to improve game balance; the added
+                            difficulty of fishing through a roof was expected to
+                            alleviate the fact that the fish were highly
+                            magnetic.
+                        </p>
+                        <br />
+                        <div class="horizontal-display" style="height: 350px">
+                            <div class="display">
+                                <img
+                                    style="height: 250px"
+                                    src="media/img/phase3/phase3_tank_main.png"
+                                />
+                                <p>
+                                    (Top) Isometric view of the tank CAD at this
+                                    point.
+                                </p>
+                                <p>
+                                    (Right) Diagram detailing how struts and
+                                    platform might be removed.
+                                </p>
                             </div>
-                            <div class="stat-item">
-                                <span class="number">45</span>
-                                <span class="label">Breeding Programs</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="number">8</span>
-                                <span class="label">Sanctuaries Created</span>
-                            </div>
+                            <img
+                                style="height: 350px"
+                                src="media/img/phase3/phase3_struts.jpg"
+                            />
                         </div>
+                        <br />
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase3/phase3_tank_top.png"
+                                />
+                                <img
+                                    src="media/img/phase3/phase3_tank_toptrans.png"
+                                />
+                            </div>
+                            <p>
+                                Top-down view. Note the two layers made to
+                                accommodate the obstacle motors.
+                            </p>
+                        </div>
+                        <p>
+                            Planning for the score display started during this
+                            phase. The initial design located the score display
+                            on the back of the scoring boxes; however, this
+                            would prevent the opponent from seeing the scores.
+                            We chose to move the score display away from the
+                            score box and planned to mount them to the tank
+                            struts instead.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <img
+                                style="height: 250px"
+                                src="media/img/phase3/phase3_sketch_scoredisplay.jpg"
+                            />
+                            <p>
+                                Quick sketches of where the LED display might be
+                                mounted.
+                            </p>
+                        </div>
+                        <p>
+                            The score box was also initially intended to close
+                            in response to the placement of a fish using a
+                            distance sensor. However, implementing the distance
+                            sensor in such a cramped space with moving parts in
+                            a manner that wouldn't accidentally trigger in
+                            response to the box but would still detect fish
+                            dropped in. Ultimately, we chose to instead
+                            randomize the opening and closing mechanism of the
+                            scorebox, much like other popular magnetized
+                            tabletop fishing games, which would simplify the
+                            sensor layout.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase3/phase3_scorebox_oldfront.png"
+                                />
+                                <img
+                                    src="media/img/phase3/phase3_scorebox_oldback.png"
+                                />
+                            </div>
+                            <p>
+                                Initial scorebox design with distance sensor and
+                                score display.
+                            </p>
+                        </div>
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase3/phase3_scorebox_front.png"
+                                />
+                                <img
+                                    src="media/img/phase3/phase3_scorebox_back.png"
+                                />
+                            </div>
+                            <p>
+                                Front and back views of the updated CAD design.
+                            </p>
+                        </div>
+                        <p>
+                            The fishbot iteration hadn't ended yet, either! At
+                            this point, the team determined that the best course
+                            of action would be to design an internal PLA shell
+                            with an external TPU casing, rather than continue
+                            forward with the full TPU shell. A shift from 3V
+                            coin cell batteries to smaller 1.5V button cell
+                            batteries to save space and weight was made after
+                            determining that there was no noticeable speed
+                            shift, but this meant there needed to be a full
+                            overhaul of the CAD. For this sprint, no new shells
+                            were created, but rigorous testing was done to
+                            determine the next steps.
+                        </p>
+                        <br />
 
-                        <div class="phase-details">
-                            <div class="detail-card">
-                                <h4>Sea Turtle Recovery</h4>
-                                <p>
-                                    Comprehensive protection programs for
-                                    endangered sea turtle species including
-                                    nesting site protection and migration
-                                    tracking.
-                                </p>
+                        <h4>Electrical and Software</h4>
+                        <p>
+                            The focus for electrical and software was on
+                            continuing to work with RFID functionality, now
+                            integrating it with a seven-segment LED display to
+                            show points. Each time an RFID token passed in front
+                            of the sensor, the LED display would change its
+                            display to increment a number.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase3/phase3_electrical_diag.png"
+                                />
+                                <video controls>
+                                    <source
+                                        src="media/video/phase3/phase3_ssd.mp4"
+                                    />
+                                </video>
                             </div>
-                            <div class="detail-card">
-                                <h4>Whale Migration</h4>
-                                <p>
-                                    Studying and protecting critical migration
-                                    corridors for humpback, blue, and gray
-                                    whales across ocean basins.
-                                </p>
-                            </div>
-                            <div class="detail-card">
-                                <h4>Shark Conservation</h4>
-                                <p>
-                                    Protecting apex predators through fishing
-                                    regulations, sanctuary establishment, and
-                                    public education campaigns.
-                                </p>
-                            </div>
+
+                            <p>
+                                Electrical diagram for the shift register
+                                interfacing an Arduino and a seven-segment
+                                display.
+                            </p>
                         </div>
+                        <div class="display">
+                            <img src="media/img/phase3/phase3_code1.png" />
+                            <p>Updated directory structure for phase 3.</p>
+                        </div>
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img src="media/img/phase3/phase3_code2.png" />
+                                <img src="media/img/phase3/phase3_code3.png" />
+                            </div>
+                            <p>this sure is code</p>
+                        </div>
+                        <br />
+
+                        <h4>Final Steps</h4>
+                        <p>
+                            We now have the overall structure for how the game
+                            is going to be integrated between subteams. From
+                            here, our main focus is shifting to fabrication and
+                            iterative development to build, test, and refine
+                            each of our components before the final
+                            demonstration day!
+                        </p>
                     </div>
 
                     <div class="phase-content" id="phase-4">
-                        <h3>Climate Impact Research</h3>
+                        <h3>Final Mile</h3>
                         <p>
-                            Investigating how climate change affects ocean
-                            ecosystems, from acidification and warming to sea
-                            level rise. Our research provides critical data for
-                            climate models and informs global policy decisions
-                            on ocean conservation.
+                            Like many engineering projects with a deadline, we
+                            got the most work done during the final three weeks
+                            of our project! Here's the breakdown on how we
+                            flat-out sprinted through the rest of this game.
                         </p>
+                        <br />
 
-                        <div class="phase-stats">
-                            <div class="stat-item">
-                                <span class="number">156</span>
-                                <span class="label">Monitoring Sites</span>
+                        <h4>Mechanical</h4>
+                        <p>
+                            The tank was mostly done at this point; the scotch
+                            yoke, base, motors, and associated supports were all
+                            placed and dimensioned in CAD. The main components
+                            added during the final segment were the dome cap, a
+                            third layer of railings, and the 3D-printed obstacle
+                            mounts for the motors and scotch yoke.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <img src="media/img/phase4/phase4_finaltank.png" />
+                            <p>Final CAD Of the tank.</p>
+                        </div>
+                        <p>
+                            However, it still wasn't finished enough to be cut
+                            and assembled immediately. The bottom layer of the
+                            railing design changed after testing determined that
+                            the fishbots would get stuck on sharp corners; a
+                            third layer was added to increase support and
+                            adhesive contact to the struts, and then altered
+                            along with the second layer in response to the
+                            scorebox location and design.
+                        </p>
+                        <br />
+                        <p>
+                            The 3D prints required some level of iteration as
+                            well. They were designed with pressfitting in mind,
+                            as they would need to be removed to slide the main
+                            platform off, and as such they required testing
+                            until the tolerances were acceptable. Likewise, the
+                            struts were originally meant to be made of clear
+                            acrylic for aesthetic purposes, and so was made to
+                            be pressfit. Difficulties with laser printing, tight
+                            tolerancing, and lack of stock meant that we were
+                            forced to use plywood as a replacement in the end.
+                        </p>
+                        <br />
+                        <p>
+                            For the scorebox, a large concern was our inability
+                            to control the orientation that the fishbots fell.
+                            An initial concept involved preventing them from
+                            flipping by designing the platform in a specific
+                            manner, such as through a ramp or a vertical tunnel.
+                        </p>
+                        <br />
+
+                        <div class="display">
+                            <img src="media/img/phase4/phase4_chomp_v3.png" />
+                            <p>
+                                Initial scorebox and tunnel design (Chomp v3).
+                            </p>
+                        </div>
+                        <p>
+                            Unfortunately, this method did not succeed, and we
+                            attempted to instead design the fishbots to
+                            consistently land upright. With this in mind, the
+                            platform simplified drastically and became much more
+                            focused on funneling the fishbots out into the
+                            tunnel.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <img src="media/img/phase4/phase4_chomp_v4.png" />
+                            <p>
+                                Partially finished assembly of an updated
+                                scorebox (Chomp v4).
+                            </p>
+                        </div>
+                        <p>
+                            This design, however, was also problematic; the
+                            assembly was never completed in favor of being able
+                            to test the railing and platform faster, and it was
+                            unexpected when the fishbots were caught on the
+                            bottom edges of spur gears and the fish jaws.
+                        </p>
+                        <br />
+                        <p>
+                            Finally, due to time constraints, we resorted to
+                            removing the "eating" mechanism.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <div class="horizontal-display">
+                                <img
+                                    src="media/img/phase4/phase4_chomp_v5.png"
+                                />
+                                <img
+                                    src="media/img/phase4/phase4_scorebox.JPG"
+                                />
                             </div>
-                            <div class="stat-item">
-                                <span class="number">7.2°C</span>
-                                <span class="label">Max Temp Rise</span>
+                            <p>
+                                A completed assembly of the final scorebox
+                                (Chomp v5) in CAD and reality.
+                            </p>
+                        </div>
+                        <p>
+                            Throughout all of this design and redesign, we were
+                            also fabricating parts. The main platform was cut
+                            with the Shopbot CNC Router with little issue. We
+                            had significant issues with cutting with the laser
+                            cutters, where there were errors with speed levels
+                            and poor tolerancing due to settings and overuse of
+                            the shop spaces. Pieces that didn't cut all the way
+                            through were difficult to retrieve and happened
+                            often enough for it to be a time issue.
+                        </p>
+                        <div class="display">
+                            <img
+                                src="media/img/phase4/phase4_shopbot.jpg"
+                                style="max-height: 20em"
+                            />
+                            <p>The main platform after being Shopbotted.</p>
+                        </div>
+                        <p>
+                            This last phase included two fishbot shell versions,
+                            each of which had multiple subiterations. Shell 7
+                            was a PLA-core bot with TPU legs designed to hold
+                            two 1.5V button cell batteries.
+                        </p>
+                        <br />
+                        <div class="horizontal-display">
+                            <div class="display">
+                                <img
+                                    src="media/img/phase4/phase4_sketch_fishbot.jpg"
+                                    style="height: 15em"
+                                />
+                                <p>
+                                    Sketches for the PLA shell and dimensions.
+                                </p>
                             </div>
-                            <div class="stat-item">
-                                <span class="number">-0.4</span>
-                                <span class="label">pH Change</span>
+                            <div class="display">
+                                <img
+                                    src="media/img/phase4/phase4_shell7.png"
+                                    style="height: 15em"
+                                />
+                                <p>
+                                    The assembled PLA shell #7 and TPU legs,
+                                    along with the motor and switch.
+                                </p>
                             </div>
                         </div>
-
-                        <div class="phase-details">
-                            <div class="detail-card">
-                                <h4>Ocean Acidification</h4>
-                                <p>
-                                    Monitoring pH changes and their effects on
-                                    calcifying organisms like corals, mollusks,
-                                    and marine plankton.
-                                </p>
-                            </div>
-                            <div class="detail-card">
-                                <h4>Thermal Stress</h4>
-                                <p>
-                                    Studying how rising temperatures affect
-                                    marine metabolism, reproduction, and species
-                                    distribution patterns.
-                                </p>
-                            </div>
-                            <div class="detail-card">
-                                <h4>Sea Level Impact</h4>
-                                <p>
-                                    Assessing coastal ecosystem changes and
-                                    adaptation strategies for rising sea levels
-                                    and increased storm intensity.
-                                </p>
-                            </div>
+                        <p>
+                            However, this shell resulted in a fishbot that was
+                            too tall. While it was high enough to be read by the
+                            RFID sensor, it would get stuck on the ¼" plywood
+                            railings. The next iteration involved lowering the
+                            face of the fishbot and adding a pointed tip to turn
+                            it away from walls instead of running directly into
+                            them.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <img
+                                src="media/img/phase4/phase4_shell7_pla.png"
+                                style="height: 15em"
+                            />
+                            <p>PLA shell #7b</p>
+                        </div>
+                        <p>
+                            The other benefit of shell #7b is that it has a
+                            lower center of mass. We had hoped this would
+                            encourage it to land feet-first more often. It did
+                            not. In order to solve the problem of orientation
+                            when landing, a different idea was devised: making
+                            the fishbots double-sided.
+                        </p>
+                        <br />
+                        <div class="display">
+                            <img
+                                src="media/img/phase4/phase4_shell8.png"
+                                style="height: 15em"
+                            />
+                            <img
+                                src="media/img/phase4/phase4_fishbot_side.JPG"
+                                style="height: 15em"
+                            />
+                            <p>(top) Fish 8 CAD. (bottom) Fish 8 assembled.</p>
+                        </div>
+                        <p>
+                            The TPU legs of Fishbot 8 clip on to the center and
+                            have legs on both sides, allowing the fish to move
+                            regardless of which side it lands on.
+                        </p>
+                        <br />
+                        <h4>Electrical and Software</h4>
+                        <ul>
+                            <li>
+                                circuitry finalization
+                                <ul>
+                                    <li>
+                                        all prototype circuits were converted
+                                        into soldered perfboard ones
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                battery power
+                                <ul>
+                                    <li>
+                                        each arduino was tested to ensure it was
+                                        able to be powered from a 9V battery
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                7 segment displays
+                                <ul>
+                                    <li>
+                                        a second digit was added to each
+                                        scorebox for a total of two digits per
+                                        scorebox
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                RFID testing
+                                <ul>
+                                    <li>
+                                        final tests were performed to double
+                                        check the range of the RFID sensor - we
+                                        found it could reliably detect chips
+                                        from 2-3cm away
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br />
+                        <div class="display">
+                            <img
+                                src="media/img/phase4/phase4_wiring.JPG"
+                                style="height: 30em"
+                            />
+                            <p>A final wired scorebox circuit</p>
                         </div>
                     </div>
                 </div>
@@ -403,103 +1015,418 @@
                 </button>
             </div>
             <div class="subteam-category active" id="mechanical">
-                mechanical
+                <h3>Mechanical Subteam</h3>
+                <p>
+                    Our game is built around three core mechanical elements, the
+                    fishbots, the tank, and the score boxes.
+                </p>
+                <h2>Fishbots</h2>
+                <br />
+                <div class="display">
+                    <img src="media/img/overview/overview_fishbot_main.png" />
+                </div>
+
+                <p>
+                    Without the fishbots, the game doesn't exist! Can't have
+                    Fishbot Frenzy without the fishbots. The bot shells are
+                    composed of an internal PLA (polylactide) shell with
+                    pressfit TPU (thermoplastic polyurethane) leg segments and
+                    external PLA toppers. PLA was printed with Prusa MINI
+                    printers, while TPU was printed on a Bambu X1 Carbon
+                </p>
+                <ul>
+                    <li>
+                        <b>Internal PLA</b>: Stiff PLA doesn't dampen vibrations
+                        as much as TPU, and stronger vibrations correspond with
+                        faster fishbots. The internal PLA casing is designed for
+                        the battery and motor to fit in precise locations; this
+                        decreases difficulty of mounting components and balances
+                        the fishbot properly, as unbalanced fishbots will spin
+                        rather than move forward.
+                    </li>
+                    <li>
+                        <b>External TPU</b>: The TPU legs are composed of a
+                        right and left set of legs, with a slot that pressfits
+                        into a central ridge running lengthwise along the
+                        internal PLA. These TPU leg sets are double-sided: if
+                        the fishbots fall, they will be able to move regardless
+                        of which side they land on. The tilt of the legs is what
+                        causes the fishbots to move forward rather than turning
+                        when vibrated.
+                    </li>
+                    <li>
+                        <b>External PLA</b>: Fish-shaped PLA toppers have pegs
+                        that pressfit into the TPU segments. They apply a
+                        horizontal tension that holds the TPU closer to the PLA.
+                        The fish toppers also act as a platform for adhesive
+                        RFID tags, a deflective shape that causes the fish to
+                        turn when they encounter an obstacle, and an aesthetic
+                        cover.
+                    </li>
+                </ul>
+                <div class="display">
+                    <div class="horizontal-display" style="height: 510px">
+                        <div class="display">
+                            <img
+                                style="height: 250px"
+                                src="media/img/overview/overview_fishbot_side.JPG"
+                            />
+                            <img
+                                style="height: 250px"
+                                src="media/img/overview/overview_fishbot_iso.JPG"
+                            />
+                        </div>
+                        <img
+                            style="height: 500px"
+                            src="media/img/overview/overview_fishbot_open.JPG"
+                        />
+                    </div>
+                    <img
+                        src="media/img/overview/fishbot_army.png"
+                        style="max-height: 40em"
+                    />
+                </div>
+                <h2>Tank</h2>
+                <br />
+                <div class="display">
+                    <img src="media/img/overview/tank.png" />
+                </div>
+
+                <ul>
+                    <li>
+                        <b>Main Platform</b>: The primary play area for the game
+                        is referred to as the "tank". The tank is a 24"-diameter
+                        circle and contains all active gameplay elements. The
+                        holes, scotch yoke slot, and entire circle were cut from
+                        a single 0.3" plywood sheet using a Shopbot CNC router.
+                    </li>
+                    <br />
+
+                    <div class="display">
+                        <img src="media/img/overview/main_platform.png" />
+                    </div>
+
+                    <li>
+                        <b>Obstacles</b>: Three moving obstacles are integrated
+                        into the tank, built to interrupt the fishbots. The
+                        central mechanism is a wooden, lasercut scotch yoke cut
+                        from a combination of ⅛" eucaboard and ¼" plywood and
+                        run with ¼" and 5/16" wooden dowels; the other two are
+                        simply spinning obstacles directly mounted to motor
+                        shafts. 3D-printed PLA mounts connect the mechanisms to
+                        lasercut obstacles such as coral. Slots in these mounts
+                        are designed such that different shapes can be placed
+                        in. The motors are mounted to a ⅛" lasercut plywood base
+                        beneath the tank with 3D-printed supports.
+                    </li>
+                    <br />
+
+                    <div class="horizontal-display">
+                        <img
+                            src="media/img/overview/obstacles_scotchyoke.JPG"
+                        />
+                        <img
+                            src="media/img/overview/obstacles_scotchyoke2.JPG"
+                        />
+                    </div>
+                    <br />
+                    <div class="horizontal-display">
+                        <img src="media/img/overview/obstacles_motors.png" />
+                        <img
+                            src="media/img/overview/obstacles_mechanisms.png"
+                        />
+                    </div>
+                    <br />
+                    <div class="horizontal-display">
+                        <img src="media/img/overview/obstacles_mounts.png" />
+                        <img src="media/img/overview/obstacles_slots.png" />
+                    </div>
+                    <br />
+                    <div class="display">
+                        <img
+                            src="media/img/overview/obstacles.JPG"
+                            style="max-height: 30em"
+                        />
+                    </div>
+                    <li>
+                        <b>Score Display</b>: 3D-printed PLA mounts are fitted
+                        precisely to the four seven-segment LED displays used to
+                        show points. A base extending from the bottoms of the
+                        mounts contains a countersunk hole for wood screws.
+                    </li>
+                    <br />
+                    <div class="display">
+                        <img
+                            src="media/img/overview/overview_scoredisplay_main.JPG"
+                            style="max-height: 30em"
+                        />
+                    </div>
+                    <br />
+                    <div class="horizontal-display">
+                        <img
+                            src="media/img/overview/overview_scoredisplay_front.JPG"
+                        />
+                        <img
+                            src="media/img/overview/overview_scoredisplay_back.JPG"
+                        />
+                    </div>
+                    <br />
+                    <div class="horizontal-display">
+                        <img
+                            src="media/img/overview/scoredisplay_cad_front.png"
+                        />
+                        <img
+                            src="media/img/overview/scoredisplay_cad_back.png"
+                        />
+                    </div>
+                    <li>
+                        <b>Structure</b>: Four ¼" plywood struts are glued to
+                        the base and to the railings, but not to the main
+                        platform. Likewise, the railings—modeled after
+                        topographical maps and cut from ¼" plywood—aren't glued
+                        to the main platform, but rather in two arcs. One arc is
+                        glued to four struts and the other is glued to the last
+                        two struts. This leaves the main platform free to slide
+                        out of place and allows us access to the electronics
+                        beneath. The base provides integral structure for the
+                        mechanisms to be mounted and for the struts to hold the
+                        railings at a set relative location.
+                    </li>
+                    <br />
+                    <div class="display">
+                        <img
+                            src="media/img/overview/structure.png"
+                            style="max-height: 30em"
+                        />
+                    </div>
+                    <li>
+                        <b>Score Box</b>: The "fins" were built to match the
+                        height of the tank, such that fish would be able to
+                        re-enter the tank without issue. The railing is shaped
+                        specifically such that the fishbots will "swim" out of
+                        the box on their own, without human intervention. From
+                        the platform, the fishbots enter a tunnel with an RFID
+                        sensor.
+                    </li>
+                    <br />
+                    <div class="horizontal-display">
+                        <img src="media/img/overview/scorebox.png" />
+                        <img src="media/img/overview/scorebox_railing.png" />
+                    </div>
+                </ul>
             </div>
-            <div class="subteam-category" id="electrical">electrical</div>
-            <div class="subteam-category" id="software">software</div>
+            <div class="subteam-category" id="electrical">
+                <h3>Electrical Subteam</h3>
+                <p>
+                    Various parts of the game are supported with electrical
+                    circuits.
+                </p>
+                <ul>
+                    <li>
+                        <b>Fishbots</b>: Each of the fishbots is powered by a
+                        coin cell battery and a small vibration motor. The
+                        fishbots can be easily disconnected and reconnected by
+                        removing the fish-shaped topper. While there were plans
+                        to implement a switch, the wiring was so small that
+                        achieving the required level of precision took too much
+                        time.
+                    </li>
+                    <li>
+                        <b>Arena Obstacles</b>: Each arena obstacle is powered
+                        with a DC motor. These motors are run through an
+                        Adafruit MotorShield stacked on an Arduino R3 Uno.
+                    </li>
+                    <li>
+                        <b>Scoreboard & RFID</b>: Scoring is implemented via an
+                        RFID sensor that detects chips located on the fishbots.
+                        Each scorebox contains an ESP32 for logic and control.
+                        Scores are displayed on two 7 segment displays
+                        controlled via shift registers. One scorebox used common
+                        anode displays, while the other used smaller common
+                        cathode displays.
+                    </li>
+                </ul>
+                <div class="display">
+                    <img src="media/img/overview/7_segment.drawio.png" />
+                    <p>
+                        A circuit diagram of a seven segment display used in the
+                        scorebox.
+                    </p>
+                </div>
+            </div>
+            <div class="subteam-category" id="software">
+                <h3>Software Subteam</h3>
+                <!-- <div class="software-section"> -->
+                <p>
+                    As Arduino compatible boards and microcontrollers were
+                    chosen for our project, our code is in Arduino C.
+                </p>
+                <ul>
+                    <li>motor</li>
+                    <ul>
+                        <li>
+                            This sketch contains the code for the playfield
+                            obstacles. It uses the Adafruit motor shield library
+                            to spin our 3 DC motors continuously
+                        </li>
+                    </ul>
+                    <li>scorebox</li>
+                    <ul>
+                        <li>
+                            This sketch contains testing code for RFID detection
+                            and incrementing score, displayed using a single
+                            digit 7 segment display.
+                        </li>
+                    </ul>
+                    <li>scorebox_multi and scorebox_multi_cathode</li>
+                    <ul>
+                        <li>
+                            These sketches contain the final code for RFID
+                            detection and incrementing score, displayed using
+                            two 7 segment displays. The cathode version required
+                            the bits of the shift register to be flipped as the
+                            7 segment displays were common cathode rather than
+                            common anode.
+                        </li>
+                    </ul>
+                </ul>
+                <p>
+                    Find the code on
+                    <a href="https://github.com/metalcupcake5/fishbot-frenzy">
+                        <i class="fa-brands fa-github"></i>Github
+                    </a>
+                </p>
+
+                <!-- <div class="github"></div> -->
+                <!-- </div> -->
+            </div>
             <!-- <div class="subteam-section"></div> -->
         </section>
 
-        <section id="equipment" class="fade-in">
-            <h2 class="section-title">Research Equipment</h2>
+        <section id="system" class="fade-in">
+            <h2 class="section-title">About the System</h2>
+            <div class="backing-box">
+                <p>
+                    Fishbot Frenzy combines software, electrical, and mechanical
+                    components to create an interactive experience!
+                </p>
+                <br />
+                <p><b>Data and Energy Flow Diagram:</b></p>
+                <br />
+                <div class="display">
+                    <img src="media/img/energy_flow_diagram.png" />
+                </div>
+                <br />
+                <p><b>System Diagram:</b></p>
+                <br />
+                <div class="display">
+                    <img src="media/img/System_Diagram.png" />
+                </div>
+            </div>
         </section>
 
-        <section id="contact" class="fade-in">
-            <h2 class="section-title">Dive Into Collaboration</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Research Station</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-text">
-                                <div class="contact-label">Email</div>
-                                <div class="contact-value">
-                                    dr.marina.wave@oceanresearch.org
-                                </div>
-                            </div>
-                        </div>
+        <section id="bom" class="fade-in">
+            <h2 class="section-title">Bill of Materials</h2>
+            <div class="backing-box">
+                <div class="display">
+                    <img src="media/img/bom.png" />
+                </div>
+                <p>
+                    Our team was given a total of $250 as the budget for this
+                    project. Above is the breakdown of how our budget was spent.
+                    Our total estimated cost of materials is $308.77. We spent
+                    $207.63 of our budget to purchase materials and the other
+                    materials were obtained for free.
+                </p>
+            </div>
+        </section>
 
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-text">
-                                <div class="contact-label">Phone</div>
-                                <div class="contact-value">
-                                    +1 (555) OCEAN-42
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">🏢</div>
-                            <div class="contact-text">
-                                <div class="contact-label">Address</div>
-                                <div class="contact-value">
-                                    Pacific Marine Research Institute<br />1247
-                                    Coral Bay Drive, Monterey, CA 93940
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <div class="contact-text">
-                                <div class="contact-label">Research Hours</div>
-                                <div class="contact-value">
-                                    Mon-Fri: 8:00 AM - 6:00 PM PST<br />Dive
-                                    Operations: 6:00 AM - 4:00 PM
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section id="team" class="fade-in">
+            <h2 class="section-title">Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img
+                        class="team-card-icon"
+                        src="media/img/team/fnoble.jpg"
+                    />
+                    <h4>Franklin</h4>
+                    <p>
+                        Hello! I’m currently a sophomore studying Electrical and
+                        Computer Engineering at Olin. My goals for this project
+                        were to branch out and try new things, like prototyping
+                        and mechanical design. I mainly worked on testing and
+                        integrating the fishbots, but I also helped out with the
+                        electrical components.
+                    </p>
                 </div>
 
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input
-                            type="text"
-                            placeholder="Marine Researcher Name"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <input
-                            type="email"
-                            placeholder="Research Institution Email"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <input
-                            type="text"
-                            placeholder="Institution/Organization"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <textarea
-                            rows="6"
-                            placeholder="Research Collaboration or Ocean Conservation Inquiry"
-                            required
-                        ></textarea>
-                    </div>
-                    <button type="submit" class="dive-btn">Send Message</button>
-                </form>
+                <div class="team-card">
+                    <img
+                        class="team-card-icon"
+                        src="media/img/team/elarouche.jpg"
+                    />
+                    <h4>Emma</h4>
+                    <p>
+                        I am a current sophomore studying Mechanical Engineering
+                        at Olin. My goals for this project were to improve my
+                        mechanical design skills and understanding of project
+                        specifications, with a focus on CAD, machining,
+                        iterative prototyping, and creative mechanical design.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <img
+                        class="team-card-icon"
+                        src="media/img/team/jshen.jpg"
+                    />
+                    <h4>Jason</h4>
+                    <p>
+                        Like most people, I am a multifaceted human being! Among
+                        other things, I am a mechanical engineer studying at
+                        Olin. My focus in this project was on integration,
+                        design for assembly, and design for manufacturing; I
+                        worked on all of the CAD, fabrication, and final
+                        assembly for the project, and was the main designer of
+                        the fishbot shells. My focus on personal projects is on
+                        artistic performance, be it painting, playing an
+                        instrument, or firespinning.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <img
+                        class="team-card-icon"
+                        src="media/img/team/sbechu.png"
+                    />
+                    <h4>Sarita</h4>
+                    <p>
+                        Hi! I'm currently a sophomore studying mechanical
+                        engineering at Olin! My goals for this project were to
+                        gain more experience in design-to-prototype work.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <img
+                        class="team-card-icon"
+                        src="media/img/team/eshih.png"
+                    />
+                    <h4>Evi</h4>
+                    <p>
+                        Hi! I am currently a sophomore studying Electrical and
+                        Computer Engineering. My goals in this project were to
+                        expand on my electrical skills, going further than
+                        prototyping boards with soldering and protoboard, and to
+                        have a final product people would genuinely enjoy
+                        playing with.
+                    </p>
+                </div>
             </div>
         </section>
 
         <footer>
-            <div class="footer-content">
+            <!-- <div class="footer-content">
                 <div class="footer-main">
                     <div class="logo-footer">
                         <svg
@@ -644,15 +1571,18 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="footer-bottom">
                 <p>
-                    🌊 &copy; 2048 Dr. Marina Wave - Marine Biology Portfolio.
-                    Protecting our oceans, one dive at a time. 🌊 Provided by
-                    <a href="https://www.tooplate.com" rel="nofollow noopener"
-                        >Tooplate</a
+                    Fishbot Frenzy | View the source on
+                    <a
+                        href="https://github.com/olincollege/pie-2025-03/tree/main/docs/fishbot-frenzy"
+                        rel="noopener noreferrer"
                     >
+                        <i class="fa-brands fa-github"></i>
+                        Github
+                    </a>
                 </p>
             </div>
         </footer>

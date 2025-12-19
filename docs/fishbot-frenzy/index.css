@@ -185,7 +185,7 @@ nav.scrolled {
 }
 
 .logo-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--ocean-surface), var(--sea-foam), var(--coral-orange));
@@ -295,7 +295,7 @@ nav ul a.active::after {
 }
 
 .ocean-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 4.8rem;
     font-weight: 800;
     position: relative;
@@ -412,16 +412,24 @@ nav ul a.active::after {
 }
 
 /* Sections */
-section {
+section:not(#subteams) {
     padding: 120px 50px;
-    max-width: 1200px;
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+section#subteams {
+    padding: 120px 50px;
+    max-width: 70%;
     margin: 0 auto;
     position: relative;
     z-index: 2;
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 60px;
@@ -506,7 +514,7 @@ section {
 }
 
 .about-hero h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 30px;
@@ -590,7 +598,7 @@ section {
 }
 
 .about-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 15px;
@@ -644,7 +652,7 @@ section {
 }
 
 .achievement-number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 3rem;
     font-weight: 800;
     color: var(--ocean-surface);
@@ -664,7 +672,7 @@ section {
 /* Research Section - Sidebar Layout */
 .phase-section {
     padding: 120px 0;
-    background: linear-gradient(135deg, rgba(17, 94, 89, 0.05), rgba(6, 182, 212, 0.08));
+    /* background: linear-gradient(135deg, rgba(17, 94, 89, 0.05), rgba(6, 182, 212, 0.08)); */
 }
 
 .phase-container {
@@ -756,7 +764,16 @@ section {
 }
 
 .phase-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--ocean-surface);
+    letter-spacing: 1px;
+}
+
+.subteam-category h3 {
+    font-family: 'Inter', serif;
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 30px;
@@ -765,6 +782,17 @@ section {
 }
 
 .phase-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(248, 250, 252, 0.9);
+    /* margin-bottom: 30px; */
+}
+
+.phase-content ol {
+    margin-left: 1.5em;
+}
+
+.subteam-category p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: rgba(248, 250, 252, 0.9);
@@ -821,7 +849,7 @@ section {
 }
 
 .stat-item .number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 2rem;
     font-weight: 800;
     color: var(--coral-orange);
@@ -846,6 +874,11 @@ section {
     border: 1px solid rgba(6, 182, 212, 0.2);
     position: relative;
     overflow: hidden;
+}
+
+.software-section {
+    display: flex;
+    flex-direction: row;
 }
 
 .subteam-section::before {
@@ -915,21 +948,25 @@ section {
     filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6));
 }
 
-.subteam-category h3 {
-    font-family: 'Playfair Display', serif;
+.subteam-category ul {
+    margin: 1em;
+}
+
+/* .subteam-category h3 {
+    font-family: 'Inter', serif;
     font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--ocean-surface);
     letter-spacing: 0.5px;
-}
+} */
 
-.subteam-category p {
+/* .subteam-category p {
     font-size: 1rem;
     line-height: 1.7;
     color: rgba(248, 250, 252, 0.8);
     margin-bottom: 25px;
-}
+} */
 
 .subteam-list {
     list-style: none;
@@ -1026,7 +1063,7 @@ section {
 }
 
 .category-stat .number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--coral-orange);
@@ -1086,7 +1123,7 @@ section {
 }
 
 .contact-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 30px;
@@ -1299,7 +1336,7 @@ footer::before {
 }
 
 .footer-main .logo-footer .logo-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 1.8rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--ocean-surface), var(--sea-foam));
@@ -1328,7 +1365,7 @@ footer::before {
 }
 
 .footer-stat .number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     font-size: 1.8rem;
     font-weight: 800;
     color: var(--coral-orange);
@@ -1348,7 +1385,7 @@ footer::before {
 }
 
 .footer-section h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     color: var(--ocean-surface);
     margin-bottom: 25px;
     font-size: 1.4rem;
@@ -1512,6 +1549,129 @@ footer::before {
 
 .footer-bottom a {
     color: white;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    gap: 10px;
+}
+
+.horizontal-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 250px;
+    gap: 1em;
+}
+
+.backing-box {
+    display: block;
+    background: rgba(6, 182, 212, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+li ul {
+    margin-left: 1.5em;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-auto-rows: 40px; */
+    gap: 50px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.team-card {
+    background: rgba(6, 182, 212, 0.12);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40em;
+}
+
+.team-card:nth-child(-1n + 3) {
+    grid-column: span 4;
+}
+
+.team-card:nth-last-child(2) {
+    grid-row-start: 2;
+    grid-column: 3 / span 4;
+}
+
+.team-card:nth-last-child(1) {
+    grid-row-start: 2;
+    grid-column: 7 / span 4;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.team-card:hover::before {
+    opacity: 1;
+    animation: shimmer 0.8s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(6, 182, 212, 0.3);
+    border-color: var(--sea-foam);
+    background: rgba(6, 182, 212, 0.18);
+}
+
+.team-card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.6));
+    max-height: 60%;
+    max-width: 60%;
+}
+
+.team-card h4 {
+    font-family: 'Inter', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--ocean-surface);
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+.team-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(248, 250, 252, 0.85);
+    font-weight: 400;
 }
 
 /* Animations */

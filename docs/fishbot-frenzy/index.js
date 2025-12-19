@@ -49,6 +49,10 @@ if (phaseTabs.length > 0 && phaseContents.length > 0) {
             if (targetContent) {
                 targetContent.classList.add("active");
             }
+            const target = document.querySelector("#progress");
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         });
     });
 }
@@ -70,12 +74,12 @@ subteamTabs.forEach((tab, index) => {
 });
 
 // Simple initialization
-// createBubbles();
-// createOceanParticles();
+createBubbles();
+createOceanParticles();
 
 // Simple regeneration
-// setInterval(createBubbles, 20000); // Every 20 seconds
-// setInterval(createOceanParticles, 30000); // Every 30 seconds
+setInterval(createBubbles, 40000);
+setInterval(createOceanParticles, 50000);
 
 // Mobile menu toggle - Fixed
 const mobileToggle = document.getElementById("mobile-toggle");
