@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MICO Ground Station</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <a href="index.html">MICO</a>
+    </div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="reflector.html">REFLECTOR</a>
+      <a href="tracking.html">TRACKING</a>
+      <a href="rf.html">RF</a>
+      <a href="about.html">TEAM</a>
+    
+      <div class="dropdown">
+        <a href="#" class="dropbtn">OTHER ▾</a>
+        <div class="dropdown-content">
+          <a href="gallery.html">Gallery</a>
+          <a href="budget.html">Budget</a>
+        </div>
+      </div>
+      </nav>
+</header>
+
+
+<section class="hero two-column-hero">
+  <div class="page-width hero-content">
+    <div class="hero-text">
+      <h1>MICO</h1>
+      <h2>GROUND STATION</h2>
+      <p>Autonomous Ground-Based Monitoring Infrastructure for Climate Observation (MICO). Designed to Track Earth-Observing Satellites on Multiple Orbits from One Platform in Real Time.</p>
+      <a class="button" href="gallery.html">VIEW GALLERY</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/gallery/im1.jpg" alt="Earth from MICO" />
+      <div class="hero-image">
+      <p class="hero-image-subtitle">Image of Earth Recieved by the MICO Groundstation from GOES-19</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+<div class="page-width mission-overview">
+    <div class="image-side">
+      <img src="images/snow.jpg" alt="Mission Overview Image" />
+    </div>
+    <div class="text-side">
+      <h2>MISSION OVERVIEW</h2>
+      <p>Ground stations remain a critical infrastructural component of modern satellite systems
+          providing critical backhaul for telecommunications, earth observation and defense systems. 
+          </p>
+          <br>
+          <p>Over the course of two months, we challenged ourselves to
+          implement a simplified ground station, focusing exclusively on the receive downlink
+          segment. We intend to initially receive from the GEO GOES-19 weather satellite. Such an endevor will require the following:</p>
+          <br>
+        <ul>
+        <li>A Custom L-Band Low-Noise Blockdownconverter</li>
+        <li>A One Meter Parabolic Dish Reflector</li>
+        <li>A Gimbal Drive System for Dynamic Pointing & Tracking</li>
+        <li>A Software Decoder to transform the Recieved Signal into Images</li>
+        <li>A Software Controls Stack to Point and Track Satellites of All Orbits from One Platform </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+<div class="page-width mission-overview">
+    <div class="text-side">
+      <h2>STATUS</h2>
+      <p>At the time of the final demonstration, the system successfully acquired and received data from the GOES-19 weather satellite. Future iterations may extend this design to better support low Earth orbit (LEO) satellites and additional frequency bands. </p>
+          
+    </div>
+  </div>
+  <div class="image-side">
+      <img src="images/goes.png" alt="Goes Image" />
+      <p class="hero-image-subtitle">Image of GOES-19</p>
+
+  </div>
+</section>
+<section class="section dark">
+  <div class="content-wide">
+    <h1>SYSTEM OVERVIEW</h1>
+    <div class="centered-image">
+      <img src="images/sysdiagram.png" alt="System Overview Diagram">
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="content-wide">
+    <h1>ENERGY / DATA FLOW</h1>
+    <div class="centered-image">
+      <img src="images/eflow.png" alt="Energy and Data Flow Diagram">
+    </div>
+  </div>
+</section>
+
+
+  <div class="footer-inner">
+    <span>© <span id="year"></span> MICO Ground Station</span>
+  </div>
+</footer>

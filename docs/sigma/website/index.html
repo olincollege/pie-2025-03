@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Sigma Machine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/Logo_edited.png" alt="" /></span>
+						<h1>Sigma Machine</h1>
+						<h2 style="color:white; margin-top:0.5em; font-size:2em;">Enigma M3</h2>
+						<p style="color:white;">A modernized take on the Enigma M3 Machine used in WWII to encrypt and decrypt messages.<br/>
+						built by: 
+						<a href="https://www.linkedin.com/in/anna-luiza-reis-braun-3aa9a9334/">Anna Braun</a>, 
+						<a href="https://www.linkedin.com/in/jowita-walkup/">Jo Walkup</a>, 
+						<a href="https://www.linkedin.com/in/kuhu-jayaswal/">Kuhu Jayaswal</a>, 
+						<a href="https://www.linkedin.com/in/leo-trepte-08b380357/">Leo Trepte</a>, 
+						<a href="https://www.linkedin.com/in/tchenzie-guichette-976319394/">Tchenzie Guichette</a></p>
+						<figure style="margin-top: 1em;">
+						    <img src="images/finger.jpg" alt="Keys Installed" style="width: 100%; max-width: 800px;" />
+						</figure>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Enigma M3</a></li>
+							<li><a href="#first">Process</a></li>
+							<li><a href="#second">Design Overview</a></li>
+							<li><a href="#third">Mechanical</a></li>
+							<li><a href="#fourth">Electrical</a></li>
+							<li><a href="#fifth">Software</a></li>
+							<li><a href="#sixth">Bill of Materials</a></li>
+							<li><a href="#seventh">About Us</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+						<section id="intro" class="main">
+						    <header class="major">
+						        <h2 style="text-align:center;">Enigma M3</h2>
+						    </header>
+						    
+						    <div class="spotlight equal">
+						        <div class="content">
+						            <p>An electro-mechanical project developed by a team of five Olin College students for Principles of Integrated Engineering (PIE) course of Fall 2025. In the demo below, the message "PIE" was typed using a specific configuration. When the encrypted message "WOD" was entered back using the same settings, the screen output our original message. This demonstrates a successful run of our Enigma replica.</p>
+						        </div>
+						    </div>
+						    
+						    <!-- Demo Video -->
+						    <div style="margin-top: 3em; text-align: center;">
+						        <h3>Demo Video</h3>
+						        <video controls style="width: 100%; max-width: 800px; border-radius: 8px;">
+						            <source src="images/demo.mp4" type="video/mp4">
+						        </video>
+						    </div>
+						</section>
+						
+						<!-- Process Section -->
+						<section id="first" class="main special">
+						    <header class="major">
+						        <h2>Process</h2>
+						    </header>
+						    
+						    <!-- Keyboard -->
+						    <div class="spotlight">
+						        <div class="content">
+						            <h3><strong>Keyboard</strong></h3>
+						            <p>The keyboard design borrows from the original Enigma Machine. It uses spring-loaded metal rods topped with labeled key-caps. When a letter is pressed, the key completes a circuit on the breadboard which gets sent to the Arduino for processing.</p>
+
+						            <p>The original idea was to use a small length of solder wick because it was conductive and flexible. However, since solder wick oxidizes so quickly, it might become unreliable, which led us to look for more reliable solutions. We decided to use copper wire and split bushings instead.</p>
+						            
+						            <p>The first iteration we had originally had the copper pieces sticking out from the brackets at an angle. It became clear that this wouldn't work as the springs were too stiff and required too much force to contact well. Instead of redesigning, which would have taken too much time and iteration at that stage of the process, we just glued the copper pieces on top of the brackets, as they were at a good height.</p>
+						            
+						            <p>A compromise we had to make was not using a lid. We had designed and laser-cut a lid, but with the amount of wires we had, and the non-constant key height, the lid would not fit. If we did this project again, we would have designed to be able to have a lid, which would restrain the keys from wobbling as much as they did.</p>
+						            
+						            <p>A tradeoff to making the keyboard as opposed to using a standard keyboard is time and redundancy. Since keys are made using springs and many small parts, each key is essentially a small mechanism, requiring hours of soldering. Since there are 26 letters in the alphabet, this creates long-repetitive tasks for the assembly of dozens of parts.</p>
+						        </div>
+						        <span class="image">
+						            <figure>
+						                <img src="images/key_prototype.JPG" alt="Key Prototype" />
+						                <figcaption>The first key prototype with solder wick.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/switch_components.JPG" alt="Switch Components" />
+						                <figcaption>All of the switch components soldered and ready for integration.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/keys_in.JPG" alt="Keys Installed" />
+						                <figcaption>The keys in the case!</figcaption>
+						            </figure>
+						        </span>
+						    </div>
+						    
+						    <!-- Rotors -->
+						    <div class="spotlight">
+						        <span class="image">
+						            <figure>
+						                <img src="images/n1.png" alt="Rotor 1" />
+						                <figcaption>Exploded drawing of a rotor.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/n2.png" alt="Rotor 2" />
+						                <figcaption>Transmission and receptor side drawings of a rotor.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/system.png" alt="Rotor 3" />
+						                <figcaption>Rotor assembly steps.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/ratchet on.png" alt="Rotor 4" />
+						                <figcaption>Ratchet system testing in the final case.</figcaption>
+						            </figure>
+									 <figure style="margin-top: 1em;">
+						                <img src="images/cadr.png" alt="Rotor 4" />
+						                <figcaption>CAD drawing of ratchet piece.</figcaption>
+						            </figure>
+						        </span>
+						        <div class="content">
+						            <h3><strong>Rotors</strong></h3>
+						            <p>The rotor assembly is the core electromechanical subsystem of the Enigma Machine, responsible for performing the encryption logic. As the signal travels through the three rotors to the reflector and back, each rotor remaps the input through its internal wiring, resulting in six successive letter substitutions. Electrically, the signal enters each rotor through recipient pins, is redirected by the internally scrambled wiring, and leaves through spring-pin contacts to the next rotor. After reaching the reflector, the signal returns through a different path, generating a second set of substitutions.</p>
+
+						            <p>The design was based on the original Enigma rotor architecture, but as development progressed, it evolved through multiple practical adaptations and original design decisions driven by fabrication methods, mechanical constraints, available components, and the project timeline.</p>
+						            
+						            <p>One of the first major adaptations was scaling the rotors. Early prototypes allowed only approximately 4 mm of space for internal wiring, which proved insufficient for reliable soldering, routing, and alignment. Increasing this space to approximately 2 cm enabled clean internal wiring, improved rotor alignment, and stable integration of spring-pin contacts within our manufacturing capabilities.</p>
+						            
+						            <p>Material selection for the recipient pins was also influenced by availability. Aluminum pins were initially considered because they were readily accessible in the shop, making them a practical early choice. However, aluminum forms an oxide layer that prevents reliable soldering without specialized fluorine-based flux. To avoid this limitation and improve electrical reliability, we transitioned to 8 AWG copper wire. The pins were fabricated by cutting the wire to length and flattening the ends with a belt sander to create smooth, consistent contact surfaces.</p>
+						            
+						            <p>The assembly process evolved alongside the design. An initial assembly sequence proved impractical due to alignment issues when installing the ratchet wheel. This led to the development of a revised method that prioritized mechanical alignment before final wiring. All 26 spring pins were first locked between the ratchet wheel and locking plate, after which wires were soldered, routed, and terminated with copper pellets and heat shrink. The wires were then scrambled according to the rotor key and enclosed within the copper housing, which was secured using three M4 screws.</p>
+						            
+						            <p>For rotor motion, we attempted to replicate the original seesaw-driven ratchet stepping mechanism. A thick driver actuated a seesaw assembly made from acrylic and 3D-printed components, converting linear motion into discrete angular rotation of the ratchet wheel. The geometry of the ratchet teeth and notched plate was redesigned to match the enlarged rotor size and pin spacing. During testing, however, we found that reliable electrical contact required greater spring-pin compression than the seesaw mechanism could provide. As a result, automatic stepping was not dependable in this iteration. To ensure consistent operation, rotor rotation was implemented manually using integrated thumb wheels, preserving functional behavior while improving reliability.</p>
+						        </div>
+						    </div>
+						    
+						    <!-- Reflector -->
+						    <div>
+						        <div class="content">
+						            <h3><strong>Reflector</strong></h3>
+						            <p>The reflector receives the signal from the rotors and sends it back through a different rotor pin. To design the reflector, we went through an iteration to align the spacing of the reflector pins with the rotor pins and ensure a press-fit that was strong enough that the pins would not slide back when compressed, but were still able to be inserted. One change we made to the wiring was shortening the wires for a cleaner look and lower risk of them getting caught/snagged. The solder connections between pins occasionally broke. From this, we learned to solder the pins so that the solder did not interfere with the press-fit while keeping a strong connection, and added shrink-wrap to prevent shorting.</p>
+						        </div>
+						        <figure style="text-align: center; margin-top: 2em;">
+						            <img src="images/ReflectorIterations.png" alt="Reflector Iterations" style="max-width: 100%; border-radius: 8px;" />
+						            <figcaption>Reflector iterations.</figcaption>
+						        </figure>
+						    </div>
+						    
+						    <!-- Compressor -->
+						    <div class="spotlight">
+						        <span class="image">
+						            <figure>
+						                <img src="images/reflector side.png" alt="Compressor 1" />
+						                <figcaption>Reflector and compressor (pink part) side view.</figcaption>
+						            </figure>
+						        </span>
+						        <div class="content">
+						            <h3><strong>Compressor</strong></h3>
+						            <p>The compressor is composed of three parts: The 3D printed housing, an aluminum nut, the threaded end of our axle, and an acrylic rectangle. The housing slides into the reflector, applying force on it and the rotors. The housing has a hole that was made to fit the nut inside. The nut was made from a ~1in block of aluminum from a free scrap bin. We decided to make the nut because m7 threaded nuts were not available in the shop and we wanted to practice machining. We cut off a ¼ inch thick rectangle with a bandsaw. The hole in the center was made with a drill-press, then threaded with an m7 tap to match the 7mm shaft. Instead of cutting it down to be hexagonal, we made a cavity in the 3d printed insert that matched the shape of the piece of aluminum we found. The end of the device's main shaft was threaded with an m7 die. About an inch and a half of the shaft was threaded so that when the nut is on the shaft, enough shaft sticks out to go through the hole in the casing that holds up and aligns the shaft.</p>
+						        </div>
+						    </div>
+						    
+						    <!-- Plugboard -->
+						    <div class="spotlight">
+						        <div class="content">
+						            <h3><strong>Plugboard</strong></h3>
+						            <p>We wanted our plugboard to be an accurate representation of the real Enigma Machine, but with a few modernized twists. We decided that all swapping and encryption must be done physically through hardware, while the encrypted message would be displayed on a screen. We made this decision for a few reasons:</p>
+										
+										<ol>
+										  <li>The original Enigma Machine required two people to operate the machine: one person to type the encrypted letters and another to write the output down as the corresponding lightbulbs illuminated. We decided to replace the lightbulbs with a display, modernizing the machine and enabling one-person operation.</li>
+										
+										  <li>Using tiny lightbulbs for each swapped letter would have required a larger portion of our budget. Additional CAD would have been necessary to house the lightbulbs, and we would have needed to focus more heavily on wiring to display the swapped letters in this way.</li>
+										
+										  <li>The original machine process was: Battery → Keypress → Plugboard → Rotors → Plugboard → Keyswitch → Lightbulb → Battery. By replacing the lightbulbs with a display, we removed the complicated keyswitch stage (and everything after it), simplifying the system to end at “display.”</li>
+										</ol>
+										
+										<p>One trade-off that came with this decision was a delay due to ideation. Since the original machine did not include an Arduino, Raspberry Pi, or display, we needed to determine which new components to use, how data would flow between them, and how the modern additions would integrate with the original design.</p>
+
+						        </div>
+						        <span class="image">
+						            <figure>
+						                <img src="images/plug.jpeg" alt="Plugboard 1" />
+						                <figcaption>Plugboard connections for each letter. </figcaption>
+						            </figure>
+	
+						        </span>
+						    </div>
+						    
+						</section>
+
+						<!-- Design Overview -->
+						<section id="second" class="main special">
+						    <header class="major">
+						        <h2>Design Overview</h2>
+						    </header>
+
+							<div>
+						        <div class="content">
+						            <h3><strong>System Diagram</strong></h3>
+								</div>
+						        <figure style="text-align: center; margin-top: 2em; margin-bottom: 4em;">
+						            <img src="images/sys_diag.jpeg" alt="Data & Energy Flow Diagram" style="max-width: 100%; border-radius: 8px;" />
+						            <figcaption>System Diagram showing the interaction between different subsystems within the machine.</figcaption>
+						        </figure>
+						    </div>
+
+							<div>
+						        <div class="content">
+						            <h3><strong>Data & Energy Flow Diagram</strong></h3>
+								</div>
+						        <figure style="text-align: center; margin-top: 2em; margin-bottom: 4em;">
+						            <img src="images/flow.png" alt="Data & Energy Flow Diagram" style="max-width: 100%; border-radius: 8px;" />
+						            <figcaption>Data & Energy Flow Diagram for the entire Enigma Machine.</figcaption>
+						        </figure>
+						    </div>
+						    
+						    <div class="content">
+						        <h3><strong>Sprint 1</strong></h3>
+						        <p>For the first sprint, we got all of the CAD done. We also were able to produce a prototype of one rotor, as well as purchasing materials and getting started on the keys.</p>
+						        
+						        <h3><strong>Sprint 2</strong></h3>
+						        <p>By the end of the second sprint, we had a prototype keyboard, a plan for the plugboard, modified parts for the rotors, and had created one finalized rotor. We also were halfway done with the reflector.</p>
+						        
+						        <h3><strong>Sprint 3</strong></h3>
+						        <p>For the third sprint review, we had completed the individual keyboard parts, laser-cut the case, CADed the plugboard, and finished all the rotors. We also designed the ratchet system.</p>
+						    </div>
+						    
+						</section>
+
+						<!-- Mechanical -->
+						<section id="third" class="main special">
+						    <header class="major">
+						        <h2>Mechanical</h2>
+						    </header>
+						    
+						    <!-- Rotors -->
+						    <div class="spotlight">
+						        <div class="content">
+						            <h3><strong>Rotors</strong></h3>
+						            <p>Each rotor is a nine-part mechanical assembly that rotates as a single unit to maintain precise alignment of the electrical contact pins. The rotor body acts as the main structural element, concentrically locating all components along the axis. A toleranced bushing between the shaft and rotor body reduces friction while ensuring accurate alignment during rotation.</p>
+
+									<p>All parts were dimensioned and toleranced for FDM Stratasys printing to ensure consistent fits across assemblies. Press fits are used where alignment is critical, while threaded fasteners allow disassembly and adjustment where needed.</p>
+									
+									<p>Indexed rotation is achieved through a ratchet wheel mounted at one end of the rotor body. The ratchet defines the angular step size and interfaces with the stepping mechanism. Together with the locking plate, it also radially and axially constrains the spring pins, keeping them aligned during rotation.</p>
+									
+									<p>Rotor stepping follows Enigma logic: the first rotor advances every key press, the second once every 26 rotations of the first, and the third once every 26 rotations of the second. This behavior is enforced by a notched plate fixed to each rotor with M2 screws, physically preventing downstream rotors from rotating until an upstream rotor completes a full cycle.</p>
+									
+									<p>The number wheel displays the current rotor position and uses friction fits with a small locking feature to prevent accidental movement. The thumb wheel allows manual adjustment and is mechanically linked to the ratchet wheel using friction and wood screws to guarantee alignment.</p>
+									
+									<p>Internally, a routing piece connects to the ratchet wheel and preserves approximately 2 cm of space for wire scrambling. The copper pin housing supports the fixed copper pins and encloses the wiring, fastening to the routing piece with M4 screws to form a rigid structure.</p>
+									
+									<p>Future iterations will focus on improving stepping consistency and electrical contact reliability, including lower-force spring pins and servo-driven rotor control, while preserving the original encryption behavior.</p>
+						        </div>
+						        <span class="image">
+						            <figure>
+						                <img src="images/allparts.jpeg" alt="All rotor parts" />
+						                <figcaption>All manufactured parts for the rotors.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/cadrotor.png" alt="Rotor CAD" />
+						                <figcaption>CAD of the final rotor design.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/3r.png" alt="Three rotors" />
+						                <figcaption>All 3 rotors wired up, tested, and fully assembled.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/rotor assembly.jpg" alt="Rotor assembly in machine" />
+						                <figcaption>Rotors wired up with the initial contact piece and reflector in the machine.</figcaption>
+						            </figure>
+						        </span>
+						    </div>
+						    
+						    <!-- Keyboard -->
+						    <div class="spotlight">
+						        <span class="image">
+						            <figure>
+						                <img src="images/key_cad.png" alt="Key CAD" />
+						                <figcaption>CAD of a single key in the keyboard assembly.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/side_k_cad.png" alt="Keyboard side view CAD" />
+						                <figcaption>Side view CAD of the keyboard assembly.</figcaption>
+						            </figure>
+						            <figure style="margin-top: 1em;">
+						                <img src="images/final_keys.jpg" alt="Final keys" />
+						                <figcaption>Fully manufactured and tested keys.</figcaption>
+						            </figure>
+						        </span>
+						        <div class="content">
+						            <h3><strong>Keyboard</strong></h3>
+						            <p>The keyboard design borrows from the original Enigma Machine. It uses spring-loaded metal rods topped with labeled key-caps. In our machine, when a letter is pressed, the key press completes a circuit on the breadboard, which is then sent to the Arduino. We chose to route keypresses to the Arduino for a specific reason: when the Arduino receives a signal for the swapped letter, both the pin corresponding to the keypress and the pin corresponding to the swapped letter will read high. By sending the keyboard press to the Arduino first, it can differentiate between the two, allowing it to send the swapped letter—and not the keypress—to the display.</p>
+
+									<p>For the body of the key, we purchased a 6-foot length of cold-worked steel with a diameter of 3/16 inches and cut it to length using a horizontal bandsaw. We selected springs with a length of 1 inch and an inner diameter of 0.192 inches to fit around the steel rods. The tabs, keycaps, and brackets were 3D printed in PLA.</p>
+									
+									<p>For the switch mechanism, we used thick copper wire soldered to 16-gauge or 22-gauge wire for one side of the switch. The other side was constructed using small split bushings soldered to 16-gauge wire. For the keycaps, we applied vinyl stickers labeled with the corresponding letters.</p>
+								</div>
+						    </div>
+
+						    <!-- Case -->
+						    <div class="spotlight">
+						        <div class="content">
+						            <h3><strong>Case</strong></h3>
+						            <p>The case was designed early on in the process. This allowed it to evolve as we designed the internal components. We used parametric CAD in Onshape with variables for length, width, height, and wall thickness to facilitate iterations. Additional features like slots for keyboard integration and the ratchet system were added as needed. Once the design was nearly final, tolerances for laser cutter kerf were applied, and the acrylic pieces were assembled using solvent welding.</p>
+						            <p>In the final build, one wall had minor fit issues due to a slightly misaligned reflector plate. We chose not to disassemble and fix it at that stage since the system was functional. Future iterations would address this, as well as tightening the shaft hole tolerance to account for threading reducing the shaft diameter.</p>
+						        </div>
+						        <span class="image">
+						            <figure>
+						                <img src="images/casecad.png" alt="Case CAD" />
+						                <figcaption>CAD of the casing for the rotors, reflector, and initial contact wheel.</figcaption>
+						            </figure>
+						        </span>
+						    </div>
+						</section>
+
+						<!-- Electrical -->
+						<section id="fourth" class="main special">
+						    <header class="major">
+						        <h2>Electrical</h2>
+						    </header>
+						    
+						    <!-- Keyboard -->
+						    <div class="spotlight">
+						        <div class="content">
+						            <h3><strong>Keyboard</strong></h3>
+						            <p>The electrical components of the keyboard essentially make a button. There is a copper wire on a bracket, which in its resting position does not touch a split bushing on the actual key. When the two come in contact, they complete a circuit, and a signal is sent to the Arduino.</p>
+						        </div>
+						        <span class="image">
+						            <figure style="margin-top: 1em;">
+						                <img src="images/switch_components.JPG" alt="Keyboard wiring" />
+						                <figcaption>Keyboard switch components mass-produced.</figcaption>
+						            </figure>
+						        </span>
+						    </div>
+						    
+						    <!-- Rotors and Reflector -->
+						    <div class="spotlight">
+						        <span class="image">
+						            <figure style="margin-top: 1em;">
+						                <img src="images/openr.jpeg" alt="Reflector wiring" />
+						                <figcaption>Open rotor just before scrambling.</figcaption>
+						            </figure>
+						        </span>
+						        <div class="content">
+						            <h3><strong>Rotors and Reflector</strong></h3>
+						            <p>The electrical operation of the rotor system begins when a key is pressed, at which point the input signal is either swapped with another letter or left unchanged by the plugboard. The signal then travels sequentially through the three rotors, where each rotor applies a substitution based on its internal wiring and current position. After passing through the third rotor, the signal reaches the reflector, which redirects it back through the same three rotors in the reverse direction, causing the signal to be transformed again. In total, the signal is altered seven times: once at the plugboard, three times through the forward rotor path, once at the reflector, and three times through the reverse rotor path. Finally, the signal returns to the plugboard, where it is either left unchanged or swapped one last time before producing the output letter.</p>
+						        </div>
+						    </div>
+						    
+						    <!-- Plugboard -->
+						    <div class="spotlight">
+						        <div class="content">
+						            <h3><strong>Plugboard</strong></h3>
+						            <p>Without any plugs, the plugboard initially connects each letter's input to the output (ex. If the plugboard receives an input ‘A’, the plugboard outputs ‘A' to the rotors. By adding a plug and swapping two letters, one letter’s input becomes another letter's output. This changes the circuit. That letter will always come out as the swapped letter unless the plug is removed.)</p>
+						        </div>
+						        <span class="image">
+						            <figure>
+						                <img src="images/circuits.png" alt="Plugboard swaps" />
+						                <figcaption>Plugboard circuitry schematics.</figcaption>
+						            </figure>
+						        </span>
+						    </div>
+						    
+						</section>
+
+						<!-- Software -->
+						<section id="fifth" class="main special">
+						    <header class="major">
+						        <h2>Software</h2>
+						    </header>
+						    
+						    <div class="content" style="text-align: center;">
+						        <p>The following software includes 3 parts. The code for the Arduino which takes in a letter and outputs the corresponding pin (as demonstrated in the system diagram). The Raspi code uses a simple setup that listens for the output from the Arduino through its serial port and outputs it to the Thonny terminal. For a more aesthetic display, we installed Putty, a common terminal emulator for the Raspberry Pi. The code can be read below for more information.</p>
+						        
+						        <h3>Github Source Code:</h3>
+						        <p>
+						            README: <a href="https://github.com/Tchenzie/pie-2025-03/blob/main/docs/sigma/pie_final_code/enigma_code_README.md">enigma_code_README.md</a><br/>
+						            Arduino MEGA Code: <a href="https://github.com/Tchenzie/pie-2025-03/blob/main/docs/sigma/pie_final_code/pie_final_current.ino">pie_final_current.ino</a><br/>
+						            RasPi Code: <a href="https://github.com/Tchenzie/pie-2025-03/blob/main/docs/sigma/pie_final_code/enigma_machine_display.py">enigma_machine_display.py</a>
+						        </p>
+						        
+						        <figure style="margin-top: 3em;">
+						            <img src="images/keyboard side view.jpg" alt="Arduino code screenshot" style="max-width: 100%; border-radius: 8px;" />
+						            <figcaption>Arduino and keyboard interaction.</figcaption>
+						        </figure>
+						    </div>
+						    
+						</section>
+
+						<section id="sixth" class="main special">
+						    <header class="major">
+						        <h2>Bill of Materials</h2>
+						    </header>
+						   
+						    <div class="table-wrapper">
+						        <table>
+						            <thead>
+						                <tr>
+						                    <th style="text-align: center;">Item</th>
+						                    <th style="text-align: center;">Price ($)</th>
+						                </tr>
+						            </thead>
+						            <tbody>
+						                <tr>
+						                    <td>Copper Probes</td>
+						                    <td>13</td>
+						                </tr>
+						                <tr>
+						                    <td>Steel Rod</td>
+						                    <td>5</td>
+						                </tr>
+						                <tr>
+						                    <td>Springs</td>
+						                    <td>22</td>
+						                </tr>
+						                <tr>
+						                    <td>Aluminum Sheet</td>
+						                    <td>19</td>
+						                </tr>
+						                <tr>
+						                    <td>LCD Display</td>
+						                    <td>34</td>
+						                </tr>
+						                <tr>
+						                    <td>Solder Wick</td>
+						                    <td>4</td>
+						                </tr>
+						                <tr>
+						                    <td>Shaft</td>
+						                    <td>12</td>
+						                </tr>
+						                <tr>
+						                    <td>Additional Copper Probes</td>
+						                    <td>13</td>
+						                </tr>
+						                <tr>
+						                    <td>Acrylic</td>
+						                    <td>45</td>
+						                </tr>
+						                <tr>
+						                    <td>400 grams PLA</td>
+						                    <td>12</td>
+						                </tr>
+						                <tr>
+						                    <td>Copper Wire</td>
+						                    <td>21</td>
+						                </tr>
+						                <tr>
+						                    <td>Aluminum for Nut</td>
+						                    <td>5</td>
+						                </tr>
+						                <tr>
+						                    <td>Sticker Paper</td>
+						                    <td>1</td>
+						                </tr>
+						                <tr>
+						                    <td>Spacer</td>
+						                    <td>2</td>
+						                </tr>
+						                <tr>
+						                    <td>Raspberry Pi 3B+</td>
+						                    <td>40</td>
+						                </tr>
+						                <tr>
+						                    <td>Screws and Washers</td>
+						                    <td>5</td>
+						                </tr>
+						                <tr>
+						                    <td>Arduino Mega</td>
+						                    <td>37</td>
+						                </tr>
+						            </tbody>
+						            <tfoot>
+						                <tr>
+						                    <td><strong>Total listed cost</strong></td>
+						                    <td><strong>290</strong></td>
+						                </tr>
+						            </tfoot>
+						        </table>
+						    </div>
+						    <div class="content" style="margin-top: 2em;">
+						        <p>The total listed cost of the machine is approximately $290. However, many items (such as aluminum scrap, some wiring, and tools) were found in the shop, already owned, or sourced from scrap bins, bringing our actual out-of-pocket cost closer to $235—well within our $250 budget.</p>
+						    </div>
+						</section>
+
+					<!-- About Us -->
+					<section id="seventh" class="main special">
+					    <header class="major">
+					        <h2>About Us</h2>
+					    </header>
+					
+					    <div class="content">
+					        <p>We are a team of five Olin College of Engineering students who built the Sigma Machine for the Fall 2025 Principles of Integrated Engineering (PIE) course.</p>
+					        <p style="font-weight: bold; margin-top: 1.5em;">Feel free to connect with us on LinkedIn or ask us any questions!</p>
+					    </div>
+					    
+					    <div style="max-width: 1200px; margin: 4em auto 0;">
+					        <!-- Top row: 3 members -->
+					        <div style="display: flex; justify-content: center; gap: 4em; flex-wrap: wrap; margin-bottom: 4em;">
+					            <article style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+					                <a href="https://www.linkedin.com/in/anna-luiza-reis-braun-3aa9a9334/" class="image">
+					                    <img src="images/anna.jpeg" alt="Anna Braun" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto;" />
+					                </a>
+					                <div class="content" style="margin-top: 1em;">
+					                    <h3>Anna Braun</h3>
+					                    <p>Mechanical Engineering</p>
+					                </div>
+					            </article>
+					            <article style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+					                <a href="https://www.linkedin.com/in/jowita-walkup/" class="image">
+					                    <img src="images/jo_headshot.jpg" alt="Jo Walkup" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto;" />
+					                </a>
+					                <div class="content" style="margin-top: 1em;">
+					                    <h3>Jo Walkup</h3>
+					                    <p>Mechanical Engineering</p>
+					                </div>
+					            </article>
+					            <article style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+					                <a href="https://www.linkedin.com/in/kuhu-jayaswal/" class="image">
+					                    <img src="images/kuhu.jpeg" alt="Kuhu Jayaswal" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto;" />
+					                </a>
+					                <div class="content" style="margin-top: 1em;">
+					                    <h3>Kuhu Jayaswal</h3>
+					                    <p>Electrical & Computer Engineering</p>
+					                </div>
+					            </article>
+					        </div>
+					        
+					        <!-- Bottom row: 2 members -->
+					        <div style="display: flex; justify-content: center; gap: 4em; flex-wrap: wrap;">
+					            <article style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+					                <a href="https://www.linkedin.com/in/leo-trepte-08b380357/" class="image">
+					                    <img src="images/LeoHeadshot.jpg" alt="Leo Trepte" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto;" />
+					                </a>
+					                <div class="content" style="margin-top: 1em;">
+					                    <h3>Leo Trepte</h3>
+					                    <p>Mechanical Engineering</p>
+					                </div>
+					            </article>
+					            <article style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+					                <a href="https://www.linkedin.com/in/tchenzie-guichette-976319394/" class="image">
+					                    <img src="images/tch.jpeg" alt="Tchenzie Guichette" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto;" />
+					                </a>
+					                <div class="content" style="margin-top: 1em;">
+					                    <h3>Tchenzie Guichette</h3>
+					                    <p>Electrical & Computer Engineering</p>
+					                </div>
+					            </article>
+					        </div>
+							<!-- Group photo placeholder -->
+					        <div style="text-align: center; margin-top: 2em;">
+					            <img src="images/grp.jpeg" alt="The Sigma Machine Team" style="max-width: 100%; width: 900px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+					            <p style="margin-top: 1em; font-style: italic; color: #666;">The Sigma Machine Team (Fall 2025)</p>
+					        </div>
+					    </div>
+					</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+
+
+
+
