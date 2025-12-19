@@ -85,7 +85,7 @@ h1 {
 }
 
 /* Video */
-iframe {
+video {
     grid-area: video;
     border-radius: 10px;
     border: 3px solid rgba(255, 255, 255, 0.4);
@@ -454,7 +454,7 @@ table tr:hover {
 
 /* Paragraphs */
 .content-section p {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     line-height: 1.7;
     margin-bottom: 15px;
     color: #f0f8ff;

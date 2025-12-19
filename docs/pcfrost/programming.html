@@ -23,125 +23,31 @@
             <p>
                 The programming system consists of three main layers: G-code generation 
                 (Python), motion control firmware (Arduino/C++), and a user interface 
-                for pattern selection and monitoring.
+                for collecting dimension input.
             </p>
-            <img src="images/software-architecture.jpg" alt="Software architecture diagram" class="content-image">
-            <p class="image-caption">Figure 1: Software architecture layers</p>
+            <img src="software-flow.png" alt="Software architecture diagram" class="content-image">
+            <p class="image-caption">Figure 1: Software architecture</p>
         </section>
 
         <section class="content-section">
-            <h2>G-code Generation</h2>
-            <h3>Pattern Design</h3>
+            <h2>Software Function</h2>
             <p>
-                Frosting patterns are defined as vector paths in Python using NumPy for 
-                mathematical operations. Common patterns (spirals, rosettes, borders) are 
-                pre-programmed, while custom designs can be imported from SVG files.
+                The CNC frosting printer is controlled through an Arduino UNO using a Python and C++ program. The purpose of the python program is displaying the GUI to receive user input on the cake dimensions. Those dimensions are then transmitted through a communication port to the C++ program so the proper extruded path can be calculated. Once the dimensions are received, the axes' limits are set first using the limit switches positioned at the bottom of the Y axis and the inner end of the X axis. After those are set, the extruder lowers to the height determined by user input and begins extruding frosting in an Archimedean spiral pattern till the set diameter input value is reached. When the pattern is complete, the frosting is back extruded for 3 seconds to minimize drip before returning to rest at the top of the Y axis. An additional Arduino program was coded to run the frosting extruder motor forward in order to fill the frosting tubing before use.
+
             </p>
-            
-            <h3>Path Planning</h3>
-            <p>
-                The path planner converts vector designs into G-code commands, optimizing 
-                for smooth motion and minimal nozzle travel time. Key considerations include:
-            </p>
-            <ul>
-                <li>Maintaining constant extrusion rate during curves</li>
-                <li>Minimizing acceleration/deceleration cycles</li>
-                <li>Optimizing path order to reduce air moves</li>
-                <li>Adding lead-in/lead-out moves for clean starts/stops</li>
-            </ul>
-            
-            <div class="code-block">
-# Example G-code for circular pattern
-G28 ; Home all axes
-G1 Z10 F500 ; Lift nozzle
-G1 X200 Y200 F3000 ; Move to center
-G1 Z2 F500 ; Lower to working height
-M3 ; Start extrusion
-G2 X200 Y200 I50 J0 F1000 ; Draw circle
-M5 ; Stop extrusion
-            </div>
         </section>
 
         <section class="content-section">
-            <h2>Motion Control Firmware</h2>
-            <h3>GRBL Integration</h3>
-            <p>
-                We adapted GRBL, an open-source CNC controller, as the foundation for our 
-                motion control. GRBL interprets G-code and generates step pulses with 
-                precise timing for smooth motor control.
-            </p>
-            
-            <h3>Custom Modifications</h3>
-            <p>
-                Several modifications were made to standard GRBL:
-            </p>
-            <ul>
-                <li>Added M-codes for pneumatic valve control (M3/M5)</li>
-                <li>Implemented variable extrusion rate based on speed</li>
-                <li>Added safety interlocks for limit switch triggers</li>
-                <li>Calibrated acceleration profiles for frosting consistency</li>
-            </ul>
-            
-            <img src="images/grbl-config.jpg" alt="GRBL configuration" class="content-image">
-            <p class="image-caption">Figure 2: GRBL configuration parameters</p>
-        </section>
+            <h2>Design Process</h2>
 
-        <section class="content-section">
-            <h2>Control Algorithms</h2>
-            <h3>Motion Interpolation</h3>
             <p>
-                Linear and circular interpolation algorithms ensure smooth multi-axis 
-                coordination. The Bresenham algorithm is used for step generation, 
-                providing even distribution of steps across coordinated moves.
-            </p>
-            
-            <h3>Acceleration Management</h3>
-            <p>
-                S-curve acceleration profiles prevent jerky motion that could cause 
-                frosting inconsistencies. The system ramps velocity smoothly during 
-                direction changes and speed transitions.
-            </p>
-            
-            <div class="code-block">
-// Acceleration parameters
-#define ACCELERATION 500 // mm/s²
-#define JUNCTION_DEVIATION 0.01 // mm
-#define ARC_TOLERANCE 0.002 // mm
-            </div>
-        </section>
+            Because the peristaltic pump motor used within the budget was not strong enough for thick frosting, we thinned out the frosting to extrude properly. Though this meant the frosting did not have enough structure to form a design. So, we did not have a design-drawing function to our final project, and stuck with our MVP of frosting the top of a cake. 
 
-        <section class="content-section">
-            <h2>User Interface</h2>
-            <h3>Pattern Selection</h3>
-            <p>
-                A simple web-based interface allows users to select from pre-designed 
-                patterns or upload custom designs. The interface provides real-time 
-                preview and estimated completion time.
             </p>
             
-            <h3>Monitoring and Control</h3>
+            <h3>Github</h3>
             <p>
-                During operation, the interface displays:
+                To find all of the code used for this project, see here:
+                <a href = "https://github.com/traiti77/PC-Frost">https://github.com/traiti77/PC-Frost</a>
             </p>
-            <ul>
-                <li>Current position (X, Y, Z coordinates)</li>
-                <li>Progress percentage</li>
-                <li>Estimated time remaining</li>
-                <li>System status and error messages</li>
-            </ul>
-        </section>
-
-        <section class="content-section">
-            <h2>Testing and Calibration</h2>
-            <p>
-                Software testing included verification of:
-            </p>
-            <ul>
-                <li>Positioning accuracy (measured within ±0.1mm)</li>
-                <li>Repeatability across multiple runs</li>
-                <li>Extrusion consistency at different speeds</li>
-                <li>Error handling and recovery procedures</li>
-            </ul>
             
-            <p>
-                Calibration routines were developed to account for
