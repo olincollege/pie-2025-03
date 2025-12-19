@@ -72,9 +72,16 @@
     <main id="main-content">
       <!-- Hero section -->
       <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-content">
-          <h1 id="hero-heading">Project AURA</h1>
-          <p class="hero-subtitle">Autonomous Robot Assistant</p>
+        <div class="hero-video" aria-hidden="true">
+          <video autoplay muted loop playsinline>
+            <source src="assets/boba.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content glass-card">
+          <h1 id="hero-heading" class="hero-title">Project AURA</h1>
+          <p class="hero-subtitle hero-subtitle-glow">Autonomous Robot Assistant</p>
           <p class="hero-text">
             AURA is a smart, autonomous cart that carries your heavy stuff and
             follows you so you never have to haul it yourself.
@@ -87,7 +94,7 @@
             navigating an airport, or just juggling too much at once, AURA lets
             you focus on where you're going while it handles the weight.
           </p>
-          <a href="overview.html" class="btn btn-primary">Learn More</a>
+          <a href="overview.html" class="btn btn-primary hero-cta">Learn More</a>
         </div>
       </section>
 
