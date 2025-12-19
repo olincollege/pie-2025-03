@@ -1131,6 +1131,44 @@ a:focus {
   object-fit: contain;
 }
 
+/* Joystick layout */
+.joystick-intro {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.joystick-intro-text {
+  flex: 1 1 0;
+}
+
+.joystick-image {
+  flex: 0 0 auto;
+}
+
+.joystick-image img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.joystick-details {
+  margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .joystick-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .joystick-image img {
+    max-width: 180px;
+  }
+}
+
 /* Generic diagram frame used on software page */
 .diagram-frame {
   margin-top: var(--spacing-xl);

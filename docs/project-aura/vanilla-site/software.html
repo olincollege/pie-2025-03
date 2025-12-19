@@ -109,7 +109,7 @@
 
             <div class="diagram-frame">
               <img
-                src="assets/SoftwareSystemDiagram.png"
+                src="assets/softwaresystemdiagram.png"
                 alt="Software System Diagram showing ROS2 nodes"
                 class="diagram-image"
               />
@@ -158,6 +158,7 @@
 
           <div class="card mb-12">
             <h2 class="card-title">Depth Camera: Tracking &amp; Safety</h2>
+            <!-- First part: text + video side by side -->
             <div class="software-grid">
               <div class="text-content">
                 <h3 class="card-subtitle">
@@ -177,42 +178,46 @@
                   appears as a bright, easily isolated region without any
                   complex machine learning.
                 </p>
-                <p>The tracking pipeline:</p>
-                <ul class="detail-list">
-                  <li>
-                    Capture synchronized IR + depth frames from the RealSense
-                    camera.
-                  </li>
-                  <li>
-                    Threshold the IR image to isolate highly reflective regions
-                    corresponding to the target belt.
-                  </li>
-                  <li>
-                    Apply morphological filtering to remove noise and stitch
-                    fragmented blobs.
-                  </li>
-                  <li>
-                    Detect contours and filter them by area and distance to
-                    reject spurious reflections.
-                  </li>
-                  <li>
-                    Fuse with depth data to compute the target&rsquo;s 3D
-                    position relative to the robot.
-                  </li>
-                </ul>
-                <p>
-                  We use a <strong>Kalman filter</strong> to smooth noisy
-                  measurements and estimate both position and velocity. If the
-                  target is temporarily occluded, the filter continues
-                  predicting motion for up to ~0.5&nbsp;seconds (about 15
-                  frames) before declaring the target lost and stopping the
-                  robot, avoiding jittery starts and stops.
-                </p>
               </div>
               <video controls autoplay loop muted>
                 <source src="assets/camera_tracker.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+            </div>
+
+            <!-- Rest of the section: full-width under the grid -->
+            <div class="text-content" style="margin-top: var(--spacing-xl)">
+              <p>The tracking pipeline:</p>
+              <ul class="detail-list">
+                <li>
+                  Capture synchronized IR + depth frames from the RealSense
+                  camera.
+                </li>
+                <li>
+                  Threshold the IR image to isolate highly reflective regions
+                  corresponding to the target belt.
+                </li>
+                <li>
+                  Apply morphological filtering to remove noise and stitch
+                  fragmented blobs.
+                </li>
+                <li>
+                  Detect contours and filter them by area and distance to reject
+                  spurious reflections.
+                </li>
+                <li>
+                  Fuse with depth data to compute the target&rsquo;s 3D
+                  position relative to the robot.
+                </li>
+              </ul>
+              <p>
+                We use a <strong>Kalman filter</strong> to smooth noisy
+                measurements and estimate both position and velocity. If the
+                target is temporarily occluded, the filter continues predicting
+                motion for up to ~0.5&nbsp;seconds (about 15 frames) before
+                declaring the target lost and stopping the robot, avoiding
+                jittery starts and stops.
+              </p>
             </div>
 
             <div class="text-content" style="margin-top: var(--spacing-xl)">
@@ -253,19 +258,31 @@
 
           <div class="card mb-16">
             <h2 class="card-title">Joystick Control &amp; Safety Interlocks</h2>
-            <div class="software-grid">
-              <div class="text-content">
-                <p>
-                  For manual and assisted control we used a
-                  <strong>Logitech F310</strong> joystick, connected via the
-                  standard ROS 2 <code>joy</code> package (<code
-                    >ros2 run joy joy_node</code
-                  >). This publishes joystick state to a topic that our teleop
-                  and autonomy nodes subscribe to.
-                </p>
-                <p>
-                  We designed the mapping to include multiple layers of safety:
-                </p>
+            <div class="text-content">
+              <div class="joystick-intro">
+                <div class="joystick-intro-text">
+                  <p>
+                    For manual and assisted control we used a
+                    <strong>Logitech F310</strong> joystick, connected via the
+                    standard ROS 2 <code>joy</code> package (<code
+                      >ros2 run joy joy_node</code
+                    >). This publishes joystick state to a topic that our teleop
+                    and autonomy nodes subscribe to.
+                  </p>
+                  <p>
+                    We designed the mapping to include multiple layers of
+                    safety:
+                  </p>
+                </div>
+                <div class="joystick-image">
+                  <img
+                    src="assets/joystick.png"
+                    alt="Joystick Control and Safety Interlocks"
+                  />
+                </div>
+              </div>
+
+              <div class="joystick-details">
                 <ul class="detail-list">
                   <li>
                     <strong>Left stick:</strong> Forward and backward linear
@@ -293,10 +310,6 @@
                   our safety goals.
                 </p>
               </div>
-              <img
-                src="assets/joystick.png"
-                alt="Joystick Control and Safety Interlocks"
-              />
             </div>
           </div>
 
