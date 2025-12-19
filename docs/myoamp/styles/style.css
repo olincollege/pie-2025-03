@@ -329,7 +329,7 @@ code {
 }
 
 .topleft{
-  margin: 0px 700px 0 25px;
+  margin: 0px 100px 0 25px;
   position: relative;
   z-index: -1;
 }
@@ -341,8 +341,8 @@ code {
 
 table {
   border-collapse: collapse;
-  margin: 0 auto;      /* centers table */
-  margin-top: -200px;
+  margin: 0px 0px 0 0px;      /* centers table */
+  transform: translateX(70px);
 }
 
 th {
@@ -375,7 +375,7 @@ tr:last-child td {
 }
 
 .bottom{
-  margin: -300px 900px 0 -230px;
+  margin: -300px 800px 0 -220px;
   width: 500px;
   height: auto;
 }
@@ -949,3 +949,129 @@ table {
   padding: 10px;
   margin: 0 0px 0 800px;
 }
+
+.boomhand{
+  width: 400px;
+  height:auto;
+  transform: translateX(-400px);
+  margin-bottom: 50px;
+  border-radius: 20px;
+  position: relative;
+  z-index: -1;
+}
+
+.ece-overview{
+  margin: 100px 0px 0px 600px;
+  text-align: right;
+}
+
+.ece-overview h3{
+  padding:15px
+}
+.ece-overview p{
+  font-size: 20px;
+  padding: 10px;
+}
+
+.systemece{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* paragraph under image */
+  transform: translateX(-1000px);
+  z-index: -1;
+}
+
+.completedimg{
+  width: 500px;
+  height: auto;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  transform: translateY(-700px);
+  z-index: -1;
+  position: relative;
+}
+
+.systemece p{
+  align-items: center;   /* paragraph under image */
+  transform: translateY(-700px);
+}
+
+.diagramm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* paragraph under image */
+  transform: translateX(-1000px);
+
+}
+
+.schematic{
+  border-radius: 50px;
+  transform: translateY(-700px);
+}
+.diagramm p{
+  align-items: center;   /* paragraph under image */
+transform: translateY(-700px);
+}
+  
+
+#ece-slides {
+  width: 700px;       
+  text-align: center;
+  transform: translateX(-800px);
+  margin-top: -600px;
+}
+
+.muscles{
+  position: relative;
+  display: flex;             /* arrange boxes horizontally */
+  justify-content: center;   /* center all boxes in the section */
+  gap: 20px;                 /* space between boxes */
+  margin: 20px 0 100px 0;         /* center section and give vertical spacing */
+  text-align: center;
+  transform: translateX(-600px);
+}
+
+.sensorss{
+  transform: translateX(-600px);
+  margin-top: 100px;
+}
+
+.palms{
+  position: relative;
+  display: flex;             /* arrange boxes horizontally */
+  justify-content: center;   /* center all boxes in the section */
+  gap: 20px;                 /* space between boxes */
+  margin: 20px 0 100px 0;         /* center section and give vertical spacing */
+  text-align: center;
+  transform: translateX(-600px);
+}
+
+.troubleshooting {
+  width: 800px;
+  margin: 50px auto;    
+  border-radius: 10px;
+  text-align: justify;  
+  border: 5px solid black;
+  transform: translateX(-850px);
+}
+
+.troubleshooting h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.troubleshooting p {
+  font-size: 20px;
+  line-height: 1.6;      /* adds vertical spacing for readability */
+  margin-bottom: 15px;   /* spacing between paragraphs */
+}
+
+.sprintvid {
+  width: 600px;
+  height: auto;
+  position: relative;
+  z-index: -1;
+}
+
+

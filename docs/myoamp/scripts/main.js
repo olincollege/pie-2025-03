@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
     },
     {
       img:"Images/cad2.png",
-      text: "A drawing of the battery housing, meant to contain a 12 Volt and 9 Volt battery."
+      text: "A drawing of the battery housing, meant to contain a 12 Volt and 5 Volt battery."
     },
     {
       img:"Images/cad3.png",
@@ -61,17 +61,23 @@ window.addEventListener('load', () => {
 
   function update() {
     const newElement = (index == 1) ? document.createElement("video") : document.createElement("img");
+    const textElement = document.getElementById("text");
+    textElement.style.position = "absolute";
+    textElement.style.top = "105%";
+    textElement.style.left = "10%";
+    textElement.style.textAlign = "center";
     if (index == 1) {
       newElement.controls = true;
       newElement.width = 600;
       const sourceElement = document.createElement("source");
-      sourceElement.src = slides[index].img;
+      sourceElement.src = slides[index].vid;
       sourceElement.type = "video/mp4";
+      console.log(sourceElement);
       newElement.appendChild(sourceElement);
-
+      textElement.textContent = slides[index].text;
     } else {
       newElement.src = slides[index].img;
-      newElement.textContent = slides[index].text;
+      textElement.textContent = slides[index].text;
     }
 
     slideContainer.children[0].replaceWith(newElement);
@@ -88,3 +94,51 @@ window.addEventListener('load', () => {
   }
 
   update();
+
+
+const eceSlides = [
+  {
+    img: "Images/powerman.png",
+    text: "The source of MyoAmp’s electrical power comes from a single 5600 mAH 12 Volt rechargeable lithium ion battery. The 12 volt source is split into 3 different voltage lines by buck converters to accommodate for different component requirements..."
+  },
+  {
+    img: "Images/actuator.png",
+    text: "In order to sense muscle contractions we used MyoWare’s V1 Surface ElectroMyography sensors. They work by taking electrical signals from muscles that are generated when the muscles contract..."
+  },
+  {
+    img: "Images/sensor.png",
+    text: "Final slide description here."
+  }
+];
+
+let eceIndex = 0;
+const eceContainer = document.getElementById("ece-slide-container");
+const eceText = document.getElementById("ece-text");
+
+function updateECE() {
+  // clear container
+  eceContainer.innerHTML = "";
+
+  // create new image element
+  const img = document.createElement("img");
+  img.src = eceSlides[eceIndex].img;
+  img.alt = "ECE slide " + (eceIndex + 1);
+  img.width = 600; // optional: keep consistent size
+  eceContainer.appendChild(img);
+
+  // update text
+  eceText.textContent = eceSlides[eceIndex].text;
+}
+
+function nextECE() {
+  eceIndex = (eceIndex + 1) % eceSlides.length;
+  updateECE();
+}
+
+function prevECE() {
+  eceIndex = (eceIndex - 1 + eceSlides.length) % eceSlides.length;
+  updateECE();
+}
+
+// initialize slideshow
+document.addEventListener("DOMContentLoaded", updateECE);

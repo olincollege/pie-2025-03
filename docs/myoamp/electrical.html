@@ -38,5 +38,116 @@
       </nav>
     </section>
       
+    <section class="first">
+      <h1>Electrical Design</h1>
+      <p>
+        The power to power.
+      </p>
+    </section>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section class="ece-overview" id="electrical">
+      <h3>Overview</h3>
+      <p>
+        The goal of the Electrical system of MyoAmp was to read surface Electromyography Signals from the user’s arm, getting this data to the 
+        pico, and actuating the linear actuators responsible for closing the user’s hand. There are a couple components of the electrical design 
+        that allow it to properly do this. Those components are the battery management, sensor data, and mechanical actuation. Due to a common 
+        ground the system components will draw whatever power they need to.
+      </p>
+      <div class="ece-overview">
+      <div class="systemece">
+        <img class="completedimg" src="Images/completed.png" alt="completedimg" />
+        <p>Completed system</p>
+      </div>
+      <div class="diagramm">
+        <img class = "schematic" src="Images/schematic.png" alt="schematic" />
+        <p>Circuit Diagram Schematic</p>
+      </div>
+
+      <div class="slideshow" id="ece-slides"> 
+      <button class="arrow left" onclick="prevECE()">&#10094;</button>
+      <div id="ece-slide-container">
+      <img src="Images/ece1.png" alt="ECE slideshow image">
+      </div>
+      <p id="ece-text">Initial text</p>
+      <button class="arrow right" onclick="nextECE()">&#10095;</button>
+      </div>
+
+
+
+      <section class="sensorss">
+      <h3>Sensor Placement</h3>
+      </section>
+      <section class="muscles">
+      
+      <section class="info-box">
+        <h3>  Extensor Digitorum </h3>
+        <img class = "long" src = "Images/long.png" alt="long">
+        <p> The Extensor Digitorum is a muscle located in the forearm which is responsible for extending & flexing the fingers. The strongest 
+          sEMG readings occur when the user abducts and flexes their fingers away from the palm. </p>
+      </section>
+      <section class="info-box">
+        <h3> Abductor Policus Longus </h3>
+        <img class = "long" src = "Images/long.png" alt="long">
+        <p> The Abductor Policus Longus is an extrinsic muscle located in the hand and it abducts the thumb at the wrist. The strongest sEMG 
+        readings occur when the user abducts and flexes their thumb away from the palm. Minor sEMG readings also occur when the user adducts the
+         thumb into their palm. </p>
+      </section>
+      <section class="info-box">
+        <h3>  Flexor Digitorum Superficialis </h3>
+        <img class = "long" src = "Images/long.png" alt="long">
+        <p> The Flexor Digitorum Superficialis is an extrinsic flexor and is located on the anterior side of the forearm and is responsible for 
+          adduction of the fingers. We placed the Sensor on the side of the belly of this muscle so that the strongest sEMG readings occur when 
+          the user contracts their pinky and ring fingers. There is also a moderately strong sEMG reading when the index and middle fingers are 
+          contracted. The difference in signal strength allows us to differentiate between the fingers with just this one sensor. </p>
+      </section>
+      </section>
+
+
+      <div section class="palms">
+      
+      <section class="info-box">
+        <h3>  Anterior Palm </h3>
+        <img class = "ant" src = "Images/anterior.png" alt="ant">
+        <p> The Extensor Digitorum is a muscle located in the forearm which is responsible for extending & flexing the fingers. The strongest 
+          sEMG readings occur when the user abducts and flexes their fingers away from the palm. </p>
+      </section>
+      <section class="info-box">
+        <h3> Posterior Palm </h3>
+        <img class = "post" src = "Images/posterior.png" alt="post">
+        <p> The Abductor Policus Longus is an extrinsic muscle located in the hand and it abducts the thumb at the wrist. The strongest sEMG 
+        readings occur when the user abducts and flexes their thumb away from the palm. Minor sEMG readings also occur when the user adducts the
+         thumb into their palm. </p>
+      </section>
+      </div>
+  
+
+      <section class="troubleshooting">
+      <h3>Troubleshooting and Next Steps</h3>
+      <p> Throughout the process of creating the electrical system for MyoAmp we had to troubleshoot many things. </p>
+        <p>
+        First, we accidentally put too much current into the sEMG sensors due to a lack of overcurrent protection. We accounted for this 
+        error by adding current limiting and filtering to make sure that the sensors were getting a safe consistent 3 volts.
+        </p>
+        <p>
+       Second, the TB6612FNG motor driver was not powerful enough to drive 2 linear actuators so the TB6612FNG motor driver ended up breaking. 
+       In the future we will replace the TB612FNG motor driver with a motor driver that is powerful enough. On top of this our second motor driver
+        never shipped to us and we ended up using a different motor driver, although it worked, it would be better if we used the same motor 
+        drivers throughout the project for reliability and troubleshooting purposes.
+        </p>
+        <p>
+        Third, one of our buck converters stopped working when we accidentally put too much current into the sEMG sensors and we don’t know why. 
+        We assume that it is an error with the buck converters we got so our next steps are to integrate a custom buck converter onto the 
+        perfboard itself rather than relying on  an external module. To get around this error with the limited time we had we had to rely on a 
+        portable charger to power the raspberry pi pico.
+        </p>
+        <p>
+        Our next steps for the electrical subsystem would be to integrate custom buck converters onto a custom PCB to minimize the space taken up 
+        by the electrical board. We would also choose a new motor driver that can handle driving the 3 linear actuators. 
+        </p>
+    </section>
+
+    <script src="scripts/main.js"></script>
+
     </section>
   </body>
