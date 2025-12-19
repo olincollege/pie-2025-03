@@ -3834,8 +3834,10 @@ body {
 }
 
 #top-nav .button.small:hover {
-  background: transparent;
-  color: #ffffff;                   
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 #top-nav {
