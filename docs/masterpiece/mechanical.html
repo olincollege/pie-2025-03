@@ -13,7 +13,7 @@
 <header id="top-nav">
   <div class="inner">
     <a href="index.html" class="brand">
-      <img src="images/masterpiecelogo.jpg" alt="Masterpiece Logo">
+      <img src="images/MasterpieceLogo.jpg" alt="Masterpiece Logo">
       <span>Masterpiece</span>
     </a>
 
@@ -25,7 +25,7 @@
         <li><a href="software.html"    class="button small">Software &amp; Logic</a></li>
         <li><a href="timeline.html"    class="button small">Timeline</a></li>
         <li><a href="budget.html"      class="button small">Budget</a></li>
-        <li><a href="gallery.html"        class="button small">Gallery</a></li>
+        <li><a href="gallery.html"     class="button small">Gallery</a></li>
         <li><a href="team.html"        class="button small">Team</a></li>
       </ul>
     </nav>
@@ -37,7 +37,7 @@
     <section id="header">
       <div class="inner">
         <h1>Mechanical Design</h1>
-        <p>XY gantry, end effector, and layered board construction.</p>
+        <p>CoreXY Gantry, End Effector, Fabrication, and Assembly Process</p>
       </div>
     </section>
 
@@ -66,7 +66,7 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
                 />
               </span>
               <p style="text-align:center;">
-                Initial sketch
+                A sketch of how we planned the cross-section of the board to look like.
               </p> 
           </div>
 
@@ -75,7 +75,7 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
         <!-- Design Process -->
           <div class="col-6 col-12-medium">
             <header class="major" style="text-align:center;">
-              <h2>Design Process</h2>
+              <h2>Key Design Decisions</h2>
             </header>
               <ul>
                 <li>Gantry System over a Robot Arm Pick and Place System and Computer Vision or Two-Degree-of-Freedom Linkage System (SCARA Mechanism)</li>
@@ -128,7 +128,7 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
             </a>
           </p>
           <header  style="text-align:center;">
-            <h5>Technical Details</h5>
+            <h3>Technical Details</h3>
           </header>
           
           <p>
@@ -180,7 +180,7 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
           <p>The rails span beyond the 8×8 playing area, so the carriage can reach capture zones off to the side of the board. This lets us slide captured pieces completely off the main grid and keeps the motion path clean and collision-free.</p>
           
           <header style="text-align:center;">
-            <h5>Design Process</h5>
+            <h3>Design Process</h3>
           </header>
             <p>
               Starting with a drawing of a standard chessboard, we planned out the overall size of the playing field, taking into account the need for capture spaces and promotion squares. This extra constraint increased the size of our board from our standard 8 x 8 to a 12 x 10 board. Using a reference gantry assembly we found online, we roughly estimated how large the gantry should be, setting the square lengths to 2 inches.
@@ -219,7 +219,7 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
             </video>
           </div>
           <header style="text-align:center;">
-            <h5>Initial Gantry</h5>
+            <h4>Initial Gantry</h4>
           </header>
           
           <div class="col-6 col-12-medium imp-medium">
@@ -240,10 +240,14 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
           </p>
           </div>
 
+          <span class="image fit">
+                <img
+                  src="images/mechanical13.jpg"
+                  alt="End effector and magnet carriage"
+                  style="width:50% !important; height:auto; display:block; margin:0 auto;"
+                />
+              </span>
         <hr class="major" />
-
-        
-
         <!-- Magnet Carriage -->
         <div class="row gtr-150">
           <div class="col-12">
@@ -259,20 +263,12 @@ Mounted on top of the gantry is the chessboard itself, made from a ⅛ inch thic
             <ul>
               <li>The Carriage had to not reduce the x-axis travel, or reduce the x-axis travel very minimally, to still reach all the target squares.</li>
               <li>The magnet had to be positioned in the center of the carriage to ensure that the final board was centered.</li>
-              <li>CThe magnet had to have a predictable and repeatable movement path.</li>
+              <li>The magnet had to have a predictable and repeatable movement path.</li>
             </ul>
 
             <p>
               We decided that a rack and pinion system would be best, as it would be space-efficient, and its motion would be easily repeatable. We designed the servo horn to be easily press-fit into the pinion and held tightly in place by the servo screw. The rack design had to have a curve to it to ensure that the magnet remained centered on the carriage. The servo assembly would be bolted to the belt retaining system
             </p>
-
-            <span class="image fit">
-                <img
-                  src="images/mechanical13.jpg"
-                  alt="End effector and magnet carriage"
-                  style="width:50% !important; height:auto; display:block; margin:0 auto;"
-                />
-              </span>
               <span class="image fit">
                 <img
                   src="images/mechanical14.jpg"
