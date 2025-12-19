@@ -41,6 +41,14 @@ window.addEventListener('load', () => {
     {
       img:"Images/cad1.png",
       text: "A drawing of the forearm and wrist mounts."
+    },
+    {
+      img:"Images/cad2.png",
+      text: "A drawing of the battery housing, meant to contain a 12 Volt and 9 Volt battery."
+    },
+    {
+      img:"Images/cad3.png",
+      text: "A drawing of the bicep mount, meant to house all of the boards."
     }
 
 
