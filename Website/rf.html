@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MICO Ground Station</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <a href="index.html">MICO</a>
+    </div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="reflector.html">REFLECTOR</a>
+      <a href="tracking.html">TRACKING</a>
+      <a href="rf.html">RF</a>
+      <a href="about.html">TEAM</a>
+    
+      <div class="dropdown">
+        <a href="#" class="dropbtn">OTHER ▾</a>
+        <div class="dropdown-content">
+          <a href="gallery.html">Gallery</a>
+          <a href="team.html">Budget</a>
+        </div>
+      </div>
+      </nav>
+</header>
+
+<section class="hero two-column-hero">
+  <div class="page-width hero-content">
+    <div class="hero-text">
+      <h1>RF SYSTEM</h1>
+    <p>Custom RF front end capable that feeds into a software defined radio capable of downlinking and decoding image data with an L-Band radio operating frequency as specified by IEEE</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/rfboard.png" alt="rdboard" />
+      <div class="hero-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+<div class="page-width mission-overview">
+    <div class="image-side">
+      <img src="images/lnasch.png" alt="Mission Overview Image" />
+    </div>
+    <div class="text-side">
+      <h2>LOW-NOISE AMPLIFIER</h2>
+        <p>
+          The low noise amplifiers in the RF signal chain allow our ground station to amplify the radio signals coming from the GOES-19 satellite 100,000 to 1,000,000 times before having its frequency lowered by the downconverter.  Without this analog signal amplification, the signal would have too low of a level to be effectively processed by our signal processing hardware.
+        </p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="page-width mission-overview">
+    <div class="text-side">
+    <h2>DONCONVERTER MIXER</h2>
+    <p>The downconverting mixer allows us to lower the frequency of the incoming microwave signals from the GOES-19 weather satellite by almost four times, making signal processing easier for our software-defined radio modem on our receiver.</p>
+    </div>
+    <div class="image-side">
+      <img src="images/lnbsch.png" alt="Ref2" />
+    </div>
+  </div>
+
+</section>
+
+<section class="section dark">
+<div class="page-width mission-overview">
+    <div class="image-side">
+      <img src="images/synsch.png" alt="Mission Overview Image" />
+    </div>
+    <div class="text-side">
+      <h2>FREQUENCY SYNTHESIZER</h2>
+        <p>
+          The frequency synthesizers allow us to generate required frequencies, used for the signal downconversion process.        </p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="page-width mission-overview">
+    <div class="text-side">
+    <h2>SOFTWARE DEFINED RADIO</h2>
+    <p>
+    After some  SAW filters to effectively remove interference from other sources of microwave radiation including cellular phones and other satellites,The software defined radio is a hardware device which acts as a modem for our satellite ground station, decoding and processing the signals we received from the satellite (We use a COTS RTL2832 based software-defined radio.)
+ </p>
+  </div>
+    <div class="image-side">
+      <img src="images/S.png" alt="Ref2" />
+    </div>
+  </div>
+
+</section>
+

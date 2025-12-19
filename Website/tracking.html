@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MICO Ground Station</title>
+
+  <!-- THIS LINE IS CRITICAL -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <a href="index.html">MICO</a>
+    </div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="reflector.html">REFLECTOR</a>
+      <a href="tracking.html">TRACKING</a>
+      <a href="rf.html">RF</a>
+      <a href="about.html">TEAM</a>
+    
+      <div class="dropdown">
+        <a href="#" class="dropbtn">OTHER ▾</a>
+        <div class="dropdown-content">
+          <a href="gallery.html">Gallery</a>
+          <a href="budget.html">Budget</a>
+        </div>
+      </div>
+      </nav>
+</header>
+
+
+
+<section class="hero two-column-hero">
+  <div class="page-width hero-content">
+    <div class="hero-text">
+      <h1>TRACKING</h1>
+    <p> A Gimbal Mechanism That Maintains a Pointing Accuracy that Deviates Less than One Degree and a Tracking Speed of Five Degrees per Minute</p>
+       
+    </div>
+    <div class="hero-image">
+      <img src="images/pointing.jpg" alt="Earth from MICO" />
+      <div class="hero-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section dark">
+<div class="page-width mission-overview">
+    <div class="image-side">
+      <img src="images/azimuth.gif" alt="azimuth Image" />
+    </div>
+    <div class="text-side">
+      <h2>AZIMUTH</h2>
+      <p>
+      The azimuth pointing mechanism consists of a NEMA 23 stepper motor driving a planetary belt drive with an 8.23:1 reduction. An idler increases belt contact with the motor pulley and an adjustable belt tensioner allows for the belt to be tightened during assembly and in case of belt creep. The entire azimuth mechanism is enclosed underneath the turntable, a design choice made to minimize belt exposure and wear. As the belt drive mechanism is not self locking, there is a removable locking pin that prevents movement of the azimuth axis during transport. Most of the structural components on the mechanism are 3/16 steel, although acrylic spacers were used as a lower cost but waterproof solution where steel was not needed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="page-width mission-overview">
+    <div class="text-side">
+    <h2>Elevation</h2>
+      <p>
+        The elevation pointing mechanism consists of a NEMA 23 stepper motor driving a ball screw mechanism. The ball screw allows for a self locking mechanism which is essential to maintain a precise elevation without running constant current through the motors. The majority of the elevation mechanism support structure is 1/4 steel plate. The mounting is designed to be an 8020 bar. This standardization allows for multiple configurations of reflector height, and rapid changes for different reflectors and payloads.
+      </p>    
+
+  </div>
+    <div class="image-side">
+      <img src="images/el2.gif" alt="Ref2" />
+    </div>
+  </div>
+
+</section>
+
+<section class="section dark">
+  <div class="content-wide">
+    <h2>Rough Calculations</h2>
+    <br>
+    <div class="centered-image">
+      <img src="images/calcz.png" alt="Validation">
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+<div class="page-width mission-overview">
+    <div class="image-side">
+      <img src="images/elevation.gif" alt="L Image" />
+    </div>
+    <div class="text-side">
+      <h2>SOFTWARE</h2>
+      <p>GitHub Link: https://github.com/JosephVazha/mico-software</p>
+      <p>
+      To track satellites accurately, MICO uses an SGP4 orbital propagation model. SGP4 predicts a satellite’s position and velocity based on its TLE (Two-Line Element) set, accounting for perturbations such as Earth’s oblateness, atmospheric drag, and gravitational influences from the Sun and Moon. This enables real-time pass predictions and precise pointing for ground-based receivers. Azimuth and elevation commands are then sent to the pico to precisely drive the stepper motors.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+</section>
+<section class="section dark">
+  <div class="content-wide">
+    <h2>Gimbal Schematic</h2>
+    <br>
+    <div class="centered-image">
+      <img src="images/msch.png" alt="Electrical Diagram">
+    </div>
+  </div>
+</section>
