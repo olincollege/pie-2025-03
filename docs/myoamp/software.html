@@ -93,128 +93,128 @@
       </p>
     </section>
 
-    <section class="overview left-align">
-      <h3>TCN Architecture</h3>
-      <pre><code>model = TCN(
+    <section class="overview tcn-pair">
+      <div class="tcn-panel">
+        <h3>TCN Architecture</h3>
+        <pre><code>model = TCN(
   num_inputs = 3, # 3 sensors
   num_channels = [32, 32, 64],
-  kernel_size = 4, # default
-  dilations = None, # default
-  dilation_reset = None, # default
-  dropout = 0.1, # default
-  causal = True, # default
-  use_norm = 'weight_norm', # default
-  activation = 'relu', # default
-  kernel_initializer = 'xavier_uniform', # default, bai et al. paper had normal initialization
-  use_skip_connections = False, # default
-  input_shape = 'NCL', # default
-  embedding_shapes = None, # default
-  embedding_mode = 'add', # default
-  use_gate = False, # default, true 
-  lookahead = 0, # default, deprecated
-  output_projection = num_classes, # default
-  output_activation= None # defaults to None
+  kernel_size = 4, 
+  dilations = None, 
+  dilation_reset = None, 
+  dropout = 0.1, 
+  causal = True, 
+  use_norm = 'weight_norm', 
+  activation = 'relu', 
+  kernel_initializer = 'xavier_uniform', 
+  use_skip_connections = False, 
+  input_shape = 'NCL', 
+  embedding_shapes = None, 
+  embedding_mode = 'add', 
+  use_gate = False,  
+  lookahead = 0, 
+  output_projection = num_classes, 
+  output_activation= None  
 )</code></pre>
+      </div>
+      <div class="tcn-panel-exp">
+        <h3>Explanation of the Architecture</h3>
+        <p><strong>num_inputs = 3</strong></p>
+        <p>
+          Specifies the number of input channels per time step. In this project, the model receives
+          EMG data from three forearm sensors, each treated as a separate input channel.
+        </p>
+        <p><strong>num_channels = [32, 32, 64]</strong></p>
+        <p>
+          Defines the number of convolutional filters in each temporal block of the network. The
+          increasing channel depth allows the model to learn progressively higher-level temporal
+          features from the EMG signals.
+        </p>
+        <p><strong>kernel_size = 4</strong></p>
+        <p>
+          Sets the temporal width of the convolutional kernels, meaning each filter processes
+          windows of four consecutive time steps to capture short-term temporal dependencies in the
+          signal.
+        </p>
+        <p><strong>dilations = None</strong></p>
+        <p>
+          Uses the default exponentially increasing dilation factors across layers, enabling the
+          network to model long-range temporal dependencies without increasing kernel size.
+        </p>
+        <p><strong>dilation_reset = None</strong></p>
+        <p>
+          Indicates that dilation factors are not periodically reset and instead follow the default
+          dilation progression through the network depth.
+        </p>
+        <p><strong>dropout = 0.1</strong></p>
+        <p>
+          Applies a 10% dropout rate during training to reduce overfitting by randomly disabling
+          neurons and encouraging more robust feature learning.
+        </p>
+        <p><strong>causal = True</strong></p>
+        <p>
+          Enforces causal convolutions so that predictions at a given time step depend only on past
+          and present inputs, which is essential for real-time EMG gesture recognition.
+        </p>
+        <p><strong>use_norm = 'weight_norm'</strong></p>
+        <p>
+          Applies weight normalization to stabilize training by decoupling the magnitude and
+          direction of weight vectors, improving convergence behavior.
+        </p>
+        <p><strong>activation = 'relu'</strong></p>
+        <p>
+          Uses the Rectified Linear Unit activation function, introducing nonlinearity while
+          maintaining computational efficiency.
+        </p>
+        <p><strong>kernel_initializer = 'xavier_uniform'</strong></p>
+        <p>
+          Initializes convolutional weights using Xavier uniform initialization, helping maintain
+          stable signal variance across layers at the start of training.
+        </p>
+        <p><strong>use_skip_connections = False</strong></p>
+        <p>
+          Disables residual skip connections between layers. While skip connections can improve
+          gradient flow, they were not used in this configuration to keep the architecture simpler.
+        </p>
+        <p><strong>input_shape = 'NCL'</strong></p>
+        <p>
+          Specifies the input tensor format as (batch size, number of channels, sequence length),
+          which is appropriate for time-series EMG data.
+        </p>
+        <p><strong>embedding_shapes = None</strong></p>
+        <p>
+          Indicates that no additional learned embeddings (e.g., for categorical metadata) are
+          incorporated into the model.
+        </p>
+        <p><strong>embedding_mode = 'add'</strong></p>
+        <p>
+          Defines how embeddings would be combined with inputs if present; here, embeddings would
+          be added element-wise, though none are used.
+        </p>
+        <p><strong>use_gate = False</strong></p>
+        <p>
+          Disables gated activations (as in gated TCNs). While gating can improve expressiveness, it
+          increases computational cost and was not required for this task.
+        </p>
+        <p><strong>lookahead = 0</strong></p>
+        <p>
+          Specifies zero lookahead, meaning the model does not access future time steps. This
+          setting is deprecated but reinforces strict causality.
+        </p>
+        <p><strong>output_projection = 5</strong></p>
+        <p>
+          Projects the final network output to five classes, corresponding to the five hand gesture
+          categories used in the classification task.
+        </p>
+        <p><strong>output_activation = None</strong></p>
+        <p>
+          Applies no activation function at the output layer, producing raw logits that are later
+          processed by a loss function such as softmax cross-entropy during training.
+        </p>
+      </div>
     </section>
 
     <section class="overview">
-      <h3>Explanation of the Architecture</h3>
-      <p><strong>num_inputs = 3</strong></p>
-      <p>
-        Specifies the number of input channels per time step. In this project, the model receives
-        EMG data from three forearm sensors, each treated as a separate input channel.
-      </p>
-      <p><strong>num_channels = [32, 32, 64]</strong></p>
-      <p>
-        Defines the number of convolutional filters in each temporal block of the network. The
-        increasing channel depth allows the model to learn progressively higher-level temporal
-        features from the EMG signals.
-      </p>
-      <p><strong>kernel_size = 4</strong></p>
-      <p>
-        Sets the temporal width of the convolutional kernels, meaning each filter processes
-        windows of four consecutive time steps to capture short-term temporal dependencies in the
-        signal.
-      </p>
-      <p><strong>dilations = None</strong></p>
-      <p>
-        Uses the default exponentially increasing dilation factors across layers, enabling the
-        network to model long-range temporal dependencies without increasing kernel size.
-      </p>
-      <p><strong>dilation_reset = None</strong></p>
-      <p>
-        Indicates that dilation factors are not periodically reset and instead follow the default
-        dilation progression through the network depth.
-      </p>
-      <p><strong>dropout = 0.1</strong></p>
-      <p>
-        Applies a 10% dropout rate during training to reduce overfitting by randomly disabling
-        neurons and encouraging more robust feature learning.
-      </p>
-      <p><strong>causal = True</strong></p>
-      <p>
-        Enforces causal convolutions so that predictions at a given time step depend only on past
-        and present inputs, which is essential for real-time EMG gesture recognition.
-      </p>
-      <p><strong>use_norm = 'weight_norm'</strong></p>
-      <p>
-        Applies weight normalization to stabilize training by decoupling the magnitude and
-        direction of weight vectors, improving convergence behavior.
-      </p>
-      <p><strong>activation = 'relu'</strong></p>
-      <p>
-        Uses the Rectified Linear Unit activation function, introducing nonlinearity while
-        maintaining computational efficiency.
-      </p>
-      <p><strong>kernel_initializer = 'xavier_uniform'</strong></p>
-      <p>
-        Initializes convolutional weights using Xavier uniform initialization, helping maintain
-        stable signal variance across layers at the start of training.
-      </p>
-      <p><strong>use_skip_connections = False</strong></p>
-      <p>
-        Disables residual skip connections between layers. While skip connections can improve
-        gradient flow, they were not used in this configuration to keep the architecture simpler.
-      </p>
-      <p><strong>input_shape = 'NCL'</strong></p>
-      <p>
-        Specifies the input tensor format as (batch size, number of channels, sequence length),
-        which is appropriate for time-series EMG data.
-      </p>
-      <p><strong>embedding_shapes = None</strong></p>
-      <p>
-        Indicates that no additional learned embeddings (e.g., for categorical metadata) are
-        incorporated into the model.
-      </p>
-      <p><strong>embedding_mode = 'add'</strong></p>
-      <p>
-        Defines how embeddings would be combined with inputs if present; here, embeddings would
-        be added element-wise, though none are used.
-      </p>
-      <p><strong>use_gate = False</strong></p>
-      <p>
-        Disables gated activations (as in gated TCNs). While gating can improve expressiveness, it
-        increases computational cost and was not required for this task.
-      </p>
-      <p><strong>lookahead = 0</strong></p>
-      <p>
-        Specifies zero lookahead, meaning the model does not access future time steps. This
-        setting is deprecated but reinforces strict causality.
-      </p>
-      <p><strong>output_projection = 5</strong></p>
-      <p>
-        Projects the final network output to five classes, corresponding to the five hand gesture
-        categories used in the classification task.
-      </p>
-      <p><strong>output_activation = None</strong></p>
-      <p>
-        Applies no activation function at the output layer, producing raw logits that are later
-        processed by a loss function such as softmax cross-entropy during training.
-      </p>
-    </section>
-
-    <section class="overview">
-      <h3>Confusion Matrix</h3>
       <figure>
         <img src="Images/confusion_matrix.png" alt="Confusion matrix for EMG gesture classification" />
 
