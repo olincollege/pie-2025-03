@@ -14,11 +14,11 @@ Click on a link below to visit the website for that team's project.
 
 [Fishbot Frenzy](https://olincollege.github.io/pie-2025-03/fishbot-frenzy)
 
-[Fox-Bot](https://jake30123.github.io/pie-2025-03/fox-bot)
+[Fox-Bot](https://olincollege.github.io/pie-2025-03/fox-bot)
 
-[Ground Station](https://olincollege.github.io/pie-2025-03/ground-station)
+[Ground Station](https://olincollege.github.io/pie-2025-03/ground-station/Website/)
 
-[Less Blades, More Fun!](https://olincollege.github.io/pie-2025-03/less-blades-more-fun)
+[Less Blades, More Fun!](https://olincollege.github.io/pie-2025-03/less-blades-more-fun/docs/)
 
 [MasterPiece](https://olincollege.github.io/pie-2025-03/masterpiece)
 
@@ -32,13 +32,13 @@ Click on a link below to visit the website for that team's project.
 
 [PIErography](https://olincollege.github.io/pie-2025-03/pierography)
 
-[Project AURA](https://olincollege.github.io/pie-2025-03/project-aura)
+[Project AURA](https://olincollege.github.io/pie-2025-03/project-aura/vanilla-site/)
 
 [Ru-bling](https://olincollege.github.io/pie-2025-03/ru-bling)
 
 [Scribblz](https://olincollege.github.io/pie-2025-03/scribblz)
 
-[Sigma](https://olincollege.github.io/pie-2025-03/sigma)
+[Sigma](https://olincollege.github.io/pie-2025-03/sigma/website)
 
 [Silly Soil Serpents](https://olincollege.github.io/pie-2025-03/silly-soil-serpents)
 
