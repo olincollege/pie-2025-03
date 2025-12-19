@@ -1791,8 +1791,14 @@ input, select, textarea {
 		}
 
 		.image.decent {
+			text-align: center;
 			display: block;
 			width: 50%;
+		}
+		.image.decent img {
+			display: inline-block;
+			max-width: 50%; /* Ensures it doesn't overflow on mobile */
+			height: auto;
 		}
 
 		.image.fit {
