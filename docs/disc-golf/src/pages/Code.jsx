@@ -321,7 +321,7 @@ function Documentation() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
           onClick={closeZoom}
         >
-          <div className="relative max-w-7xl max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl">
+          <div className="relative max-w-4xl max-h-[85vh] overflow-auto bg-white rounded-lg shadow-2xl">
             <button
               onClick={closeZoom}
               className="absolute top-4 right-4 text-stone-500 hover:text-stone-900 text-3xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-stone-100 transition-colors"
