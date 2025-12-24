@@ -2,7 +2,7 @@
 
 Click on a link below to visit the website for that team's project.
 
-[For PIE students - an example page using CSS](https://olincollege.github.io/pie-2025-03/example-css-page/)
+[For PIE students - an example page using CSS](https://olincollege.github.io/pie-2025-03/example-css-page)
 
 [Box Bot](https://olincollege.github.io/pie-2025-03/box-bot)
 
@@ -16,13 +16,13 @@ Click on a link below to visit the website for that team's project.
 
 [Fox-Bot](https://olincollege.github.io/pie-2025-03/fox-bot)
 
-[Ground Station](https://olincollege.github.io/pie-2025-03/ground-station/Website/)
+[Ground Station](https://olincollege.github.io/pie-2025-03/ground-station)
 
-[Less Blades, More Fun!](https://olincollege.github.io/pie-2025-03/less-blades-more-fun/docs/)
+[Less Blades, More Fun!](https://olincollege.github.io/pie-2025-03/less-blades-more-fun)
 
 [MasterPiece](https://olincollege.github.io/pie-2025-03/masterpiece)
 
-[Munchkins](https://olincollege.github.io/pie-2025-03/munchkins)
+[Munchkin](https://olincollege.github.io/pie-2025-03/munchkins)
 
 [MyoAmp](https://olincollege.github.io/pie-2025-03/myoamp)
 
@@ -32,13 +32,13 @@ Click on a link below to visit the website for that team's project.
 
 [PIErography](https://olincollege.github.io/pie-2025-03/pierography)
 
-[Project AURA](https://olincollege.github.io/pie-2025-03/project-aura/vanilla-site/)
+[Project AURA](https://olincollege.github.io/pie-2025-03/project-aura)
 
 [Ru-bling](https://olincollege.github.io/pie-2025-03/ru-bling)
 
 [Scribblz](https://olincollege.github.io/pie-2025-03/scribblz)
 
-[Sigma](https://olincollege.github.io/pie-2025-03/sigma/website)
+[Sigma](https://olincollege.github.io/pie-2025-03/sigma)
 
 [Silly Soil Serpents](https://olincollege.github.io/pie-2025-03/silly-soil-serpents)
 
