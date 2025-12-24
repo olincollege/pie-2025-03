@@ -16,7 +16,8 @@
 <body>
     <canvas id="three"></canvas>
     <div class="center-text" style="position: fixed; top: 20px; left: 20px;">
-        <a href="index.html" style="color: white; font-family: 'Space Grotesk', sans-serif; text-decoration: none;">Back to Home</a>
+        <a href="index.html" style="color: white; font-family: 'Space Grotesk', sans-serif; text-decoration: none;">Back
+            to Home</a>
     </div>
     <section style="height: 1600vh; background: #303030;"></section>
     <div id="story" style="color: white">
@@ -49,7 +50,16 @@
             <p>Two counterclockwise and two clockwise motors and propellers.</p>
         </div>
     </div>
-    <script type="module" src="model.js"></script>
+    <script type="importmap">
+    {
+    "imports": {
+        "three": "./three/build/three.module.js",
+        "three/addons/": "./three/examples/jsm/"
+    }
+    }
+    </script>
+
+    <script type="module" src="./model.js"></script>
 </body>
 
 </html>
