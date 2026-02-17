@@ -22,7 +22,7 @@ Click on a link below to visit the website for that team's project.
 
 [MasterPiece](https://olincollege.github.io/pie-2025-03/masterpiece)
 
-[Munchkin](https://olincollege.github.io/pie-2025-03/munchkins)
+[Munchkin](https://olincollege.github.io/pie-2025-03/munchkin)
 
 [MyoAmp](https://olincollege.github.io/pie-2025-03/myoamp)
 
